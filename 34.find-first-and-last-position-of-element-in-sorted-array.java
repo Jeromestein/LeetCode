@@ -23,7 +23,6 @@ class Solution {
             } else if (target > nums[pivot]) {
                 left = pivot + 1;
             }
-
         }
 
         return new int[] { -1, -1 };
