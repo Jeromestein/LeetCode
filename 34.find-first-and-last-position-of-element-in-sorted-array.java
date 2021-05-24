@@ -24,7 +24,6 @@ class Solution {
                 left = pivot + 1;
             }
         }
-
         return new int[] { -1, -1 };
     }
 }
