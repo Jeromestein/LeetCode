@@ -32,9 +32,9 @@ class Solution {
     }
 }*/
 
-// binary search twice: find the fisrt one, and find the last one
-// O(2logn), which is O(logn)
 class Solution {
+    // binary search twice: find the fisrt one, and find the last one
+    // O(2logn), which is O(logn)
     public int[] searchRange(int[] nums, int target) {
         int start = findFirstGorE(nums, target);
         // 1. if target is greater than all the elements in nums[],
