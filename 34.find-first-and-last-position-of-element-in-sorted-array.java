@@ -35,31 +35,35 @@ class Solution {
 // binary search twice: find the fisrt one, and find the last one
 // O(2logn), which is O(logn)
 class Solution {
-    public int[] searchRange(int[] A, int target) {
-        int start = Solution.firstGreaterEqual(A, target);
-        if (start == A.length || A[start] != target) {
+    public int[] searchRange(int[] nums, int target) {
+        int start = Solution.findFirstGorE(nums, target);
+        if (start == nums.length || nums[start] != target) {
             return new int[] { -1, -1 };
         }
-        return new int[] { start, Solution.firstGreaterEqual(A, target + 1) - 1 };
+
+        int ans[] = { start, Solution.findFirstGorE(nums, target + 1) - 1 };
+        return ans;
     }
 
     // find the first number that is greater than or equal to target.
     // could return A.length if target is greater than A[A.length-1].
     // actually this is the same as lower_bound in C++ STL.
-    private static int firstGreaterEqual(int[] A, int target) {
-        int low = 0, high = A.length;
-        while (low < high) {
-            int mid = low + ((high - low) >> 1);
+    private static int findFirstGorE(int[] A, int target) {
+        // if target is greater than all the elements in A,
+        // then the output should be A.length
+        int lo = 0, hi = A.length;
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
             // low <= mid < high
             if (A[mid] < target) {
-                low = mid + 1;
+                lo = mid + 1;
             } else {
                 // should not be mid-1 when A[mid]==target.
                 // could be mid even if A[mid]>target because mid<high.
-                high = mid;
+                hi = mid;
             }
         }
-        return low;
+        return lo;
     }
 }
 // @lc code=end
