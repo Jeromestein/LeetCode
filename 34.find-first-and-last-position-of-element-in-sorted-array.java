@@ -5,6 +5,10 @@
  */
 
 // @lc code=start
+
+// mySolution: O(logn+m), m is the no. of taget elements.
+// However, in the worst case, m may be n, so it becomes O(n)
+/*
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
@@ -25,6 +29,37 @@ class Solution {
             }
         }
         return new int[] { -1, -1 };
+    }
+}*/
+
+// binary search twice: find the fisrt one, and find the last one
+// O(2logn), which is O(logn)
+class Solution {
+    public int[] searchRange(int[] A, int target) {
+        int start = Solution.firstGreaterEqual(A, target);
+        if (start == A.length || A[start] != target) {
+            return new int[] { -1, -1 };
+        }
+        return new int[] { start, Solution.firstGreaterEqual(A, target + 1) - 1 };
+    }
+
+    // find the first number that is greater than or equal to target.
+    // could return A.length if target is greater than A[A.length-1].
+    // actually this is the same as lower_bound in C++ STL.
+    private static int firstGreaterEqual(int[] A, int target) {
+        int low = 0, high = A.length;
+        while (low < high) {
+            int mid = low + ((high - low) >> 1);
+            // low <= mid < high
+            if (A[mid] < target) {
+                low = mid + 1;
+            } else {
+                // should not be mid-1 when A[mid]==target.
+                // could be mid even if A[mid]>target because mid<high.
+                high = mid;
+            }
+        }
+        return low;
     }
 }
 // @lc code=end
