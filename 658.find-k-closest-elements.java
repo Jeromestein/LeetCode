@@ -12,7 +12,7 @@ class Solution {
     public List<Integer> findClosestElements(int[] A, int k, int x) {
         int left = 0, right = A.length - k;
         while (left < right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             if (x - A[mid] > A[mid + k] - x)
                 left = mid + 1;
             else
