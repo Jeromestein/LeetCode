@@ -1,6 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /*
  * @lc app=leetcode id=658 lang=java
@@ -19,7 +18,14 @@ class Solution {
             else
                 right = mid;
         }
-        return Arrays.stream(A, left, left + k).boxed().collect(Collectors.toList());
+
+        List<Integer> ans = new ArrayList<>(k);
+        for (int i = 0; i < k; i++) {
+            ans.add(A[left + i]);
+        }
+        return ans;
+
+        // return Arrays.stream(A, left, left + k).boxed().collect(Collectors.toList());
     }
 }
 // @lc code=end
