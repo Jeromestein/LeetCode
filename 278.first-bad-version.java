@@ -15,10 +15,10 @@ public class Solution extends VersionControl {
         int left = 1, right = n;
         while (left < right) {
             int pivot = left + (right - left) / 2;
-            if (isBadVersion(pivot) == false) {
-                left = pivot + 1;
-            } else {
+            if (isBadVersion(pivot) == true) {
                 right = pivot;
+            } else {
+                left = pivot + 1;
             }
         }
 
