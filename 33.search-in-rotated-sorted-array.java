@@ -26,7 +26,7 @@ class Solution {
         hi = nums.length - 1;
         // The usual binary search and accounting for rotation.!!!
         while (lo <= hi) {
-            int mid = (lo + hi) / 2;
+            int mid = lo + (hi - lo) / 2;
             int realmid = (mid + rot) % nums.length;
             if (target == nums[realmid]) {
                 return realmid;
