@@ -19,17 +19,23 @@ class Solution {
             }
         }
 
-        // lo/hi is the index of the smallest value and the number of places rotated.
+        // lo/hi is the index of the smallest value
         int rot = lo;
         lo = 0;
         hi = nums.length - 1;
+
+        if (target >= nums[rot] && target <= nums[hi]) {
+            lo = rot;
+        } else {
+            hi = rot;
+        }
+
         // The usual binary search and accounting for rotation.!!!
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            int realmid = (mid + rot) % nums.length;
-            if (target == nums[realmid]) {
-                return realmid;
-            } else if (target < nums[realmid]) {
+            if (target == nums[mid]) {
+                return mid;
+            } else if (target < nums[mid]) {
                 hi = mid - 1;
             } else {
                 lo = mid + 1;
