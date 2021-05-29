@@ -20,14 +20,15 @@ class Solution {
         }
 
         // lo/hi is the index of the smallest value
-        int rot = lo;
+        int min = lo;
         lo = 0;
         hi = nums.length - 1;
 
-        if (target >= nums[rot] && target <= nums[hi]) {
-            lo = rot;
+        // based on min to do first binary search
+        if (target >= nums[min] && target <= nums[hi]) {
+            lo = min;
         } else {
-            hi = rot;
+            hi = min;
         }
 
         // The usual binary search and accounting for rotation.!!!
