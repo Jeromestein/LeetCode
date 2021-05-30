@@ -1,5 +1,3 @@
-import jdk.internal.vm.compiler.word.Pointer;
-
 /*
  * @lc app=leetcode id=278 lang=java
  *
