@@ -7,7 +7,8 @@
 // @lc code=start
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        int lo = 1, hi = Integer.MAX_VALUE;
+        // 1 <= h <= 109
+        int lo = 1, hi = 1000000000;
         while (lo < hi) {
             int mid = lo + (hi - lo) / 2;
             if (hours(piles, mid) > h) {
