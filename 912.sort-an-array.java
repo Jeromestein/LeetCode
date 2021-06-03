@@ -13,8 +13,9 @@ class Solution {
         // quickSort(nums, 0, nums.length - 1);
         // TopDown_mergeSort(nums, 0, nums.length - 1);
         // BottomUp_mergeSort(nums);
-        // heapSort(nums);
-        selectionSort(nums);
+        heapSort(nums);
+        // selectionSort(nums); // LTE in case 13
+        // bubbleSort(nums); // LTE in case 11
         return nums;
     }
 
@@ -127,6 +128,7 @@ class Solution {
     /*********************************************************************/
     /************************** selection sort *****************************/
     private void selectionSort(int[] nums) {
+        System.out.println(nums.length);
         for (int i = 0; i < nums.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < nums.length; j++) {
