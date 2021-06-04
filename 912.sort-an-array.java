@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /*
  * @lc app=leetcode id=912 lang=java
  *
@@ -15,6 +12,7 @@ class Solution {
         // BottomUp_mergeSort(nums);
         heapSort(nums);
         // selectionSort(nums); // LTE in case 13
+        // insertionSort(nums); // LTE in case 13
         // bubbleSort(nums); // LTE in case 11
         return nums;
     }
@@ -99,7 +97,7 @@ class Solution {
             heapify(nums, i, nums.length - 1);
         }
         for (int i = nums.length - 1; i >= 1; i--) {
-            heap_swap(nums, 0, i);
+            swap(nums, 0, i);
             heapify(nums, 0, i - 1);
         }
     }
@@ -114,7 +112,7 @@ class Solution {
                 maxIndex = r;
             if (maxIndex == i)
                 break;
-            heap_swap(nums, i, maxIndex);
+            swap(nums, i, maxIndex);
             i = maxIndex;
         }
     }
@@ -123,6 +121,12 @@ class Solution {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        nums[i] = nums[i] ^ nums[j];
+        nums[j] = nums[i] ^ nums[j];
+        nums[i] = nums[i] ^ nums[j];
     }
 
     /*********************************************************************/
@@ -136,14 +140,20 @@ class Solution {
                     minIndex = j;
             }
             if (minIndex != i)
-                select_swap(nums, i, minIndex);
+                swap(nums, i, minIndex);
         }
     }
 
-    private void select_swap(int[] nums, int i, int j) {
-        nums[i] = nums[i] ^ nums[j];
-        nums[j] = nums[i] ^ nums[j];
-        nums[i] = nums[i] ^ nums[j];
+    /*********************************************************************/
+    /*********************** insertion sort ********************************/
+    private void insertionSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = i; j >= 1; j--) {
+                if (nums[j] >= nums[j - 1])
+                    break;
+                swap(nums, j, j - 1);
+            }
+        }
     }
 
     /*********************************************************************/
@@ -152,15 +162,9 @@ class Solution {
         for (int k = nums.length - 1; k >= 1; k--) {
             for (int i = 0; i < k; i++) {
                 if (nums[i] > nums[i + 1])
-                    bubble_swap(nums, i, i + 1);
+                    swap(nums, i, i + 1);
             }
         }
-    }
-
-    private void bubble_swap(int[] nums, int i, int j) {
-        nums[i] = nums[i] ^ nums[j];
-        nums[j] = nums[i] ^ nums[j];
-        nums[i] = nums[i] ^ nums[j];
     }
     /*********************************************************************/
 }
