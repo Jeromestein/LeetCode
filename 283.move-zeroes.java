@@ -7,33 +7,18 @@
 // @lc code=start
 class Solution {
     public void moveZeroes(int[] nums) {
-        // i: zero; j: non zero
-        int i = 0, j = 0;
-        while (j < nums.length && i < nums.length) {
-            while (i < nums.length && nums[i] != 0) {
-                i++;
-            }
-            while (j < nums.length && nums[j] == 0) {
-                j++;
-            }
+        if (nums == null || nums.length == 0)
+            return;
 
-            if (j >= nums.length || i >= nums.length) {
-                break;
-            }
+        int insertPos = 0;
+        for (int num : nums) {
+            if (num != 0)
+                nums[insertPos++] = num;
+        }
 
-            if (j > i) {
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
-                if (i < nums.length)
-                    i++;
-            } else {
-                if (j < nums.length)
-                    j++;
-            }
-
+        while (insertPos < nums.length) {
+            nums[insertPos++] = 0;
         }
     }
-
 }
 // @lc code=end
