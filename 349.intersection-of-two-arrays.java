@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 /*
@@ -17,6 +18,7 @@ class Solution {
         for (Integer n : nums2)
             set2.add(n);
 
+        // get the intersections
         set1.retainAll(set2);
 
         int[] output = new int[set1.size()];
