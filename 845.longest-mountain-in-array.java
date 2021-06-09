@@ -8,36 +8,46 @@ import java.util.ArrayList;
 
 // @lc code=start
 class Solution {
-    public int longestMountain(int[] arr) {
-        if (arr.length < 3) {
-            return 0;
-        }
-        ArrayList<Integer> peak = new ArrayList<>();
-        for (int i = 1; i < arr.length - 1; i++) {
-            if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]) {
-                peak.add(i);
-            }
-        }
-        if (peak.size() == 0) {
-            return 0;
-        }
+    // public int longestMountain(int[] arr) {
+    // if (arr.length < 3) {
+    // return 0;
+    // }
+    // int maxlen = 0;
+    // int left = 0, right = 0;
 
-        int maxlen = 3;
-        for (Integer p : peak) {
-            int left = p, right = p;
+    // while (left < arr.length - 1) {
+    // right = left;
+    // if (right < arr.length - 1 && arr[right] < arr[right + 1]) {
+    // while (right < arr.length - 1 && arr[right] < arr[right + 1])
+    // right++;
 
-            while (left > 0 && arr[left - 1] < arr[left]) {
-                left--;
-            }
-            while (right < arr.length - 1 && arr[right] > arr[right + 1]) {
-                right++;
-            }
-            if (right - left + 1 > maxlen)
-                maxlen = right - left + 1;
+    // if (right < arr.length - 1 && arr[right] > arr[right + 1]) {
+    // // it is a peak
+    // while (right < arr.length - 1 && arr[right] > arr[right + 1])
+    // right++;
+
+    // maxlen = Math.max(maxlen, right - left + 1);
+    // }
+    // }
+
+    // left = Math.max(right, left + 1);
+    // }
+
+    // return maxlen;
+    // }
+    public int longestMountain(int[] A) {
+        int res = 0, up = 0, down = 0;
+        for (int i = 1; i < A.length; ++i) {
+            if (down > 0 && A[i - 1] < A[i] || A[i - 1] == A[i])
+                up = down = 0;
+            if (A[i - 1] < A[i])
+                up++;
+            if (A[i - 1] > A[i])
+                down++;
+            if (up > 0 && down > 0 && up + down + 1 > res)
+                res = up + down + 1;
         }
-
-        return maxlen;
-
+        return res;
     }
 }
 // @lc code=end
