@@ -7,24 +7,30 @@
 // @lc code=start
 class Solution {
     public int trap(int[] height) {
-        int a = 0;
-        int b = height.length - 1;
-        int max = 0;
-        int leftmax = 0;
-        int rightmax = 0;
-        while (a <= b) {
-            leftmax = Math.max(leftmax, height[a]);
-            rightmax = Math.max(rightmax, height[b]);
-            if (leftmax < rightmax) {
-                max += (leftmax - height[a]); // leftmax is smaller than rightmax, so the (leftmax-A[a]) water can be
-                                              // stored
-                a++;
+        if (height == null || height.length < 3)
+            return 0;
+
+        int result = 0;
+        int leftMax = Integer.MIN_VALUE; // highest bar from left
+        int rightMax = Integer.MIN_VALUE; // highest bar from right
+
+        // Key points:
+        // all the bars between leftMax and rightMax do not matter
+        for (int left = 0, right = height.length - 1; left <= right;) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+
+            // how much can current position trap depends on the shorter bar
+            if (leftMax <= rightMax) {
+                // DO NOT FORGET to subtract bar height of current position
+                result += leftMax - height[left];
+                left++;
             } else {
-                max += (rightmax - height[b]);
-                b--;
+                result += rightMax - height[right];
+                right--;
             }
         }
-        return max;
+        return result;
     }
 }
 // @lc code=end
