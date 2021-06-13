@@ -83,18 +83,33 @@ class Solution {
     }
 
     // reverse the left half, a bit faster
-    /*
-     * public boolean isPalindrome(ListNode head) { ListNode slow = head; ListNode
-     * fast = head; ListNode pre = null; ListNode prepre = null;
-     * 
-     * while (fast != null && fast.next != null) { pre = slow; slow = slow.next;
-     * fast = fast.next.next; pre.next = prepre; prepre = pre; }
-     * 
-     * if (fast != null) { slow = slow.next; }
-     * 
-     * while (pre != null && slow != null) { if (pre.val != slow.val) { return
-     * false; } pre = pre.next; slow = slow.next; } return true; }
-     */
+    // public boolean isPalindrome(ListNode head) {
+    // ListNode slow = head;
+    // ListNode fast = head;
+    // ListNode pre = null;
+    // ListNode prepre = null;
+
+    // while (fast != null && fast.next != null) {
+    // pre = slow;
+    // slow = slow.next;
+    // fast = fast.next.next;
+    // pre.next = prepre;
+    // prepre = pre;
+    // }
+
+    // if (fast != null) {
+    // slow = slow.next;
+    // }
+
+    // while (pre != null && slow != null) {
+    // if (pre.val != slow.val) {
+    // return false;
+    // }
+    // pre = pre.next;
+    // slow = slow.next;
+    // }
+    // return true;
+    // }
 
 }
 // @lc code=end
