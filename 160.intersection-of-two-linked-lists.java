@@ -50,6 +50,16 @@ public class Solution {
         }
 
         return null;
+
+        // // a short code
+        // // but when there is no intersection,
+        // // the code's runtime will be too long
+        // ListNode a = headA, b = headB;
+        // while (a != b) {
+        // a = (a == null) ? headA : a.next;
+        // b = (b == null) ? headB : b.next;
+        // }
+        // return a;
     }
 }
 // @lc code=end
