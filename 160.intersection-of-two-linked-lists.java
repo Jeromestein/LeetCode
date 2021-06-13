@@ -16,40 +16,30 @@ public class Solution {
         }
         // get the length of A and B
         int lengthA = 0, lengthB = 0;
-        for (ListNode i = headA; i != null; i = i.next) {
+        for (ListNode i = headA; i != null; i = i.next)
             lengthA++;
-        }
-        for (ListNode i = headB; i != null; i = i.next) {
+        for (ListNode i = headB; i != null; i = i.next)
             lengthB++;
-        }
 
         // get the difference value of their lengths
         // and set 2 pointers
         ListNode a = headA, b = headB;
-        if (lengthA > lengthB) {
-            int temp = lengthA - lengthB;
-            while (temp > 0) {
-                a = a.next;
-                temp--;
-            }
-        } else {
-            int temp = lengthB - lengthA;
-            while (temp > 0) {
-                b = b.next;
-                temp--;
-            }
+        while (lengthA > lengthB) {
+            a = a.next;
+            lengthA--;
+        }
+        while (lengthB > lengthA) {
+            b = b.next;
+            lengthB--;
         }
 
-        while (a != null && b != null) {
-            if (a == b) {
-                return a;
-            }
-
+        // find the intersection
+        while (a != b) {
             a = a.next;
             b = b.next;
         }
 
-        return null;
+        return a;
 
         // // a short code
         // // but when there is no intersection,
