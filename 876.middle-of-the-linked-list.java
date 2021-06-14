@@ -12,20 +12,13 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        // 1. get the length
-        int len = 0;
-        ListNode p = head;
-        while (p != null) {
-            len++;
-            p = p.next;
+        ListNode runner = head, walker = head;
+        while (runner != null && runner.next != null) {
+            walker = walker.next;
+            runner = runner.next.next;
         }
 
-        p = head;
-        for (int i = 0; i < len / 2; i++) {
-            p = p.next;
-        }
-
-        return p;
+        return walker;
     }
 }
 // @lc code=end
