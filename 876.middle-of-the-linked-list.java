@@ -13,6 +13,8 @@
 class Solution {
     public ListNode middleNode(ListNode head) {
         ListNode runner = head, walker = head;
+        // runner != null must be before runner.next != null
+        // or there will be java.lang.NullPointerException
         while (runner != null && runner.next != null) {
             walker = walker.next;
             runner = runner.next.next;
