@@ -69,9 +69,12 @@ public class Solution {
             return null;
         ListNode slow = head, fast = head, start = head;
         while (fast != null && fast.next != null) {
+            // Find the intersection point of the two runners.
             slow = slow.next;
             fast = fast.next.next;
+
             if (slow == fast) {
+                // Find the "entrance" to the cycle.
                 while (slow != start) {
                     slow = slow.next;
                     start = start.next;
