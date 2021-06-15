@@ -42,6 +42,7 @@ class Solution {
         return result.toArray(new int[result.size()][]);
     }
 
+    // // wtf is that shit?!
     // public int[][] merge(int[][] intervals) {
     // int nMerged = 1;
     // for (int i = 0; i < intervals.length; i++) {
@@ -54,13 +55,16 @@ class Solution {
     // int m0 = candidate[0];
     // int m1 = candidate[1];
     // if (m1 < i0) {
+    // // no overlap
     // // m0,m1 lower than i0,i1 - retain m0,m1
     // nRemain++;
     // } else if (i1 < m0) {
+    // // no overlap
     // // i0,i1 lower than m0,m1 - retain i0,i1, continue with m0,m1
     // intervals[nRemain++] = interval;
     // interval = candidate;
     // } else {
+    // // overlap
     // if (m0 < i0)
     // interval[0] = i0 = m0;
     // if (m1 > i1)
