@@ -6,7 +6,7 @@
 
 // @lc code=start
 public class Solution {
-    private int lo, maxLen;
+    private int start, maxLen;
 
     public String longestPalindrome(String s) {
         int len = s.length();
@@ -19,17 +19,20 @@ public class Solution {
             // assume even length.
             extendPalindrome(s, i, i + 1);
         }
-        return s.substring(lo, lo + maxLen);
+        return s.substring(start, start + maxLen);
     }
 
-    private void extendPalindrome(String s, int j, int k) {
-        while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
-            j--;
-            k++;
+    private void extendPalindrome(String s, int left, int right) {
+        // 2 pointers
+        // left-- and right++
+        // expand 2pinter to find the longest palindrome
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
         }
-        if (maxLen < k - j - 1) {
-            lo = j + 1;
-            maxLen = k - j - 1;
+        if (maxLen < right - left - 1) {
+            start = left + 1;
+            maxLen = right - left - 1;
         }
     }
 }
