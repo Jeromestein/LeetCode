@@ -9,25 +9,36 @@ import java.util.Set;
 
 // @lc code=start
 class Solution {
-
-    String allVowels = new String("AEIOUaeiou");
-
     public String reverseVowels(String s) {
-        ArrayList<Integer> vowels = new ArrayList<>();
-        for (int i = 0; i < s.length(); i++) {
-            if (allVowels.contains(s.substring(i, i + 1))) {
-                vowels.add(i);
+        int len = s.length();
+        char[] arr = s.toCharArray();
+        int left = 0;
+        int right = len - 1;
+        while (left < right) {
+            char leftChar = arr[left];
+            char rightChar = arr[right];
+
+            if (isVowels(leftChar) == false) {
+                left++;
+            } else if (isVowels(rightChar) == false) {
+                right--;
+            } else {
+                // leftChar and rightChar are vowel at same time
+                // swap
+                arr[left] = rightChar;
+                arr[right] = leftChar;
+                left++;
+                right--;
             }
         }
-        StringBuilder res = new StringBuilder(s);
-        int i = 0, j = vowels.size() - 1;
-        while (i < j) {
-            res.setCharAt(vowels.get(i), s.charAt(vowels.get(j)));
-            res.setCharAt(vowels.get(j), s.charAt(vowels.get(i)));
-            i++;
-            j--;
-        }
-        return res.toString();
+
+        String res = String.valueOf(arr);
+        return res;
+    }
+
+    private boolean isVowels(char x) {
+        return (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u' || x == 'A' || x == 'E' || x == 'I' || x == 'O'
+                || x == 'U');
     }
 }
 // @lc code=end
