@@ -20,15 +20,19 @@ class Solution {
             // get start and end time
             start = Math.max(firstList[i][0], secondList[j][0]);
             end = Math.min(firstList[i][1], secondList[j][1]);
-            // closed interval or not?
+
             if (end >= start) {
+                // there is a closed interval
                 res.add(new int[] { start, end });
             }
 
             // i++ or j++
             if (end == firstList[i][1]) {
+                // if firstList[i][1] is the end time
+                // we should move to the next
                 i++;
             } else {
+                // same reason
                 j++;
             }
         }
