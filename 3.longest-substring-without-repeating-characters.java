@@ -18,7 +18,6 @@ class Solution {
         boolean[] isRepeated = new boolean[256];
         int res = 0;
         while (end < s.length()) {
-
             while (isRepeated[s.charAt(end)] == true) {
                 isRepeated[s.charAt(start)] = false;
                 start++;
