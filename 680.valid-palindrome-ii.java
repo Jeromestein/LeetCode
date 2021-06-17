@@ -6,31 +6,28 @@
 
 // @lc code=start
 class Solution {
-    boolean deleteFlag = false;
+    boolean isDeleted = false;
 
     public boolean validPalindrome(String s) {
-
-        int left = 0, right = s.length() - 1;
-        while (left < right) {
-            if (s.charAt(left) != s.charAt(right)) {
-                if (deleteFlag == false) {
-                    String deleteLeft = removeCharAt(s, left);
-                    String deleteRight = removeCharAt(s, right);
-                    deleteFlag = true;
-                    return validPalindrome(deleteLeft) || validPalindrome(deleteRight);
-                } else {
-                    return false;
-                }
-            } else {
-                left++;
-                right--;
-            }
-        }
-        return true;
+        return isPalindrome(s, 0, s.length() - 1);
     }
 
-    public static String removeCharAt(String s, int pos) {
-        return s.substring(0, pos) + s.substring(pos + 1);
+    public boolean isPalindrome(final String s, int leftIndex, int rightIndex) {
+        while (leftIndex < rightIndex) {
+            if (s.charAt(leftIndex) != s.charAt(rightIndex)) {
+                if (isDeleted == true) {
+                    return false;
+                } else {
+                    isDeleted = true;
+                    return isPalindrome(s, leftIndex + 1, rightIndex) || isPalindrome(s, leftIndex, rightIndex - 1);
+                }
+            }
+
+            leftIndex++;
+            rightIndex--;
+        }
+
+        return true;
     }
 }
 // @lc code=end
