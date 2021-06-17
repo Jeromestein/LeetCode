@@ -15,20 +15,17 @@ class Solution {
         }
         int start, end;
         start = end = 0;
-        HashMap<Character, Integer> map = new HashMap<>();
+        boolean[] isRepeated = new boolean[256];
         int res = 0;
         while (end < s.length()) {
-            if (map.containsKey(s.charAt(end)) == true) {
-                start = end = map.remove(s.charAt(end)) + 1;
-                map.clear();
 
-            } else {
-                map.put(s.charAt(end), end);
-                res = Math.max(res, map.size());
-                // System.out.println(map);
-                end++;
+            while (isRepeated[s.charAt(end)] == true) {
+                isRepeated[s.charAt(start)] = false;
+                start++;
             }
-
+            isRepeated[s.charAt(end)] = true;
+            res = Math.max(res, end - start + 1);
+            end++;
         }
 
         return res;
