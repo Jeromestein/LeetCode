@@ -7,39 +7,38 @@
 // @lc code=start
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
-        int start = 0, end = k - 1;
-        int[] maxSlidingWindow = new int[nums.length - k + 1];
-
-        int maxIndex = -1;
-
-        while (end < nums.length) {
-            // find the max of subarray
-            if (start > maxIndex) {
-                // if the old max is out of window
-                // then find new max in current window
-                int max = Integer.MIN_VALUE;
-                for (int i = start; i <= end; i++) {
-                    // find the max having biggest index
-                    if (max <= nums[i]) {
-                        max = nums[i];
-                        maxIndex = i;
-                    }
-                }
-                maxSlidingWindow[start] = max;
+        int n = nums.length;
+        int[] maxSWindow = new int[n - k + 1];
+        int left = 0, right = k - 1, maxIdx = getMaxIdx(nums, 0, k - 1);
+        while (right < n) {
+            if (left <= maxIdx) {
+                maxSWindow[left] = nums[maxIdx];
+                left++;
+                right++;
+                if (right == n)
+                    break;
+                if (nums[right] >= nums[maxIdx])
+                    maxIdx = right;
             } else {
-                if (maxSlidingWindow[start - 1] > nums[end]) {
-                    maxSlidingWindow[start] = maxSlidingWindow[start - 1];
-                } else {
-                    maxSlidingWindow[start] = nums[end];
-                    maxIndex = end;
-                }
+                if (nums[right] >= nums[maxIdx] - 1)
+                    maxIdx = right;
+                else if (nums[left] >= nums[maxIdx] - 1)
+                    maxIdx = left;
+                else
+                    maxIdx = getMaxIdx(nums, left, right);
             }
-
-            start++;
-            end++;
         }
+        return maxSWindow;
+    }
 
-        return maxSlidingWindow;
+    private int getMaxIdx(int[] nums, int left, int right) {
+        int maxVal = nums[left], maxIdx = left;
+        for (int i = left + 1; i <= right; i++)
+            if (nums[i] >= maxVal) {
+                maxVal = nums[i];
+                maxIdx = i;
+            }
+        return maxIdx;
     }
 
 }
