@@ -7,19 +7,28 @@
 // @lc code=start
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
-        int n = nums.length;
-        int[] maxSWindow = new int[n - k + 1];
-        int left = 0, right = k - 1, maxIdx = getMaxIdx(nums, 0, k - 1);
-        while (right < n) {
+        int[] maxSWindow = new int[nums.length - k + 1];
+        int left = 0, right = k - 1;
+        int maxIdx = getMaxIdx(nums, 0, k - 1);
+
+        while (right < nums.length) {
             if (left <= maxIdx) {
+                // max is in the window
                 maxSWindow[left] = nums[maxIdx];
                 left++;
                 right++;
-                if (right == n)
+
+                // prevent java.lang.ArrayIndexOutOfBoundsException
+                // from if (nums[right] >= nums[maxIdx])
+                if (right == nums.length)
                     break;
+
                 if (nums[right] >= nums[maxIdx])
                     maxIdx = right;
             } else {
+                // max is out of the window
+
+                // This 2 if-else make it form 500ms to 3ms !!!
                 if (nums[right] >= nums[maxIdx] - 1)
                     maxIdx = right;
                 else if (nums[left] >= nums[maxIdx] - 1)
