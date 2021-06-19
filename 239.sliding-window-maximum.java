@@ -13,7 +13,7 @@ class Solution {
 
         while (right < nums.length) {
             if (left <= maxIdx) {
-                // max is in the window
+                // the old max is in the window
                 maxSWindow[left] = nums[maxIdx];
                 left++;
                 right++;
@@ -26,12 +26,13 @@ class Solution {
                 if (nums[right] >= nums[maxIdx])
                     maxIdx = right;
             } else {
-                // max is out of the window
+                // the old max is out of the window
+                // we need to find the new max
 
                 // This 2 if-else make it form 500ms to 3ms !!!
-                if (nums[right] >= nums[maxIdx] - 1)
-                    maxIdx = right;
-                else if (nums[left] >= nums[maxIdx] - 1)
+                // I dont get it...
+
+                if (nums[left] >= nums[maxIdx] - 1)
                     maxIdx = left;
                 else
                     maxIdx = getMaxIdx(nums, left, right);
@@ -42,7 +43,7 @@ class Solution {
 
     private int getMaxIdx(int[] nums, int left, int right) {
         int maxVal = nums[left], maxIdx = left;
-        for (int i = left + 1; i <= right; i++)
+        for (int i = left; i <= right; i++)
             if (nums[i] >= maxVal) {
                 maxVal = nums[i];
                 maxIdx = i;
