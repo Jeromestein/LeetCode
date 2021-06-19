@@ -23,15 +23,26 @@ class Solution {
                 if (right == nums.length)
                     break;
 
+                // we need the max having biggest index
+                // so >= not >
                 if (nums[right] >= nums[maxIdx])
                     maxIdx = right;
+
             } else {
                 // the old max is out of the window
                 // we need to find the new max
 
-                // This 1 if-else makes it form 500ms to 3ms !!!
+                // This if-else makes it form 500ms to 3ms !!!
                 // I dont get it...
 
+                /*
+                 * nums[left] is obviously < nums[maxIdx], because:
+                 * 
+                 * if (nums[right] >= nums[maxIdx]) maxIdx = right;
+                 * 
+                 */
+                // but if change it as if (nums[left] == nums[maxIdx] - 1)
+                // it will use 150ms
                 if (nums[left] >= nums[maxIdx] - 1)
                     maxIdx = left;
                 else
@@ -50,6 +61,5 @@ class Solution {
             }
         return maxIdx;
     }
-
 }
 // @lc code=end
