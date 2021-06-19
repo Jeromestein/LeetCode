@@ -29,7 +29,7 @@ class Solution {
                 // the old max is out of the window
                 // we need to find the new max
 
-                // This 2 if-else make it form 500ms to 3ms !!!
+                // This 1 if-else makes it form 500ms to 3ms !!!
                 // I dont get it...
 
                 if (nums[left] >= nums[maxIdx] - 1)
