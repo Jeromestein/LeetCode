@@ -10,7 +10,10 @@ import java.util.Queue;
 
 // @lc code=start
 class MedianFinder {
-    static final int MAX_NUM = 25003; // balanced heaps
+    // balanced heaps
+    // hl[1] is the max of left heap
+    // hr[1] is the min of right heap
+    static final int MAX_NUM = 25003;
     int[] hl = new int[MAX_NUM]; // max heap (left side)
     int[] hr = new int[MAX_NUM]; // min heap (right side)
     int pl, pr, p, t;
@@ -26,7 +29,10 @@ class MedianFinder {
         else
             addToHR(num);
 
-        if (pr > pl) {
+        // keep balance
+        // pr<=pl<=pr+1
+        // pl=pr or pl=pr+1
+        if (pl < pr) {
             addToHL(hr[1]);
             removeFromHR();
         } else if (pl > pr + 1) {
@@ -44,6 +50,7 @@ class MedianFinder {
     }
 
     private void removeFromHL() {
+        // remove top node, the max
         p = 1;
         hl[1] = hl[pl--];
         while (p * 2 <= pl) {
@@ -62,6 +69,7 @@ class MedianFinder {
     }
 
     private void removeFromHR() {
+        // remove top node, the min
         p = 1;
         hr[1] = hr[pr--];
         while (p * 2 <= pr) {
@@ -79,10 +87,26 @@ class MedianFinder {
         }
     }
 
+    private void addToHL(int num) {
+        // add to leaf node
+        p = ++pl;
+        hl[p] = num;
+        while (p > 1 && p < MAX_NUM && hl[p] > hl[p >> 1]) {
+            // max heap
+            // if it is > its father node, swap
+            t = hl[p >> 1];
+            hl[p >> 1] = hl[p];
+            hl[p] = t;
+            p >>= 1;
+        }
+    }
+
     private void addToHR(int num) {
         p = ++pr;
         hr[p] = num;
         while (p > 1 && p < MAX_NUM && hr[p] < hr[p >> 1]) {
+            // min heap
+            // if it is < its father node, swap
             t = hr[p >> 1];
             hr[p >> 1] = hr[p];
             hr[p] = t;
@@ -90,16 +114,6 @@ class MedianFinder {
         }
     }
 
-    private void addToHL(int num) {
-        p = ++pl;
-        hl[p] = num;
-        while (p > 1 && p < MAX_NUM && hl[p] > hl[p >> 1]) {
-            t = hl[p >> 1];
-            hl[p >> 1] = hl[p];
-            hl[p] = t;
-            p >>= 1;
-        }
-    }
 }
 
 /**
