@@ -73,6 +73,7 @@ class Solution {
     }
 
     public boolean checkInclusion(String s1, String s2) {
+        // c1[i] seems a bit fastere than s1.charAt(i)
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
         int l1 = c1.length;
