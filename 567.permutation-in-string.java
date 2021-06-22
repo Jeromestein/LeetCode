@@ -8,60 +8,6 @@ import java.util.Arrays;
 
 // @lc code=start
 class Solution {
-    // public boolean checkInclusion(String s1, String s2) {
-    // int uniqueCNT = 0;
-    // // s1 and s2 consist of lowercase English letters.
-    // int[] s1charCNT = new int[26];
-    // int[] s2charCNT = new int[26];
-
-    // // reset charCNT
-    // Arrays.fill(s1charCNT, 0);
-    // Arrays.fill(s2charCNT, 0);
-
-    // for (int i = 0; i < s1.length(); i++) {
-    // int idx = s1.charAt(i) - 'a';
-    // if (s1charCNT[idx] == 0) {
-    // uniqueCNT++;
-    // }
-    // s1charCNT[idx]++;
-    // }
-
-    // int start = 0, end = 0;
-
-    // int currUniqueCNT = 1;
-    // s2charCNT[s2.charAt(end) - 'a']++;
-    // while (end < s2.length() && start < s2.length() - s1.length() + 1) {
-    // if (currUniqueCNT < uniqueCNT) {
-    // end++;
-    // if (end < s2.length()) {
-    // int idx = s2.charAt(end) - 'a';
-    // if (s2charCNT[idx] == 0) {
-    // currUniqueCNT++;
-    // }
-    // s2charCNT[idx]++;
-    // }
-
-    // }
-    // if (currUniqueCNT == uniqueCNT && !Arrays.equals(s1charCNT, s2charCNT)) {
-    // // T(n) of Arrays.equals(,) is O(1), the size of two arrays is both 26.
-    // int idx = s2.charAt(start) - 'a';
-    // s2charCNT[idx]--;
-    // if (s2charCNT[idx] == 0) {
-    // currUniqueCNT--;
-    // }
-    // start++;
-    // }
-    // if (currUniqueCNT == uniqueCNT && Arrays.equals(s1charCNT, s2charCNT)) {
-    // return true;
-    // }
-
-    // // System.out.println(start + " " + end + " " + currUniqueCNT);
-
-    // }
-
-    // return false;
-    // }
-
     // checks if frequency of all chars in both array is same or not
     // faster than Arrays.equals()
     private boolean isSame(int[] A, int[] B) {
