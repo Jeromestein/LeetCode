@@ -11,26 +11,27 @@ import java.util.PriorityQueue;
 
 class KthLargest {
     final PriorityQueue<Integer> minHeap;
-    final int k;
+    int k;
 
     public KthLargest(int k, int[] nums) {
         this.k = k;
         minHeap = new PriorityQueue<>(k);
-        for (int num : nums)
+        for (int num : nums) {
             add(num);
+        }
     }
 
     public int add(int val) {
-        if (minHeap.size() < k)
-            minHeap.offer(val);
-        else {
+        if (minHeap.size() < k) {
+            minHeap.add(val);
+        } else {
             // size == k
             if (minHeap.peek() < val) {
                 // if the top node < val
                 // remove top node
                 minHeap.poll();
                 // add val
-                minHeap.offer(val);
+                minHeap.add(val);
             }
         }
         return minHeap.peek();
