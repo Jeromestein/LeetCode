@@ -1,10 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.PriorityQueue;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.List;
+
+i
 
 /*
  * @lc app=leetcode id=352 lang=java
@@ -14,40 +11,54 @@ import java.util.TreeSet;
 
 // @lc code=start
 class SummaryRanges {
-    // uniqueness
-    Set<Integer> nums;
+    private List<int[]> intervalList;
 
     /** Initialize your data structure here. */
     public SummaryRanges() {
-        // uniqueness & orderliness
-        nums = new TreeSet<>();
+        intervalList = new ArrayList<>();
     }
 
     public void addNum(int val) {
-        nums.add(val);
+        int count = 0;
+        boolean isAdded = false;
+        for (int i = 0; i < intervalList.size(); i++) {
+            if (intervalList.get(i)[0] <= val && intervalList.get(i)[1] >= val) {
+                isAdded = true;
+                break;
+            }
+            if (intervalList.get(i)[0] >= val + 2)
+                break;
+            if (intervalList.get(i)[1] == val - 1) {
+                isAdded = true;
+                if ((i == intervalList.size() - 1 || intervalList.get(i + 1)[0] != val + 1)) {
+                    // extends
+                    intervalList.get(i)[1] = val;
+                } else {
+                    // joins
+                    intervalList.get(i)[1] = intervalList.get(i + 1)[1];
+                    intervalList.remove(i + 1);
+                }
+                break;
+            } else if (intervalList.get(i)[0] == val + 1) {
+                isAdded = true;
+                intervalList.get(i)[0] = val;
+                break;
+            }
+            count++;
+        }
+        if (!isAdded) {
+            intervalList.add(count, new int[] { val, val });
+        }
     }
 
     public int[][] getIntervals() {
-        ArrayList<int[]> res = new ArrayList<>();
-        // uniqueness & orderliness
-        Iterator<Integer> i = nums.iterator();
-        int start = i.next(), end = start;
-
-        for (int num : nums) {
-            if (num > end + 1) {
-                res.add(new int[] { start, end });
-                start = num;
-                end = num;
-            } else {
-                end = num;
-            }
+        int[][] res = new int[intervalList.size()][2];
+        for (int i = 0; i < intervalList.size(); i++) {
+            res[i] = intervalList.get(i);
         }
-        // put the rest { start, end } into res
-        res.add(new int[] { start, end });
-        return res.toArray(new int[res.size()][]);
+        return res;
     }
 }
-
 /**
  * Your SummaryRanges object will be instantiated and called as such:
  * SummaryRanges obj = new SummaryRanges(); obj.addNum(val); int[][] param_2 =
