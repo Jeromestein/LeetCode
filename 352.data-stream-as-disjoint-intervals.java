@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.TreeSet;
 
 /*
  * @lc app=leetcode id=352 lang=java
@@ -11,11 +14,13 @@ import java.util.PriorityQueue;
 
 // @lc code=start
 class SummaryRanges {
-    ArrayList<Integer> nums;
+    // uniqueness
+    Set<Integer> nums;
 
     /** Initialize your data structure here. */
     public SummaryRanges() {
-        nums = new ArrayList<>();
+        // uniqueness & orderliness
+        nums = new TreeSet<>();
     }
 
     public void addNum(int val) {
@@ -23,11 +28,10 @@ class SummaryRanges {
     }
 
     public int[][] getIntervals() {
-        // O(nlogn)
-        nums.sort(Comparator.naturalOrder());
-
         ArrayList<int[]> res = new ArrayList<>();
-        int start = nums.get(0), end = nums.get(0);
+        // uniqueness & orderliness
+        Iterator<Integer> i = nums.iterator();
+        int start = i.next(), end = start;
 
         for (int num : nums) {
             if (num > end + 1) {
