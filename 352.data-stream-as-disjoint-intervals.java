@@ -23,11 +23,11 @@ class SummaryRanges {
         boolean isAdded = false;
         for (int i = 0; i < intervalList.size(); i++) {
             if (intervalList.get(i)[0] <= val && intervalList.get(i)[1] >= val) {
+                // val is included.
                 isAdded = true;
                 break;
-            }
-            if (intervalList.get(i)[0] >= val + 2)
-                break;
+            }            
+
             if (intervalList.get(i)[1] == val - 1) {
                 isAdded = true;
                 if ((i == intervalList.size() - 1 || intervalList.get(i + 1)[0] != val + 1)) {
@@ -44,6 +44,10 @@ class SummaryRanges {
                 intervalList.get(i)[0] = val;
                 break;
             }
+
+            if (intervalList.get(i)[0] >= val + 2)
+                break;
+
             count++;
         }
         if (!isAdded) {
@@ -52,11 +56,8 @@ class SummaryRanges {
     }
 
     public int[][] getIntervals() {
-        int[][] res = new int[intervalList.size()][2];
-        for (int i = 0; i < intervalList.size(); i++) {
-            res[i] = intervalList.get(i);
-        }
-        return res;
+
+        return intervalList.toArray(new int[intervalList.size()][]);
     }
 }
 /**
