@@ -9,30 +9,32 @@ class Solution {
     public int[] productExceptSelf(int[] nums) {
         // The product of any prefix or suffix of nums
         // is guaranteed to fit in a 32-bit integer.
-        int[] prodLeft, prodRight, res;
-        prodLeft = new int[nums.length];
-        prodRight = new int[nums.length];
-        res = new int[nums.length];
+        int[] res = new int[nums.length];
 
+        // get the product of i left, prodLeft
         for (int i = 0; i < nums.length; i++) {
             if (i == 0) {
-                prodLeft[i] = 1;
+                res[i] = 1;
             } else {
-                prodLeft[i] = nums[i - 1] * prodLeft[i - 1];
+                res[i] = nums[i - 1] * res[i - 1];
             }
         }
 
+        // get the oriduct of i right, prodRight
+        // prodRight * prodLeft =
+        // the product of all the elements of nums except nums[i]
+        int prodRight = 1;
         for (int i = nums.length - 1; i >= 0; i--) {
             if (i == nums.length - 1) {
-                prodRight[i] = 1;
+                res[i] *= prodRight;
             } else {
-                prodRight[i] = nums[i + 1] * prodRight[i + 1];
+                prodRight *= nums[i + 1];
+                res[i] *= prodRight;
             }
         }
-
-        for (int i = 0; i < nums.length; i++) {
-            res[i] = prodLeft[i] * prodRight[i];
-        }
+        // Can you solve the problem in O(1) extra space complexity?
+        // (The output array does not count as extra space
+        // for space complexity analysis.)
 
         return res;
     }
