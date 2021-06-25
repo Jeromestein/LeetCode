@@ -5,37 +5,53 @@
  */
 
 // @lc code=start
+
+// class Solution {
+//     public int maxSubArray(int[] nums) {
+//         int pre = 0, maxAns = nums[0];
+//         for (int x : nums) {
+//             // f(i-1)
+//             pre = Math.max(pre + x, x);
+//             // f(i) = max{f(i-1) + nums[i], nums[i]}
+//             maxAns = Math.max(maxAns, pre);
+//         }
+//         return maxAns;
+//     }
+// }
+
 class Solution {
-    public int maxSubArray(int[] nums) {
-        int pre = 0, maxAns = nums[0];
-        for (int x : nums) {
-            pre = Math.max(pre + x, x);
-            maxAns = Math.max(maxAns, pre);
+    public class Status {
+        public int lSum, rSum, mSum, iSum;
+
+        public Status(int lSum, int rSum, int mSum, int iSum) {
+            this.lSum = lSum;
+            this.rSum = rSum;
+            this.mSum = mSum;
+            this.iSum = iSum;
         }
-        return maxAns;
+    }
+
+    public int maxSubArray(int[] nums) {
+        return getInfo(nums, 0, nums.length - 1).mSum;
+    }
+
+    public Status getInfo(int[] a, int l, int r) {
+        if (l == r) {
+            return new Status(a[l], a[l], a[l], a[l]);
+        }
+        int m = (l + r) >> 1;
+        Status lSub = getInfo(a, l, m);
+        Status rSub = getInfo(a, m + 1, r);
+        return pushUp(lSub, rSub);
+    }
+
+    public Status pushUp(Status l, Status r) {
+        int iSum = l.iSum + r.iSum;
+        int lSum = Math.max(l.lSum, l.iSum + r.lSum);
+        int rSum = Math.max(r.rSum, r.iSum + l.rSum);
+        int mSum = Math.max(Math.max(l.mSum, r.mSum), l.rSum + r.lSum);
+        return new Status(lSum, rSum, mSum, iSum);
     }
 }
 
-// class Solution {
-// struct val{int l,m,r,s;
-
-// val(int l,int m,int r,int s):l(l),m(m),r(r),s(s){}};
-
-// public:
-// val dac(int A[], int n) {
-// if(n == 1) return val(A[0], A[0], A[0], A[0]);
-// val v1 = dac(A, n / 2), v2 = dac(A + n / 2, n - n / 2);
-// int l, m, r, s;
-// l = max(v1.l, v1.s + v2.l);
-// m = max(v1.r + v2.l, max(v1.m, v2.m));
-// r = max(v2.r, v1.r + v2.s);
-// s = v1.s + v2.s;
-// return val(l, m, r, s);
-// }
-
-// int maxSubArray(int A[], int n) {
-// val v = dac(A, n);
-// return v.m;
-// }
-// };
 // @lc code=end
