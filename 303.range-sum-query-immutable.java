@@ -8,22 +8,34 @@ import java.util.ArrayList;
 
 // @lc code=start
 class NumArray {
-    int[] nums;
+    // leftSum: the sum of i's left
+    int[] nums, leftSum;
+    int sum;
 
     public NumArray(int[] nums) {
         this.nums = new int[nums.length];
+        this.leftSum = new int[nums.length];
+
+        sum = 0;
         for (int i = 0; i < nums.length; i++) {
             this.nums[i] = nums[i];
+            sum += nums[i];
+
+            if (i == 0) {
+                leftSum[i] = 0;
+            } else {
+                leftSum[i] = leftSum[i - 1] + nums[i - 1];
+            }
         }
+
     }
 
     public int sumRange(int left, int right) {
-        int sum = 0;
-        for (int i = left; i <= right; i++) {
-            sum += nums[i];
+        if (right == nums.length - 1) {
+            return sum - leftSum[left];
+        } else {
+            return leftSum[right + 1] - leftSum[left];
         }
-
-        return sum;
     }
 }
 
