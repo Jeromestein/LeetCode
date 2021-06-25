@@ -9,33 +9,19 @@ import java.util.ArrayList;
 // @lc code=start
 class NumArray {
     // leftSum: the sum of i's left
-    int[] nums, leftSum;
-    int sum;
+    int[] leftSum;
 
     public NumArray(int[] nums) {
-        this.nums = new int[nums.length];
-        this.leftSum = new int[nums.length];
+        leftSum = new int[nums.length + 1];
 
-        sum = 0;
+        leftSum[0] = 0;
         for (int i = 0; i < nums.length; i++) {
-            this.nums[i] = nums[i];
-            sum += nums[i];
-
-            if (i == 0) {
-                leftSum[i] = 0;
-            } else {
-                leftSum[i] = leftSum[i - 1] + nums[i - 1];
-            }
+            leftSum[i + 1] = leftSum[i] + nums[i];
         }
-
     }
 
     public int sumRange(int left, int right) {
-        if (right == nums.length - 1) {
-            return sum - leftSum[left];
-        } else {
-            return leftSum[right + 1] - leftSum[left];
-        }
+        return leftSum[right + 1] - leftSum[left];
     }
 }
 
