@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * @lc app=leetcode id=528 lang=java
  *
@@ -9,11 +11,11 @@ class Solution {
     int[] prefix;
     int n;
 
-    public int bs(int r) {
+    public int binarySearch(int target) {
         int left = 0, right = n - 1;
         while (left < right) {
             int mid = (left + right) / 2;
-            if (r > prefix[mid])
+            if (target > prefix[mid])
                 left = mid + 1;
             else
                 right = mid;
@@ -30,8 +32,11 @@ class Solution {
     }
 
     public int pickIndex() {
-        int r = ((int) (Math.random() * 323576) % prefix[n - 1]) + 1;
-        return bs(r);
+        int roll = ((int) (Math.random() * 323576) % prefix[n - 1]) + 1;
+        // return binarySearch(roll);
+        int resindex = Arrays.binarySearch(prefix, roll);
+        int res = resindex >= 0 ? resindex : (resindex + 1) * -1;
+        return res;
     }
 }
 
