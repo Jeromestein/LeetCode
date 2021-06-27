@@ -11,17 +11,19 @@ class Solution {
     public int subarraySum(int[] nums, int k) {
         // return the total number of continuous subarrays
         // whose sum equals to k.
-
-        HashMap<Integer, Integer> prefixMap = new HashMap<>();
+        HashMap<Integer, Integer> prefixFreq = new HashMap<>();
+        // we dont need pre[]
         int pre = 0;
         int cnt = 0;
-        prefixMap.put(0, 1);
+        // of course, there is a 0.
+        prefixFreq.put(0, 1);
         for (int i = 0; i < nums.length; i++) {
             pre += nums[i];
-            if (prefixMap.containsKey(pre - k) == true) {
-                cnt += prefixMap.get(pre - k);
+            if (prefixFreq.containsKey(pre - k) == true) {
+                cnt += prefixFreq.get(pre - k);
             }
-            prefixMap.put(pre, prefixMap.getOrDefault(pre, 0) + 1);
+            // get the times
+            prefixFreq.put(pre, prefixFreq.getOrDefault(pre, 0) + 1);
         }
         return cnt;
 
