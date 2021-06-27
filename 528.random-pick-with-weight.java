@@ -26,17 +26,21 @@ class Solution {
     public Solution(int[] w) {
         this.n = w.length;
         this.prefix = new int[n];
+
         this.prefix[0] = w[0];
         for (int i = 1; i < n; i++)
             prefix[i] = w[i] + prefix[i - 1];
     }
 
     public int pickIndex() {
-        int roll = ((int) (Math.random() * 323576) % prefix[n - 1]) + 1;
-        // return binarySearch(roll);
-        int resindex = Arrays.binarySearch(prefix, roll);
-        int res = resindex >= 0 ? resindex : (resindex + 1) * -1;
-        return res;
+        int roll = ((int) (Math.random() * prefix[n - 1])) + 1;
+        return binarySearch(roll);
+
+        // // index of the search key, if it is contained in the array;
+        // // otherwise, (-(insertion point) - 1).
+        // int resindex = Arrays.binarySearch(prefix, roll);
+        // int res = resindex >= 0 ? resindex : (resindex + 1) * -1;
+        // return res;
     }
 }
 
