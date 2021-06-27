@@ -8,6 +8,7 @@ import java.util.Map;
  */
 
 // @lc code=start
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -17,7 +18,7 @@ class Solution {
             if (map.containsKey(x)) {
                 return new int[] { map.get(x), i };
             }
-
+            // hashmap cant store duplicate keys, so detect first than store.
             map.put(nums[i], i);
         }
         throw new IllegalArgumentException("No Solution");
