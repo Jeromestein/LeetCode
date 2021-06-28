@@ -14,6 +14,7 @@
 class Solution {
 
     public boolean findTarget(TreeNode root, int k) {
+        // from tree to arraay
         List<Integer> list = new ArrayList();
         inorder(root, list);
         int l = 0, r = list.size() - 1;
