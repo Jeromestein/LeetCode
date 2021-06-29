@@ -14,7 +14,7 @@ import javax.swing.tree.TreeNode;
  * left; TreeNode right; TreeNode(int x) { val = x; } }
  */
 public class Codec {
-
+    // is that ok???
     private static int index;
 
     // Encodes a tree to a single string.
@@ -27,6 +27,8 @@ public class Codec {
 
     private void buildString(StringBuilder sb, TreeNode root) {
         if (root == null) {
+            // String[] res = data.split(","); in deserialize()
+            // so no mater how many ","
             sb.append("null").append(",");
         } else {
             sb.append(root.val).append(",");
