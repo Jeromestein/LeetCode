@@ -15,41 +15,47 @@ import javax.swing.tree.TreeNode;
  */
 public class Codec {
 
-    public String rserialize(TreeNode root, String str) {
-        if (root == null) {
-            str += "None,";
-        } else {
-            str += str.valueOf(root.val) + ",";
-            str = rserialize(root.left, str);
-            str = rserialize(root.right, str);
-        }
-        return str;
-    }
+    private static int index;
 
+    // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        return rserialize(root, "");
+        StringBuilder sb = new StringBuilder();
+        buildString(sb, root);
+
+        return sb.toString();
     }
 
-    public TreeNode rdeserialize(List<String> l) {
-        if (l.get(0).equals("None")) {
-            l.remove(0);
+    private void buildString(StringBuilder sb, TreeNode root) {
+        if (root == null) {
+            sb.append("null").append(",");
+        } else {
+            sb.append(root.val).append(",");
+            buildString(sb, root.left);
+            buildString(sb, root.right);
+        }
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        index = 0;
+        String[] res = data.split(",");
+
+        return buildTree(res);
+    }
+
+    private TreeNode buildTree(String[] res) {
+        String p = res[index++];
+        if (p.equals("null")) {
             return null;
         }
 
-        TreeNode root = new TreeNode(Integer.valueOf(l.get(0)));
-        l.remove(0);
-        root.left = rdeserialize(l);
-        root.right = rdeserialize(l);
+        // pre order
+        TreeNode root = new TreeNode(Integer.parseInt(p));
+        root.left = buildTree(res);
+        root.right = buildTree(res);
 
         return root;
     }
-
-    public TreeNode deserialize(String data) {
-        String[] data_array = data.split(",");
-        List<String> data_list = new LinkedList<String>(Arrays.asList(data_array));
-        return rdeserialize(data_list);
-    }
-
 }
 
 // Your Codec object will be instantiated and called as such:
