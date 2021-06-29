@@ -29,6 +29,7 @@ class Solution {
             q.add(root);
         }
 
+        // BFS
         while (!q.isEmpty()) {
             List<Integer> currLevel = new ArrayList<>();
             int currLevelSize = q.size();
