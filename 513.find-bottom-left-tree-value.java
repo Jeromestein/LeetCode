@@ -18,9 +18,6 @@ import javax.swing.tree.TreeNode;
  * = left; this.right = right; } }
  */
 class Solution {
-    int max;
-    int maxLevel;
-
     public int findBottomLeftValue(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
 
@@ -29,20 +26,19 @@ class Solution {
 
         int res = root.val;
         while (!q.isEmpty()) {
-            int currLevelSize = q.size();
-            for (int i = 0; i < currLevelSize; i++) {
-                TreeNode node = q.poll();
-                // only store the first node val of each level
-                if (i == 0)
-                    res = node.val;
+            TreeNode node = q.poll();
+            // only store the first left node val of each level
+            res = node.val;
 
-                if (node.left != null) {
-                    q.add(node.left);
-                }
-                if (node.right != null) {
-                    q.add(node.right);
-                }
+            // enque right node first,
+            // so the fisrt left node will be the last one
+            if (node.right != null) {
+                q.add(node.right);
             }
+            if (node.left != null) {
+                q.add(node.left);
+            }
+
         }
         return res;
     }
