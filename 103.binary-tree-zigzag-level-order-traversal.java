@@ -22,45 +22,38 @@ import javax.swing.tree.TreeNode;
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        Deque<TreeNode> deque = new LinkedList<>();
+        Queue<TreeNode> deque = new LinkedList<>();
         int levelCNT = 0;
         if (root != null) {
             deque.add(root);
         }
 
         while (!deque.isEmpty()) {
-            List<Integer> currLevel = new ArrayList<>();
+            // LinkedList is faster than Deque
+            LinkedList<Integer> currLevel = new LinkedList<>();
             int currLevelSize = deque.size();
 
-            if (levelCNT % 2 == 0) {
-                // if levelCNT is even
-                // then traverse node from left to right
-                for (int i = 0; i < currLevelSize; i++) {
-                    TreeNode node = deque.poll();
-                    currLevel.add(node.val);
+            for (int i = 0; i < currLevelSize; i++) {
+                TreeNode node = deque.poll();
 
-                    if (node.left != null) {
-                        deque.add(node.left);
-                    }
-                    if (node.right != null) {
-                        deque.add(node.right);
-                    }
+                if (levelCNT % 2 == 0) {
+                    // if levelCNT is even
+                    // then traverse node from left to right
+                    currLevel.addLast(node.val);
+                } else {
+                    // else
+                    // then traverse node from right to left
+                    currLevel.addFirst(node.val);
                 }
-            } else {
-                // traverse node from right to left
-                for (int i = currLevelSize - 1; i >= 0; i--) {
-                    TreeNode node = deque.pollLast();
 
-                    currLevel.add(node.val);
-                    if (node.right != null) {
-                        deque.addFirst(node.right);
-                    }
-                    if (node.left != null) {
-                        deque.addFirst(node.left);
-                    }
-
+                if (node.left != null) {
+                    deque.add(node.left);
+                }
+                if (node.right != null) {
+                    deque.add(node.right);
                 }
             }
+
             levelCNT++;
             res.add(currLevel);
 
