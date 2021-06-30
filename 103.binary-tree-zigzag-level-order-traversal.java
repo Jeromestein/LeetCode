@@ -30,7 +30,7 @@ class Solution {
 
         while (!deque.isEmpty()) {
             // LinkedList is faster than Deque
-            LinkedList<Integer> currLevel = new LinkedList<>();
+            LinkedList<Integer> currLevelNodes = new LinkedList<>();
             int currLevelSize = deque.size();
 
             for (int i = 0; i < currLevelSize; i++) {
@@ -39,11 +39,11 @@ class Solution {
                 if (levelCNT % 2 == 0) {
                     // if levelCNT is even
                     // then traverse node from left to right
-                    currLevel.addLast(node.val);
+                    currLevelNodes.addLast(node.val);
                 } else {
                     // else
                     // then traverse node from right to left
-                    currLevel.addFirst(node.val);
+                    currLevelNodes.addFirst(node.val);
                 }
 
                 if (node.left != null) {
@@ -55,7 +55,7 @@ class Solution {
             }
 
             levelCNT++;
-            res.add(currLevel);
+            res.add(currLevelNodes);
 
         }
 

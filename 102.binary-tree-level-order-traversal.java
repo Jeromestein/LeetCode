@@ -31,13 +31,13 @@ class Solution {
 
         // BFS
         while (!q.isEmpty()) {
-            List<Integer> currLevel = new ArrayList<>();
+            List<Integer> currLevelNodes = new ArrayList<>();
             int currLevelSize = q.size();
 
             // use for loop to traverse all the elements in current level
             for (int i = 0; i < currLevelSize; i++) {
                 TreeNode node = q.poll();
-                currLevel.add(node.val);
+                currLevelNodes.add(node.val);
 
                 if (node.left != null) {
                     q.add(node.left);
@@ -47,7 +47,7 @@ class Solution {
                     q.add(node.right);
                 }
             }
-            res.add(currLevel);
+            res.add(currLevelNodes);
         }
 
         return res;

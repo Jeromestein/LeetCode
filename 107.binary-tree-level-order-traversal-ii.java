@@ -29,12 +29,12 @@ class Solution {
             q.add(root);
 
         while (!q.isEmpty()) {
-            List<Integer> currLevel = new ArrayList<>();
+            List<Integer> currLevelNodes = new ArrayList<>();
             int currLevelSize = q.size();
 
             for (int i = 0; i < currLevelSize; i++) {
                 TreeNode node = q.poll();
-                currLevel.add(node.val);
+                currLevelNodes.add(node.val);
 
                 if (node.left != null) {
                     q.add(node.left);
@@ -45,7 +45,7 @@ class Solution {
             }
 
             // insert to the head to implement the reverse
-            res.addFirst(currLevel);
+            res.addFirst(currLevelNodes);
         }
 
         return res;
