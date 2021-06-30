@@ -18,29 +18,49 @@ import javax.swing.tree.TreeNode;
  * = left; this.right = right; } }
  */
 class Solution {
+    // public int findBottomLeftValue(TreeNode root) {
+    // Queue<TreeNode> q = new LinkedList<>();
+
+    // if (root != null)
+    // q.add(root);
+
+    // int res = root.val;
+    // while (!q.isEmpty()) {
+    // TreeNode node = q.poll();
+    // // only store the first left node val of each level
+    // res = node.val;
+
+    // // enque right node first,
+    // // so the fisrt left node will be the last one
+    // if (node.right != null) {
+    // q.add(node.right);
+    // }
+    // if (node.left != null) {
+    // q.add(node.left);
+    // }
+
+    // }
+    // return res;
+    // }
+
+    int max = -1;
+    int value = 0;
+
     public int findBottomLeftValue(TreeNode root) {
-        Queue<TreeNode> q = new LinkedList<>();
+        dfs(root, 0);
+        return value;
+    }
 
-        if (root != null)
-            q.add(root);
-
-        int res = root.val;
-        while (!q.isEmpty()) {
-            TreeNode node = q.poll();
+    public void dfs(TreeNode root, int level) {
+        if (root == null)
+            return;
+        dfs(root.left, level + 1);
+        dfs(root.right, level + 1);
+        if (level > max) {
             // only store the first left node val of each level
-            res = node.val;
-
-            // enque right node first,
-            // so the fisrt left node will be the last one
-            if (node.right != null) {
-                q.add(node.right);
-            }
-            if (node.left != null) {
-                q.add(node.left);
-            }
-
+            max = level;
+            value = root.val;
         }
-        return res;
     }
 }
 // @lc code=end
