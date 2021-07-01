@@ -10,7 +10,10 @@ import java.util.List;
 
 // @lc code=start
 class Solution {
-    ArrayList<Integer> res;
+    // ArrayList<Integer> res;
+    int[] res;
+    int index;
+
     List<List<Integer>> adjList;
     // 0: unvisited
     // 1: visiting
@@ -30,7 +33,10 @@ class Solution {
             adjList.get(p[1]).add(p[0]);
         }
 
-        res = new ArrayList<>();
+        // res = new ArrayList<>();
+        res = new int[numCourses];
+        index = numCourses - 1;
+
         visited = new int[numCourses];
         for (int i = 0; i < numCourses; i++) {
             if (visited[i] == 0) {
@@ -38,7 +44,8 @@ class Solution {
             }
         }
         if (valid) {
-            return res.stream().mapToInt(Integer::valueOf).toArray();
+            // return res.stream().mapToInt(Integer::valueOf).toArray();
+            return res;
         } else {
             return new int[] {};
         }
@@ -60,7 +67,8 @@ class Solution {
         }
         visited[u] = 2;
         // insert to the head to implement reversal
-        res.add(0, u);
+        // res.add(0, u);
+        res[index--] = u;
     }
 }
 // @lc code=end
