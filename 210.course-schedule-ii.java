@@ -45,6 +45,7 @@ import java.util.Queue;
 //             }
 //         }
 //         if (valid) {
+//             // List<Integer> to int[], not a good idea!
 //             // return res.stream().mapToInt(Integer::valueOf).toArray();
 //             return res;
 //         } else {
