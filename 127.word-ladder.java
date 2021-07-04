@@ -35,11 +35,16 @@ class Solution {
         Queue<Integer> queEnd = new LinkedList<Integer>();
         queEnd.offer(endId);
 
+        // bothway bfs
+        // start with beginWord and endWord at same time,
+        // stop searching if same node is visited by both 2 ways search at one time
         while (!queBegin.isEmpty() && !queEnd.isEmpty()) {
             int queBeginSize = queBegin.size();
             for (int i = 0; i < queBeginSize; ++i) {
                 int nodeBegin = queBegin.poll();
                 if (disEnd[nodeBegin] != Integer.MAX_VALUE) {
+                    // beacause of fake nodes, we should /2
+                    // +1 is the extra distance from beginWord
                     return (disBegin[nodeBegin] + disEnd[nodeBegin]) / 2 + 1;
                 }
                 for (int it : edge.get(nodeBegin)) {
@@ -54,6 +59,8 @@ class Solution {
             for (int i = 0; i < queEndSize; ++i) {
                 int nodeEnd = queEnd.poll();
                 if (disBegin[nodeEnd] != Integer.MAX_VALUE) {
+                    // beacause of fake nodes, we should /2
+                    // +1 is the extra distance from beginWord
                     return (disBegin[nodeEnd] + disEnd[nodeEnd]) / 2 + 1;
                 }
                 for (int it : edge.get(nodeEnd)) {
@@ -74,8 +81,11 @@ class Solution {
         int length = array.length;
         for (int i = 0; i < length; ++i) {
             char tmp = array[i];
+            // touche!
+            // * is the different bits
             array[i] = '*';
             String newWord = new String(array);
+            // newWord is a fake node
             addWord(newWord);
             int id2 = wordId.get(newWord);
             edge.get(id1).add(id2);
