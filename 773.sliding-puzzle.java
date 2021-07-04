@@ -38,8 +38,8 @@ class Solution {
             ++step;
             int size = queue.size();
             for (int i = 0; i < size; ++i) {
-                String status = queue.poll();
-                for (String nextStatus : oneMoveStates(status)) {
+                String currStatus = queue.poll();
+                for (String nextStatus : oneMoveStatuses(currStatus)) {
                     if (!seen.contains(nextStatus)) {
                         if ("123450".equals(nextStatus)) {
                             return step;
@@ -55,15 +55,18 @@ class Solution {
     }
 
     // enumerate all the status we can get through one move
-    // A move consists of
-    // choosing 0 and a 4-directionally adjacent number and swapping it.
-    public List<String> oneMoveStates(String status) {
+    // (A move consists of
+    // choosing 0 and a 4-directionally adjacent number and swapping it.)
+    public List<String> oneMoveStatuses(String status) {
         List<String> ret = new ArrayList<String>();
         char[] array = status.toCharArray();
+        // get the index of '0'
         int x = status.indexOf('0');
         for (int y : neighbors[x]) {
+            // get the index of '0's neighbors and swap them
             swap(array, x, y);
             ret.add(new String(array));
+            // swap back, to be reaedy for next swap
             swap(array, x, y);
         }
         return ret;
