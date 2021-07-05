@@ -75,29 +75,58 @@ import javax.swing.tree.TreeNode;
 // return res;
 // }
 // }
+
+// class Solution {
+// public List<Integer> inorderTraversal(TreeNode root) {
+// List<Integer> res = new ArrayList<Integer>();
+// TreeNode pre = null;
+
+// while (root != null) {
+// if (root.left != null) {
+// pre = root.left;
+// while (pre.right != null && pre.right != root) {
+// pre = pre.right;
+// }
+// if (pre.right == null) {
+// pre.right = root;
+// root = root.left;
+// } else {
+// res.add(root.val);
+// pre.right = null;
+// root = root.right;
+// }
+// } else {
+// res.add(root.val);
+// root = root.right;
+// }
+// }
+// return res;
+// }
+// }
+
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        TreeNode pre = null;
+        TreeNode node = root, pre = null;
 
-        while (root != null) {
-            if (root.left != null) {
-                pre = root.left;
-                while (pre.right != null && pre.right != root) {
+        while (node != null) {
+            pre = node.left;
+            if (pre != null) {
+                while (pre.right != null && pre.right != node) {
                     pre = pre.right;
                 }
                 if (pre.right == null) {
-                    pre.right = root;
-                    root = root.left;
+                    pre.right = node;
+                    node = node.left;
+                    continue;
                 } else {
-                    res.add(root.val);
+                    res.add(node.val);
                     pre.right = null;
-                    root = root.right;
                 }
             } else {
-                res.add(root.val);
-                root = root.right;
+                res.add(node.val);
             }
+            node = node.right;
         }
         return res;
     }
