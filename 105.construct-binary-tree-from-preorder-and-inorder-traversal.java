@@ -37,10 +37,10 @@ import javax.swing.tree.TreeNode;
 // return null;
 // }
 
-// int preoRoot = preStart;
-// int inRoot = indexMap.get(preorder[preoRoot]);
+// int preRoot = preStart;
+// int inRoot = indexMap.get(preorder[preRoot]);
 
-// TreeNode root = new TreeNode(preorder[preoRoot]);
+// TreeNode root = new TreeNode(preorder[preRoot]);
 // int leftSubtreeSize = inRoot - inStart;
 
 // root.left = buildTreePreIn(preorder, preStart + 1, preStart +
