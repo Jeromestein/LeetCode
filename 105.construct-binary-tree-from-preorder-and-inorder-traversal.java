@@ -36,7 +36,7 @@ class Solution {
     }
 
     public TreeNode buildTreePreIn(int preStart, int preEnd, int inStart, int inEnd) {
-        if (preStart > preEnd) {
+        if (inStart > inEnd) {
             return null;
         }
 
