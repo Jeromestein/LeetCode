@@ -23,10 +23,10 @@ class Solution {
     int[] inorder, postorder;
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        this.inorder = inorder;
-        this.postorder = postorder;
         n = inorder.length;
         indexMap = new HashMap<>();
+        this.inorder = inorder;
+        this.postorder = postorder;
 
         for (int i = 0; i < n; i++) {
             indexMap.put(inorder[i], i);
