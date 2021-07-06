@@ -36,7 +36,7 @@ class Solution {
         int preRoot = preStart;
         int postRoot = postEnd;
         TreeNode root = new TreeNode(pre[preRoot]);
-        int leftSubtreeSize = 1;
+        int leftSubtreeSize = 0;
         for (int i = postStart; preRoot < preEnd && i <= postEnd; i++) {
             if (post[i] == pre[preRoot + 1]) {
                 leftSubtreeSize = i - postStart + 1;
