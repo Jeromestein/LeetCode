@@ -13,20 +13,24 @@
  */
 class Solution {
     public boolean isValidBST(TreeNode root) {
-        // -2^31 <= Node.val <= 2^31 - 1
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    public boolean isValidBST(TreeNode node, long lowerBound, long upperBound) {
-        if (node == null) {
+    // -2^31 <= Node.val <= 2^31 - 1
+    // so use long type rather than in
+    public boolean isValidBST(TreeNode root, long lowerBound, long upperBound) {
+        if (root == null)
             return true;
-        }
-        // The left subtree of a node contains only nodes with keys < the node's key.
-        // The right subtree of a node contains only nodes with keys > the node's key.
-        if (node.val <= lowerBound || node.val >= upperBound) {
+
+        // The left subtree of a node contains only nodes
+        // with keys less than the node's key.
+        // The right subtree of a node contains only nodes
+        // with keys greater than the node's key.
+        // so don't forget '='
+        if (root.val <= lowerBound || root.val >= upperBound)
             return false;
-        }
-        return isValidBST(node.left, lowerBound, node.val) && isValidBST(node.right, node.val, upperBound);
+
+        return isValidBST(root.left, lowerBound, root.val) && isValidBST(root.right, root.val, upperBound);
     }
 }
 // @lc code=end
