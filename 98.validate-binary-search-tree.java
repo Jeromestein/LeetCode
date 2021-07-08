@@ -42,6 +42,8 @@ import javax.swing.tree.TreeNode;
 class Solution {
     public boolean isValidBST(TreeNode root) {
         Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        // -2^31 <= Node.val <= 2^31 - 1
+        // so use long type rather than in
         long preVal = Long.MIN_VALUE;
 
         while (root != null || !stack.isEmpty()) {
