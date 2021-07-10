@@ -18,38 +18,53 @@ import jdk.nashorn.api.tree.Tree;
  * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
  * = left; this.right = right; } }
  */
+// class Solution {
+// public boolean hasPathSum(TreeNode root, int targetSum) {
+// if (root == null) {
+// return false;
+// }
+// Queue<TreeNode> nodeQ = new LinkedList<>();
+// Queue<Integer> sumQ = new LinkedList<>();
+// nodeQ.add(root);
+// sumQ.add(root.val);
+
+// while (!nodeQ.isEmpty()) {
+// int currLevelSize = nodeQ.size();
+// for (int i = 0; i < currLevelSize; i++) {
+// TreeNode node = nodeQ.poll();
+// int valSum = sumQ.poll();
+// if (node.left == null && node.right == null) {
+// if (valSum == targetSum) {
+// return true;
+// }
+// }
+// if (node.left != null) {
+// nodeQ.add(node.left);
+// sumQ.add(valSum + node.left.val);
+// }
+// if (node.right != null) {
+// nodeQ.add(node.right);
+// sumQ.add(valSum + node.right.val);
+// }
+// }
+// }
+
+// return false;
+// }
+// }
+
 class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return false;
         }
-        Queue<TreeNode> nodeQ = new LinkedList<>();
-        Queue<Integer> sumQ = new LinkedList<>();
-        nodeQ.add(root);
-        sumQ.add(root.val);
 
-        while (!nodeQ.isEmpty()) {
-            int currLevelSize = nodeQ.size();
-            for (int i = 0; i < currLevelSize; i++) {
-                TreeNode node = nodeQ.poll();
-                int valSum = sumQ.poll();
-                if (node.left == null && node.right == null) {
-                    if (valSum == targetSum) {
-                        return true;
-                    }
-                }
-                if (node.left != null) {
-                    nodeQ.add(node.left);
-                    sumQ.add(valSum + node.left.val);
-                }
-                if (node.right != null) {
-                    nodeQ.add(node.right);
-                    sumQ.add(valSum + node.right.val);
-                }
-            }
+        int nextSum = targetSum - root.val;
+        if (root.left == null && root.right == null && nextSum == 0) {
+            return true;
         }
 
-        return false;
+        return hasPathSum(root.left, nextSum) || hasPathSum(root.right, nextSum);
     }
 }
 // @lc code=end
