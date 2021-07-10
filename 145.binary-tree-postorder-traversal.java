@@ -73,39 +73,54 @@ class Solution {
 
         while (node != null) {
             if (node.left != null) {
+                // find the rightmost in node's left subtree
                 pre = node.left;
                 while (pre.right != null && pre.right != node) {
                     pre = pre.right;
                 }
+
+                // if this rightmost's right point to null
+                // then let this rightmost's right point to node
+                // aka let this rightmost become node's prenode
                 if (pre.right == null) {
                     pre.right = node;
+                    // go left, move to next node
                     node = node.left;
+                    // skip below "node = node.right;"
                     continue;
                 } else {
+                    // if his rightmost's right point to node,
+                    // let it point to null
                     pre.right = null;
+                    // add path this left subtree
                     addPath(res, node.left);
                 }
             }
+            // cannot use else!!! because the "continue;" above!!!
             node = node.right;
         }
+
         addPath(res, root);
         return res;
     }
 
     public void addPath(List<Integer> res, TreeNode node) {
+        // get the size of both left and right subtree
         int count = 0;
         while (node != null) {
             count++;
             res.add(node.val);
             node = node.right;
         }
-        int left = res.size() - count, right = res.size() - 1;
-        while (left < right) {
-            int temp = res.get(left);
-            res.set(left, res.get(right));
-            res.set(right, temp);
-            left++;
-            right--;
+        int leftSubtreeSize = res.size() - count, rightSubtreeSize = res.size() - 1;
+
+        while (leftSubtreeSize < rightSubtreeSize) {
+            // swap
+            int temp = res.get(leftSubtreeSize);
+            res.set(leftSubtreeSize, res.get(rightSubtreeSize));
+            res.set(rightSubtreeSize, temp);
+            leftSubtreeSize++;
+            rightSubtreeSize--;
         }
     }
 }
