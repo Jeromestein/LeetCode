@@ -60,8 +60,8 @@ class Solution {
         }
 
         int nextSum = targetSum - root.val;
-        if (root.left == null && root.right == null && nextSum == 0) {
-            return true;
+        if (root.left == null && root.right == null) {
+            return nextSum == 0;
         }
 
         return hasPathSum(root.left, nextSum) || hasPathSum(root.right, nextSum);
