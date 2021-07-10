@@ -18,32 +18,42 @@ import jdk.nashorn.internal.ir.TryNode;
  * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
  * = left; this.right = right; } }
  */
+// class Solution {
+// public int maxDepth(TreeNode root) {
+// if (root == null)
+// return 0;
+// Queue<TreeNode> q = new LinkedList<>();
+// q.add(root);
+
+// int depth = 1, maxDepth = 0;
+// while (!q.isEmpty()) {
+// int currLevelSize = q.size();
+// for (int i = 0; i < currLevelSize; i++) {
+// TreeNode node = q.poll();
+// if (node.left == null && node.right == null) {
+// maxDepth = depth;
+// }
+// if (node.left != null) {
+// q.add(node.left);
+// }
+// if (node.right != null) {
+// q.add(node.right);
+// }
+// }
+// depth++;
+// }
+
+// return maxDepth;
+// }
+// }
+
 class Solution {
     public int maxDepth(TreeNode root) {
         if (root == null)
             return 0;
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
 
-        int depth = 1, maxDepth = 0;
-        while (!q.isEmpty()) {
-            int currLevelSize = q.size();
-            for (int i = 0; i < currLevelSize; i++) {
-                TreeNode node = q.poll();
-                if (node.left == null && node.right == null) {
-                    maxDepth = depth;
-                }
-                if (node.left != null) {
-                    q.add(node.left);
-                }
-                if (node.right != null) {
-                    q.add(node.right);
-                }
-            }
-            depth++;
-        }
-
-        return maxDepth;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
+
 // @lc code=end
