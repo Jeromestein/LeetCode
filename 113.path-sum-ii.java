@@ -18,57 +18,57 @@ import javax.swing.tree.TreeNode;
  * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
  * = left; this.right = right; } }
  */
+
+// 8ms, 5%, 5%.
 class Solution {
+    List<List<Integer>> ret = new LinkedList<List<Integer>>();
+    // adjacent list, <child, father>
+    // save the path from leaf to root
+    Map<TreeNode, TreeNode> map = new HashMap<TreeNode, TreeNode>();
+
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        List<List<Integer>> res = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ret;
         }
 
-        Queue<TreeNode> nodeQ = new LinkedList<>();
-        Queue<Integer> sumQ = new LinkedList<>();
-        Queue<List<Integer>> listQ = new LinkedList<>();
-        nodeQ.add(root);
-        sumQ.add(root.val);
-        List<Integer> tmpList = new ArrayList<>();
-        tmpList.add(root.val);
-        listQ.add(tmpList);
+        Queue<TreeNode> queueNode = new LinkedList<TreeNode>();
+        Queue<Integer> queueSum = new LinkedList<Integer>();
+        queueNode.offer(root);
+        queueSum.offer(0);
 
-        while (!nodeQ.isEmpty()) {
-            int currLevelSize = nodeQ.size();
-            for (int i = 0; i < currLevelSize; i++) {
-                TreeNode node = nodeQ.poll();
-                int sum = sumQ.poll();
-                List<Integer> list = listQ.poll();
-                if (node.left == null && node.right == null) {
-                    if (sum == targetSum) {
-                        res.add(list);
-                    }
+        while (!queueNode.isEmpty()) {
+            TreeNode node = queueNode.poll();
+            int rec = queueSum.poll() + node.val;
+
+            if (node.left == null && node.right == null) {
+                if (rec == targetSum) {
+                    getPath(node);
                 }
+            } else {
                 if (node.left != null) {
-                    nodeQ.add(node.left);
-                    sumQ.add(node.left.val + sum);
-                    // first, deep copy list to lList
-                    List<Integer> lList = new ArrayList<>();
-                    lList.addAll(list);
-                    // second, add node.left.val
-                    lList.add(node.left.val);
-                    listQ.add(lList);
+                    map.put(node.left, node);
+                    queueNode.offer(node.left);
+                    queueSum.offer(rec);
                 }
                 if (node.right != null) {
-                    nodeQ.add(node.right);
-                    sumQ.add(node.right.val + sum);
-                    // first, deep copy list to rList
-                    List<Integer> rList = new ArrayList<>();
-                    rList.addAll(list);
-                    // second, add node.right.val
-                    rList.add(node.right.val);
-                    listQ.add(rList);
+                    map.put(node.right, node);
+                    queueNode.offer(node.right);
+                    queueSum.offer(rec);
                 }
             }
         }
 
-        return res;
+        return ret;
+    }
+
+    public void getPath(TreeNode node) {
+        List<Integer> temp = new LinkedList<Integer>();
+        while (node != null) {
+            temp.add(node.val);
+            node = map.get(node);
+        }
+        Collections.reverse(temp);
+        ret.add(new LinkedList<Integer>(temp));
     }
 }
 // @lc code=end
