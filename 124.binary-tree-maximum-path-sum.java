@@ -32,6 +32,9 @@ class Solution {
         int maxSum = root.val;
         if (lMaxSum > rMaxSum) {
             maxSum += lMaxSum;
+
+            // casue we dont have to save the path,
+            // so we can get the maxPathSum in recursion. O(n)
             maxPathSum = Math.max(maxPathSum, maxSum + rMaxSum);
         } else {
             maxSum += rMaxSum;
