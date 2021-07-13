@@ -6,35 +6,27 @@
 
 // @lc code=start
 class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-        List<Integer> combine = new ArrayList<Integer>();
-
-        dfs(candidates, target, ans, combine, 0);
-        return ans;
+    public List<List<Integer>> combinationSum(int[] nums, int target) {
+        List<List<Integer>> list = new ArrayList<>();
+        Arrays.sort(nums);
+        backtrack(list, new ArrayList<>(), nums, target, 0);
+        return list;
     }
 
-    public void dfs(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int idx) {
-        if (idx == candidates.length) {
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
+        if (remain < 0)
             return;
-        }
-        if (target == 0) {
-            ans.add(new ArrayList<Integer>(combine));
-            return;
-        }
+        else if (remain == 0)
+            list.add(new ArrayList<>(tempList));
+        else {
+            for (int i = start; i < nums.length; i++) {
+                tempList.add(nums[i]);
+                // not i + 1 because we can reuse same elements
+                backtrack(list, tempList, nums, remain - nums[i], i);
 
-        // we will always have two branch
-        // 1. just skip, don't consider current idx (idx+1)
-        dfs(candidates, target, ans, combine, idx + 1);
-
-        // 2. consider current idx (idx unchange)
-        if (target - candidates[idx] >= 0) { // prune
-            combine.add(candidates[idx]);
-            dfs(candidates, target - candidates[idx], ans, combine, idx);
-
-            // reset: remove the last added element
-            combine.remove(combine.size() - 1);
-            // System.out.println(combine + " " + ans);
+                // reset
+                tempList.remove(tempList.size() - 1);
+            }
         }
     }
 }
