@@ -28,7 +28,7 @@ class Solution {
         dfs(candidates, target, ans, combine, idx + 1);
 
         // 2. consider current idx (idx unchange)
-        if (target - candidates[idx] >= 0) {
+        if (target - candidates[idx] >= 0) { // prune
             combine.add(candidates[idx]);
             dfs(candidates, target - candidates[idx], ans, combine, idx);
 
