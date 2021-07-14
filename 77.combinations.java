@@ -19,6 +19,7 @@ class Solution {
         if (k == 0)
             res.add(new ArrayList<>(tempList));
         else {
+            // prune: i + k - 1 <= n
             for (int i = start; i + k - 1 <= n; i++) {
                 tempList.add(i);
                 backtrack(res, tempList, n, k - 1, i + 1);
