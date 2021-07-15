@@ -16,26 +16,25 @@ class Solution {
         return res;
     }
 
-    public void backtrack(int n, int unpaired, int paired, List<String> res, StringBuilder tempStr) {
-        if (paired == n) {
+    public void backtrack(int n, int leftCNT, int rightCNT, List<String> res, StringBuilder tempStr) {
+        if (rightCNT == leftCNT && rightCNT == n) {
             res.add(tempStr.toString());
             return;
         }
 
         // two branches:
         // 1. add a left bracket
-        if (unpaired + 1 <= n - paired) {
-            // the no. of left bracket should be less than n- paired bracket
+        if (leftCNT + 1 <= n) {
+            // the no. of left bracket should be no greater than n
             tempStr.append('(');
-            backtrack(n, unpaired + 1, paired, res, tempStr);
+            backtrack(n, leftCNT + 1, rightCNT, res, tempStr);
             tempStr.deleteCharAt(tempStr.length() - 1);
         }
         // 2. add a right bracket
-        if (paired + 1 <= n && unpaired > 0) {
-            // the no. of right bracket should be less than n
-            // and no greater than unpaired left bracket
+        if (rightCNT + 1 <= leftCNT) {
+            // the no. of right bracket should be no greater than unpaired left bracket
             tempStr.append(')');
-            backtrack(n, unpaired - 1, paired + 1, res, tempStr);
+            backtrack(n, leftCNT, rightCNT + 1, res, tempStr);
             tempStr.deleteCharAt(tempStr.length() - 1);
         }
     }
