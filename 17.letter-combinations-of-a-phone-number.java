@@ -22,17 +22,18 @@ class Solution {
 
     public void backtrack(String digits, int idx, List<String> res, StringBuilder tempStr) {
         if (idx == digits.length()) {
-            res.add(new String(tempStr.toString()));
+            res.add(tempStr.toString());
             return;
         }
 
         // Given a string containing digits from 2-9 inclusive
         int digit = digits.charAt(idx) - '0';
         String str = letters[digit - 2];
-        for (int i = 0; i < str.length(); i++) {
-            tempStr.append(str.substring(i, i + 1));
+        int strLen = letters[digit - 2].length();
+        for (int i = 0; i < strLen; i++) {
+            tempStr.append(str.charAt(i));
             backtrack(digits, idx + 1, res, tempStr);
-            tempStr.delete(tempStr.length() - 1, tempStr.length());
+            tempStr.deleteCharAt(tempStr.length() - 1);
         }
 
     }
