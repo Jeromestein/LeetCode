@@ -10,7 +10,8 @@ import java.util.List;
 // @lc code=start
 
 class Solution {
-    private boolean[][] line = new boolean[9][9];
+    //
+    private boolean[][] row = new boolean[9][9];
     private boolean[][] column = new boolean[9][9];
     private boolean[][][] block = new boolean[3][3][9];
     private boolean valid = false;
@@ -22,8 +23,10 @@ class Solution {
                 if (board[i][j] == '.') {
                     spaces.add(new int[] { i, j });
                 } else {
+                    // the range is [1,9], but idx starts from 0
                     int digit = board[i][j] - '0' - 1;
-                    line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
+                    // digit is in row i, column j, and block[i/3][j/3]
+                    row[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
                 }
             }
         }
@@ -40,11 +43,11 @@ class Solution {
         int[] space = spaces.get(pos);
         int i = space[0], j = space[1];
         for (int digit = 0; digit < 9 && !valid; ++digit) {
-            if (!line[i][digit] && !column[j][digit] && !block[i / 3][j / 3][digit]) {
-                line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
+            if (!row[i][digit] && !column[j][digit] && !block[i / 3][j / 3][digit]) {
+                row[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
                 board[i][j] = (char) (digit + '0' + 1);
                 dfs(board, pos + 1);
-                line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = false;
+                row[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = false;
             }
         }
     }
