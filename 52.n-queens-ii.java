@@ -12,44 +12,25 @@ import org.graalvm.compiler.asm.amd64.AMD64Assembler.AvxVectorLen;
 // @lc code=start
 class Solution {
     public int totalNQueens(int n) {
-        List<List<String>> res = new ArrayList<>();
-
-        backtrack(n, 0, 0, 0, 0, new int[n], res, new ArrayList<>());
-        return res.size();
+        return backtrack(n, 0, 0, 0, 0);
     }
 
-    public void backtrack(int n, int currRow, int columns, int lDiagonals, int rDiagonals, int[] queens,
-            List<List<String>> res, List<String> temp) {
+    public int backtrack(int n, int currRow, int columns, int lDiagonals, int rDiagonals) {
         if (currRow == n) {
-            res.add(new ArrayList<>(temp));
-            return;
+            return 1;
         }
 
         int availablePositions = ((1 << n) - 1) & (~(columns | lDiagonals | rDiagonals));
+        int cnt = 0;
         while (availablePositions != 0) {
             int currPosition = availablePositions & (-1 * availablePositions);
-            queens[currRow] = Integer.bitCount(currPosition - 1);
-
             availablePositions = availablePositions & (availablePositions - 1);
 
-            temp.add(bulidStr(n, queens[currRow]));
-
-            backtrack(n, currRow + 1, columns | currPosition, (lDiagonals | currPosition) << 1,
-                    (rDiagonals | currPosition) >> 1, queens, res, temp);
+            cnt += backtrack(n, currRow + 1, columns | currPosition, (lDiagonals | currPosition) << 1,
+                    (rDiagonals | currPosition) >> 1);
         }
-
+        return cnt;
     }
 
-    public String bulidStr(int n, int Q_bit) {
-        char[] str = new char[n];
-        for (int i = 0; i < str.length; i++) {
-            if (str.length - 1 - i == Q_bit)
-                str[i] = 'Q';
-            else
-                str[i] = '.';
-        }
-
-        return String.valueOf(str);
-    }
 }
 // @lc code=end
