@@ -8,61 +8,58 @@ import java.util.List;
  */
 
 // @lc code=start
+
 class Solution {
     public List<String> restoreIpAddresses(String s) {
-        List<String> res = new ArrayList<>();
-        if (s.length() > 12) {
-            return res;
-        }
-
-        backtrack(res, new StringBuilder(s), 1, 0);
-        return res;
+        List<String> ans = new ArrayList<String>();
+        int[] IP = new int[4];
+        backtrack(ans, IP, s, 0, 0);
+        return ans;
     }
 
-    public void backtrack(List<String> res, StringBuilder sb, int idx, int dotCNt) {
-        if (dotCNt == 3) {
-            if (isValidIP(sb)) {
-                res.add(sb.toString());
-
+    public void backtrack(List<String> ans, int[] IP, String s, int segCNT, int idx) {
+        // 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
+        if (segCNT == 4) {
+            if (idx == s.length()) {
+                ans.add(buildStrIPAddr(IP));
             }
             return;
         }
 
-        // 1. add "."
-        if (idx < sb.length() && dotCNt < 3) {
-            if (sb.charAt(idx - 1) != '.') {
-                sb.insert(idx, ".");
-                backtrack(res, sb, idx + 1, dotCNt + 1);
-                sb.deleteCharAt(idx);
-            }
-
-            // 2. not add "."
-            backtrack(res, sb, idx + 1, dotCNt);
+        // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
+        if (idx == s.length()) {
+            return;
         }
 
+        // 由于不能有前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
+        if (s.charAt(idx) == '0') {
+            IP[segCNT] = 0;
+            backtrack(ans, IP, s, segCNT + 1, idx + 1);
+        }
+
+        // 一般情况，枚举每一种可能性并递归
+        int addr = 0;
+
+        for (int segEnd = idx; segEnd < s.length(); ++segEnd) {
+            addr = addr * 10 + s.charAt(segEnd) - '0';
+            if (addr > 0 && addr < 256) {
+                IP[segCNT] = addr;
+                backtrack(ans, IP, s, segCNT + 1, segEnd + 1);
+            } else {
+                break;
+            }
+        }
     }
 
-    public boolean isValidIP(StringBuilder sb) {
-        String[] bytes = sb.toString().split("\\.");
+    public String buildStrIPAddr(int[] IP) {
+        StringBuffer str = new StringBuffer();
+        for (int i = 0; i < 4; ++i) {
+            str.append(IP[i]);
 
-        if (bytes.length != 4) {
-            return false;
+            str.append('.');
         }
-        for (String b : bytes) {
-            if (b.equals("")) {
-                return false;
-            }
-            if (!b.equals("0") && b.charAt(0) == '0') {
-                return false;
-            }
-            long val = Long.valueOf(b);
-
-            if (val < 0 || val > 255) {
-                return false;
-            }
-        }
-
-        return true;
+        str.deleteCharAt(str.length() - 1);
+        return str.toString();
     }
 }
 // @lc code=end
