@@ -49,7 +49,6 @@ class Solution {
             dfs(root.right, res, sb);
             sb.delete(idx, sb.length());
         }
-
     }
 }
 // @lc code=end
