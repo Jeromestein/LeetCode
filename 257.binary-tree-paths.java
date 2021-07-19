@@ -32,22 +32,24 @@ class Solution {
         if (root == null) {
             return;
         }
-
+        sb.append(root.val);
         if (root.left == null && root.right == null) {
-            sb.append(root.val);
+
             res.add(sb.toString());
             return;
+        } else {
+            sb.append("->");
+            // store current string length
+            int idx = sb.length();
+
+            dfs(root.left, res, sb);
+            // remove reduntant part (child imformation)
+            sb.delete(idx, sb.length());
+
+            dfs(root.right, res, sb);
+            sb.delete(idx, sb.length());
         }
 
-        sb.append(root.val);
-        sb.append("->");
-        int idx = sb.length();
-
-        dfs(root.left, res, sb);
-        sb.delete(idx, sb.length());
-
-        dfs(root.right, res, sb);
-        sb.delete(idx, sb.length());
     }
 }
 // @lc code=end
