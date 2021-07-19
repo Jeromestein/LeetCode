@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 // @lc code=start
+
 class Solution {
     public List<String> restoreIpAddresses(String s) {
         List<String> res = new ArrayList<>();
@@ -16,16 +17,16 @@ class Solution {
         return res;
     }
 
-    public void backtrack(List<String> res, int[] IPAddrs, String s, int segStart, int segCNT) {
+    public void backtrack(List<String> res, int[] Segments, String s, int segStart, int segCNT) {
         if (segCNT == 4 || segStart == s.length()) {
             if (segCNT == 4 && segStart == s.length())
-                res.add(buildIPAddr(IPAddrs));
+                res.add(buildIPAddr(Segments));
             return;
         }
 
         if (s.charAt(segStart) == '0') {
-            IPAddrs[segCNT] = 0;
-            backtrack(res, IPAddrs, s, segStart + 1, segCNT + 1);
+            Segments[segCNT] = 0;
+            backtrack(res, Segments, s, segStart + 1, segCNT + 1);
         }
 
         int addr = 0;
@@ -33,8 +34,8 @@ class Solution {
             // addr = [segStart: segEnd] of s
             addr = addr * 10 + s.charAt(segEnd) - '0';
             if (addr < 256 && addr > 0) {
-                IPAddrs[segCNT] = addr;
-                backtrack(res, IPAddrs, s, segEnd + 1, segCNT + 1);
+                Segments[segCNT] = addr;
+                backtrack(res, Segments, s, segEnd + 1, segCNT + 1);
             } else {
                 break;
             }
