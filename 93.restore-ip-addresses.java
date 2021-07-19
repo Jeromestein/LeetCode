@@ -8,58 +8,50 @@ import java.util.List;
  */
 
 // @lc code=start
-
 class Solution {
     public List<String> restoreIpAddresses(String s) {
-        List<String> ans = new ArrayList<String>();
-        int[] IP = new int[4];
-        backtrack(ans, IP, s, 0, 0);
-        return ans;
+        List<String> res = new ArrayList<>();
+
+        backtrack(res, new int[4], s, 0, 0);
+        return res;
     }
 
-    public void backtrack(List<String> ans, int[] IP, String s, int segCNT, int idx) {
-        // 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
-        if (segCNT == 4) {
-            if (idx == s.length()) {
-                ans.add(buildStrIPAddr(IP));
-            }
+    public void backtrack(List<String> res, int[] IPAddrs, String s, int segStart, int segCNT) {
+        if (segCNT == 4 || segStart == s.length()) {
+            if (segCNT == 4 && segStart == s.length())
+                res.add(buildIPAddr(IPAddrs));
             return;
         }
 
-        // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
-        if (idx == s.length()) {
-            return;
+        if (s.charAt(segStart) == '0') {
+            IPAddrs[segCNT] = 0;
+            backtrack(res, IPAddrs, s, segStart + 1, segCNT + 1);
         }
 
-        // 由于不能有前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
-        if (s.charAt(idx) == '0') {
-            IP[segCNT] = 0;
-            backtrack(ans, IP, s, segCNT + 1, idx + 1);
-        }
-
-        // 一般情况，枚举每一种可能性并递归
         int addr = 0;
-
-        for (int segEnd = idx; segEnd < s.length(); ++segEnd) {
+        for (int segEnd = segStart; segEnd < s.length(); segEnd++) {
+            // addr = [segStart: segEnd] of s
             addr = addr * 10 + s.charAt(segEnd) - '0';
-            if (addr > 0 && addr < 256) {
-                IP[segCNT] = addr;
-                backtrack(ans, IP, s, segCNT + 1, segEnd + 1);
+            if (addr < 256 && addr > 0) {
+                IPAddrs[segCNT] = addr;
+                backtrack(res, IPAddrs, s, segEnd + 1, segCNT + 1);
             } else {
                 break;
             }
         }
+
     }
 
-    public String buildStrIPAddr(int[] IP) {
-        StringBuffer str = new StringBuffer();
-        for (int i = 0; i < 4; ++i) {
-            str.append(IP[i]);
-
-            str.append('.');
+    public String buildIPAddr(int[] segments) {
+        StringBuilder sb = new StringBuilder();
+        for (int s : segments) {
+            sb.append(s);
+            sb.append(".");
         }
-        str.deleteCharAt(str.length() - 1);
-        return str.toString();
+        sb.deleteCharAt(sb.length() - 1);
+
+        return sb.toString();
     }
+
 }
 // @lc code=end
