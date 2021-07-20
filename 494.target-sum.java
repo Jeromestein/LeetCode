@@ -30,6 +30,7 @@
 
 class Solution {
     public int findTargetSumWays(int[] nums, int target) {
+        // 0 <= nums[i] <= 1000
         int sum = 0;
         for (int num : nums) {
             sum += num;
