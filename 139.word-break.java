@@ -24,7 +24,8 @@ class Solution {
 
         for (int i = 1; i <= s.length(); i++) {
             // don't need to walk though all the s[0,i-1]
-            // if even the longest word can't fit in, dp[i] should be false
+            // if even the longest word can't fit in, than this string is invalid
+            // dp[i] should be false
             for (int j = i; j >= 0 && j >= i - maxWordLen; j--) {
                 if (dp[j] && wordDictSet.contains(s.subSequence(j, i))) {
                     dp[i] = true;
