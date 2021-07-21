@@ -10,33 +10,35 @@ import java.util.List;
 // @lc code=start
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> order = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<Integer>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            return order;
+            return res;
         }
-        int rows = matrix.length, columns = matrix[0].length;
-        int left = 0, right = columns - 1, top = 0, bottom = rows - 1;
+        int left = 0, right = matrix[0].length - 1, top = 0, bottom = matrix.length - 1;
+
         while (left <= right && top <= bottom) {
             for (int column = left; column <= right; column++) {
-                order.add(matrix[top][column]);
+                res.add(matrix[top][column]);
             }
             for (int row = top + 1; row <= bottom; row++) {
-                order.add(matrix[row][right]);
+                res.add(matrix[row][right]);
             }
             if (left < right && top < bottom) {
                 for (int column = right - 1; column > left; column--) {
-                    order.add(matrix[bottom][column]);
+                    res.add(matrix[bottom][column]);
                 }
                 for (int row = bottom; row > top; row--) {
-                    order.add(matrix[row][left]);
+                    res.add(matrix[row][left]);
                 }
             }
+
+            // peel one layer/level
             left++;
             right--;
             top++;
             bottom--;
         }
-        return order;
+        return res;
     }
 }
 
