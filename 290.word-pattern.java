@@ -8,6 +8,7 @@ import java.util.Map;
  */
 
 // @lc code=start
+
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         String[] words = s.split(" ");
@@ -19,19 +20,22 @@ class Solution {
         Map<String, Character> String2pattern = new HashMap<>();
         for (int i = 0; i < pattern.length(); i++) {
             // putIfAbsent(key, val) return null means key has no val now
-            if (pattern2String.putIfAbsent(pattern.charAt(i), words[i]) != null) {
+            if (pattern2String.containsKey(pattern.charAt(i))) {
                 // if key has val but val != words[i]
-                if (!pattern2String.putIfAbsent(pattern.charAt(i), words[i]).equals(words[i])) {
+                if (!pattern2String.get(pattern.charAt(i)).equals(words[i])) {
                     return false;
                 }
+            } else {
+                pattern2String.put(pattern.charAt(i), words[i]);
             }
 
             // putIfAbsent(key, val) return null means key has no val now
-            if (String2pattern.putIfAbsent(words[i], pattern.charAt(i)) != null) {
-                // if key has val but val != words[i]
-                if (String2pattern.putIfAbsent(words[i], pattern.charAt(i)) != pattern.charAt(i)) {
+            if (String2pattern.containsKey(words[i])) {
+                if (String2pattern.get(words[i]) != pattern.charAt(i)) {
                     return false;
                 }
+            } else {
+                String2pattern.put(words[i], pattern.charAt(i));
             }
 
         }
@@ -39,4 +43,5 @@ class Solution {
         return true;
     }
 }
+
 // @lc code=end
