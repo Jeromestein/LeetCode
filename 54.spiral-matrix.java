@@ -14,29 +14,34 @@ class Solution {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return res;
         }
-        int left = 0, right = matrix[0].length - 1, top = 0, bottom = matrix.length - 1;
+        int row = matrix.length, col = matrix[0].length;
+        int num = row * col;
+        int left = 0, right = col - 1, top = 0, bottom = row - 1;
 
-        while (left <= right && top <= bottom) {
-            for (int column = left; column <= right; column++) {
-                res.add(matrix[top][column]);
+        while (num >= 1) {
+            for (int i = left; i <= right && num >= 1; i++) {
+                res.add(matrix[top][i]);
+                num--;
             }
-            for (int row = top + 1; row <= bottom; row++) {
-                res.add(matrix[row][right]);
-            }
-            if (left < right && top < bottom) {
-                for (int column = right - 1; column > left; column--) {
-                    res.add(matrix[bottom][column]);
-                }
-                for (int row = bottom; row > top; row--) {
-                    res.add(matrix[row][left]);
-                }
-            }
-
-            // peel one layer/level
-            left++;
-            right--;
             top++;
+
+            for (int i = top; i <= bottom && num >= 1; i++) {
+                res.add(matrix[i][right]);
+                num--;
+            }
+            right--;
+
+            for (int i = right; i >= left && num >= 1; i--) {
+                res.add(matrix[bottom][i]);
+                num--;
+            }
             bottom--;
+
+            for (int i = bottom; i >= top && num >= 1; i--) {
+                res.add(matrix[i][left]);
+                num--;
+            }
+            left++;
         }
         return res;
     }
