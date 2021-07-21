@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+
 class Solution {
     public void rotate(int[][] matrix) {
         // You are given an n x n 2D matrix
