@@ -6,19 +6,28 @@
 
 // @lc code=start
 class Solution {
+
     public void setZeroes(int[][] matrix) {
         int row = matrix.length, col = matrix[0].length;
 
+        // use setRow0Zero/setCol0Zero to find
+        // if we should set first row/first col as 0
         boolean setRow0Zero = false, setCol0Zero = false;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 if (matrix[i][j] == 0) {
                     if (i == 0) {
+                        // if a element in first row is 0,
+                        // we should set first row as 0
                         setRow0Zero = true;
                     }
                     if (j == 0) {
+                        // if a element in first col is 0,
+                        // we should set first col as 0
                         setCol0Zero = true;
                     }
+                    // matrix[0][j] means we should set col j as 0
+                    // matrix[i][0] means we should set row i as 0
                     matrix[0][j] = matrix[i][0] = 0;
                 }
             }
@@ -33,12 +42,14 @@ class Solution {
         }
 
         if (setRow0Zero) {
+            // set first row as 0
             for (int j = 0; j < col; j++) {
                 matrix[0][j] = 0;
             }
         }
 
         if (setCol0Zero) {
+            // set first col as 0
             for (int i = 0; i < row; i++) {
                 matrix[i][0] = 0;
             }
