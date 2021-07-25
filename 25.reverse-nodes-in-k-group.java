@@ -13,43 +13,53 @@
 
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
+        // create a new node before head
         ListNode hair = new ListNode(0);
         hair.next = head;
         ListNode pre = hair;
 
         while (head != null) {
             ListNode tail = pre;
-            // 查看剩余部分长度是否大于等于 k
+            // chechk if the length of list is less than k, find tail
             for (int i = 0; i < k; ++i) {
                 tail = tail.next;
                 if (tail == null) {
+                    // if the length of list is less than k, return the list directly
                     return hair.next;
                 }
             }
-            ListNode nex = tail.next;
             ListNode[] reverse = myReverse(head, tail);
             head = reverse[0];
             tail = reverse[1];
-            // 把子链表重新接回原链表
+
+            // let pre head point to new head
+            // (not necessary to let new tail point to after tail,
+            // we already did it in myReverse(). )
             pre.next = head;
-            tail.next = nex;
             pre = tail;
-            head = tail.next;
+            head = pre.next;
         }
 
         return hair.next;
     }
 
-    public ListNode[] myReverse(ListNode head, ListNode tail) {
-        ListNode prev = tail.next;
-        ListNode p = head;
-        while (prev != tail) {
-            ListNode nex = p.next;
-            p.next = prev;
-            prev = p;
-            p = nex;
+    public ListNode[] myReverse(ListNode oldHead, ListNode oldTail) {
+        // p1: old tail's next
+        ListNode oldTailNext = oldTail.next;
+        // p2: first node in this sublist
+        ListNode first = oldHead;
+
+        while (oldTailNext != oldTail) {
+            ListNode firstNext = first.next;
+            // put first node after old tail
+            first.next = oldTailNext;
+            oldTailNext = first;
+
+            // get new first
+            first = firstNext;
         }
-        return new ListNode[] { tail, head };
+        // new head is old tail, new tail is old head
+        return new ListNode[] { oldTail, oldHead };
     }
 }
 // @lc code=end
