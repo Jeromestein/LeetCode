@@ -44,9 +44,9 @@ class Solution {
     }
 
     public ListNode[] myReverse(ListNode oldHead, ListNode oldTail) {
-        // p1: old tail's next
+        // oldTailNext: old tail's next
         ListNode oldTailNext = oldTail.next;
-        // p2: first node in this sublist
+        // first: first node in this sublist
         ListNode first = oldHead;
 
         while (oldTailNext != oldTail) {
