@@ -17,20 +17,29 @@ class Solution {
             return head;
         }
 
+        // create a node pre head point to head
         ListNode preHead = new ListNode(0, head);
-        ListNode cur = preHead;
-        while (cur.next != null && cur.next.next != null) {
-            if (cur.next.val == cur.next.next.val) {
-                int x = cur.next.val;
-                while (cur.next != null && cur.next.val == x) {
-                    cur.next = cur.next.next;
-                }
+        // start from pre head
+        ListNode p = preHead;
+        while (p.next != null && p.next.next != null) {
+            // check if next and next next are equal
+            if (p.next.val == p.next.next.val) {
+                // if yes, then delete all duplicates equal to x
+                deleteDuplicates(p, p.next.val);
             } else {
-                cur = cur.next;
+                // if not, then point moves to next
+                p = p.next;
             }
         }
 
         return preHead.next;
+    }
+
+    public void deleteDuplicates(ListNode preHead, int val) {
+        while (preHead.next != null && preHead.next.val == val) {
+            // delete 'old' preHead.next
+            preHead.next = preHead.next.next;
+        }
     }
 }
 // @lc code=end
