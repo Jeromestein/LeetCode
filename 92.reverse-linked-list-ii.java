@@ -20,6 +20,7 @@ class Solution {
         }
         ListNode cur = pre.next;
         ListNode next;
+        // 1 <= left <= right <= n
         for (int i = 0; i < right - left; i++) {
             next = cur.next;
             cur.next = next.next;
