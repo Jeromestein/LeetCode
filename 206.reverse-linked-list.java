@@ -18,32 +18,54 @@ class Solution {
             return head;
         }
 
-        // get old tail
-        ListNode oldTail = head;
-        ListNode p = head;
-        while (p != null) {
-            oldTail = p;
-            p = p.next;
+        ListNode pre = new ListNode(0, head);
+
+        ListNode cur = pre.next;
+        ListNode next;
+
+        while (cur.next != null) {
+            next = cur.next;
+            cur.next = next.next;
+            next.next = pre.next;
+            pre.next = next;
         }
-
-        // oldTailNext: old tail's next
-        ListNode oldTailNext = oldTail.next;
-        // first: first node in this sublist
-        ListNode first = head;
-
-        while (oldTailNext != oldTail) {
-            ListNode firstNext = first.next;
-            // put first node after old tail
-            first.next = oldTailNext;
-            oldTailNext = first;
-
-            // get new first
-            first = firstNext;
-        }
-
-        return oldTail;
+        return pre.next;
     }
 }
+
+// class Solution {
+// public ListNode reverseList(ListNode head) {
+// if (head == null || head.next == null) {
+// // if length of list < 2, return directly
+// return head;
+// }
+
+// // get old tail
+// ListNode oldTail = head;
+// ListNode p = head;
+// while (p != null) {
+// oldTail = p;
+// p = p.next;
+// }
+
+// // oldTailNext: old tail's next
+// ListNode oldTailNext = oldTail.next;
+// // first: first node in this sublist
+// ListNode first = head;
+
+// while (oldTailNext != oldTail) {
+// ListNode firstNext = first.next;
+// // put first node after old tail
+// first.next = oldTailNext;
+// oldTailNext = first;
+
+// // get new first
+// first = firstNext;
+// }
+
+// return oldTail;
+// }
+// }
 
 // class Solution {
 // public ListNode reverseList(ListNode head) {
