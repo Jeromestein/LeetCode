@@ -25,14 +25,18 @@ class Solution {
             p = p.next;
         }
 
+        // oldTailNext: old tail's next
         ListNode oldTailNext = oldTail.next;
+        // first: first node in this sublist
         ListNode first = head;
+
         while (oldTailNext != oldTail) {
             ListNode firstNext = first.next;
-
+            // put first node after old tail
             first.next = oldTailNext;
             oldTailNext = first;
 
+            // get new first
             first = firstNext;
         }
 
