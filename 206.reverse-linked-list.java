@@ -10,6 +10,7 @@
  * next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val,
  * ListNode next) { this.val = val; this.next = next; } }
  */
+
 class Solution {
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
@@ -43,4 +44,24 @@ class Solution {
         return oldTail;
     }
 }
+
+// class Solution {
+// public ListNode reverseList(ListNode head) {
+// if (head == null || head.next == null) {
+// // if length of list < 2, return directly
+// return head;
+// }
+
+// // get reverse subList strating from head next,
+// // then head next will be the new tail of this sublist
+// ListNode newHead = reverseList(head.next);
+// // let new tail of sublist point to head
+// head.next.next = head;
+// // let new tail of list point to null
+// head.next = null;
+
+// return newHead;
+// }
+// }
+
 // @lc code=end
