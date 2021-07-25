@@ -24,7 +24,7 @@ class Solution {
         while (p.next != null && p.next.next != null) {
             // check if next and next next are equal
             if (p.next.val == p.next.next.val) {
-                // if yes, then delete all duplicates equal to x
+                // if yes, then delete all duplicates after p equal to x
                 deleteDuplicates(p, p.next.val);
             } else {
                 // if not, then point moves to next
@@ -35,10 +35,10 @@ class Solution {
         return preHead.next;
     }
 
-    public void deleteDuplicates(ListNode preHead, int val) {
-        while (preHead.next != null && preHead.next.val == val) {
-            // delete 'old' preHead.next
-            preHead.next = preHead.next.next;
+    public void deleteDuplicates(ListNode p, int val) {
+        while (p.next != null && p.next.val == val) {
+            // delete 'old' p.next
+            p.next = p.next.next;
         }
     }
 }
