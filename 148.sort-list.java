@@ -63,10 +63,12 @@ class Solution {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        int n = getCount(head);
+
+        int len = getLength(head);
+
         ListNode start = head;
         ListNode dummyHead = new ListNode();
-        for (int size = 1; size < n; size = size * 2) {
+        for (int size = 1; size < len; size = size * 2) {
             tail = dummyHead;
             while (start != null) {
                 if (start.next == null) {
@@ -127,7 +129,7 @@ class Solution {
         tail = newTail;
     }
 
-    int getCount(ListNode head) {
+    int getLength(ListNode head) {
         int cnt = 0;
         ListNode ptr = head;
         while (ptr != null) {
