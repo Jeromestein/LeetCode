@@ -25,15 +25,20 @@ class Solution {
         if (head == null) {
             return null;
         }
+        // 1. For each node S, we create new node S' and insert it right before S
+        // A -> B -> C ==> A -> A' -> B -> B' -> C -> C'
         for (Node node = head; node != null; node = node.next.next) {
             Node nodeNew = new Node(node.val);
             nodeNew.next = node.next;
             node.next = nodeNew;
         }
+        // 2. Thus, we can get nodeNew.random by node.random.next
         for (Node node = head; node != null; node = node.next.next) {
             Node nodeNew = node.next;
             nodeNew.random = (node.random != null) ? node.random.next : null;
         }
+
+        // 3. Detach 2 lists
         Node headNew = head.next;
         for (Node node = head; node != null; node = node.next) {
             Node nodeNew = node.next;
