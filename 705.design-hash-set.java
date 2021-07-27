@@ -9,6 +9,7 @@ import java.util.LinkedList;
  */
 
 // @lc code=start
+
 class MyHashSet {
     // an array of linkedlists' addresses
     LinkedList[] hashTable;
