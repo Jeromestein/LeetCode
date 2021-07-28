@@ -12,7 +12,7 @@ import java.util.Set;
 // @lc code=start
 class Solution {
     public int longestConsecutive(int[] nums) {
-        // hashSet is way faster than LinkedHashSet
+        // HashSet is way faster than LinkedHashSet
         Set<Integer> numSet = new HashSet<>();
         for (int n : nums) {
             numSet.add(n);
