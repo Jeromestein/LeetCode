@@ -15,23 +15,29 @@ class Solution {
         for (int i = 0; i < order.length(); ++i)
             index[order.charAt(i) - 'a'] = i;
 
-        search: for (int i = 0; i < words.length - 1; ++i) {
+        boolean isDifferent = false;
+        for (int i = 0; i < words.length - 1; ++i) {
             String word1 = words[i];
             String word2 = words[i + 1];
 
             // Find the first difference word1[k] != word2[k].
             for (int k = 0; k < Math.min(word1.length(), word2.length()); ++k) {
                 if (word1.charAt(k) != word2.charAt(k)) {
-                    // If they compare badly, it's not sorted.
-                    if (index[word1.charAt(k) - 'a'] > index[word2.charAt(k) - 'a'])
+                    isDifferent = true;
+
+                    int val1 = index[word1.charAt(k) - 'a'], val2 = index[word2.charAt(k) - 'a'];
+                    if (val1 > val2) {
+                        // If they compare badly, it's not sorted.
                         return false;
-                    continue search;
+                    } else if (val1 < val2) {
+                        break;
+                    }
                 }
             }
 
-            // If we didn't find a first difference, the
-            // words are like ["apple","app"].
-            if (word1.length() > word2.length())
+            // If we didn't find a first difference, which is not different (!isDifferent)
+            // the words are like ["apple","app"].
+            if (!isDifferent && word1.length() > word2.length())
                 return false;
         }
 
