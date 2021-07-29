@@ -14,6 +14,7 @@ import jdk.internal.platform.Container;
  */
 
 // @lc code=start
+
 class Solution {
     public List<String> topKFrequent(String[] words, int k) {
         Map<String, Integer> freqCNT = new HashMap<>();
@@ -47,4 +48,35 @@ class Solution {
         return res.subList(0, k);
     }
 }
+
+// class Solution {
+// public List<String> topKFrequent(String[] words, int k) {
+// Map<String, Integer> cnt = new HashMap<String, Integer>();
+// for (String word : words) {
+// cnt.put(word, cnt.getOrDefault(word, 0) + 1);
+// }
+// PriorityQueue<Map.Entry<String, Integer>> pq = new
+// PriorityQueue<Map.Entry<String, Integer>>(
+// new Comparator<Map.Entry<String, Integer>>() {
+// public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String,
+// Integer> entry2) {
+// int val1 = entry1.getValue(), val2 = entry2.getValue();
+// String s1 = entry1.getKey(), s2 = entry2.getKey();
+// return val1 == val2 ? s2.compareTo(s1) : val1 - val2;
+// }
+// });
+// for (Map.Entry<String, Integer> entry : cnt.entrySet()) {
+// pq.add(entry);
+// if (pq.size() > k) {
+// pq.poll();
+// }
+// }
+// List<String> ret = new ArrayList<String>();
+// while (!pq.isEmpty()) {
+// ret.add(pq.poll().getKey());
+// }
+// Collections.reverse(ret);
+// return ret;
+// }
+// }
 // @lc code=end
