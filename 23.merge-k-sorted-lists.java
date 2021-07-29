@@ -31,8 +31,8 @@ class Solution {
         if (a == null || b == null) {
             return a != null ? a : b;
         }
-        ListNode head = new ListNode(0);
-        ListNode tail = head, aPtr = a, bPtr = b;
+        ListNode preHead = new ListNode(0);
+        ListNode tail = preHead, aPtr = a, bPtr = b;
         while (aPtr != null && bPtr != null) {
             if (aPtr.val < bPtr.val) {
                 tail.next = aPtr;
@@ -43,8 +43,8 @@ class Solution {
             }
             tail = tail.next;
         }
-        tail.next = (aPtr != null ? aPtr : bPtr);
-        return head.next;
+        tail.next = aPtr != null ? aPtr : bPtr;
+        return preHead.next;
     }
 }
 
