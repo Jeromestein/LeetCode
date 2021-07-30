@@ -11,6 +11,7 @@ class Solution {
         if (s.length() < 2) {
             return s;
         }
+
         int[] counts = new int[26];
         int maxCount = 0;
         int length = s.length();
@@ -19,19 +20,25 @@ class Solution {
             counts[c - 'a']++;
             maxCount = Math.max(maxCount, counts[c - 'a']);
         }
+
+        // if one letter repeat more than half of length times,
+        // then it will be impossible to rearrange
         if (maxCount > (length + 1) / 2) {
             return "";
         }
+
         char[] reorganizeArray = new char[length];
         int evenIndex = 0, oddIndex = 1;
         int halfLength = length / 2;
         for (int i = 0; i < 26; i++) {
             char c = (char) ('a' + i);
+            // first, assign to add indexs
             while (counts[i] > 0 && counts[i] <= halfLength && oddIndex < length) {
                 reorganizeArray[oddIndex] = c;
                 counts[i]--;
                 oddIndex += 2;
             }
+            // if odd indexs is full, then assign to even indexs
             while (counts[i] > 0) {
                 reorganizeArray[evenIndex] = c;
                 counts[i]--;
