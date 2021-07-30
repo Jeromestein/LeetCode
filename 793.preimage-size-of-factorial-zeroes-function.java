@@ -9,6 +9,7 @@
 class Solution {
     public int preimageSizeFZF(long K) {
         long lo = K, hi = 10 * K + 1;
+        // binary search
         while (lo < hi) {
             long mid = lo + (hi - lo) / 2;
             long zmid = zeta(mid);
