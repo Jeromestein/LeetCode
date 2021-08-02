@@ -9,6 +9,7 @@ import java.util.Stack;
  */
 
 // @lc code=start
+
 class Solution {
     public boolean isValid(String s) {
         Deque<Character> stack = new LinkedList<>();
