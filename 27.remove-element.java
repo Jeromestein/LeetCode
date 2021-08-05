@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /*
  * @lc app=leetcode id=27 lang=java
  *
@@ -17,6 +15,7 @@ class Solution {
                 nums[left] = nums[right - 1];
                 right--;
             } else {
+                // only if nums[left] != val, left++
                 left++;
             }
         }
