@@ -5,29 +5,36 @@
  */
 
 // @lc code=start
+
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (needle.equals("")) {
+        int n = haystack.length(), m = needle.length();
+        if (m == 0) {
             return 0;
         }
-        int left = 0, right = 0;
-        int n = haystack.length(), m = needle.length();
-
-        while (left < n - m + 1) {
-            right = left;
-
-            while (haystack.charAt(right) == needle.charAt(right - left)) {
-                if (right - left == m - 1) {
-                    return left;
-                }
-
-                right++;
+        int[] pi = new int[m];
+        for (int i = 1, j = 0; i < m; i++) {
+            while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
             }
-
-            left++;
+            if (needle.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            pi[i] = j;
         }
-
+        for (int i = 0, j = 0; i < n; i++) {
+            while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
+            }
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            if (j == m) {
+                return i - m + 1;
+            }
+        }
         return -1;
     }
 }
+
 // @lc code=end
