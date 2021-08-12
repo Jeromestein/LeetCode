@@ -8,33 +8,17 @@ import java.util.List;
  */
 
 // @lc code=start
+
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<List<Integer>> res = new ArrayList<>();
-
-        for (int i = 0; i <= rowIndex; i++) {
-            List<Integer> temp = new ArrayList<>();
-
-            if (res.isEmpty()) {
-                temp.add(1);
-            } else {
-                for (int j = 0; j < i + 1; j++) {
-                    if (j == 0 || j == i) {
-                        temp.add(1);
-                    } else {
-                        List<Integer> preLine = res.get(i - 1);
-                        int left = preLine.get(j - 1);
-                        int right = preLine.get(j);
-
-                        temp.add(left + right);
-                    }
-                }
-            }
-
-            res.add(temp);
+        List<Integer> row = new ArrayList<Integer>();
+        row.add(1);
+        for (int i = 1; i <= rowIndex; ++i) {
+            // C(m,n)=C(m-1,n)* (n-m+1)/m
+            row.add((int) ((long) row.get(i - 1) * (rowIndex - i + 1) / i));
         }
-
-        return res.get(rowIndex);
+        return row;
     }
 }
+
 // @lc code=end
