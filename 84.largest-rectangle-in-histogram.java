@@ -12,22 +12,30 @@ class Solution {
         int[] left = new int[n];
         int[] right = new int[n];
 
-        Stack<Integer> mono_stack = new Stack<Integer>();
+        Stack<Integer> monoStack = new Stack<Integer>();
+        // from left to right
         for (int i = 0; i < n; ++i) {
-            while (!mono_stack.isEmpty() && heights[mono_stack.peek()] >= heights[i]) {
-                mono_stack.pop();
+            // use mono stack to implement monotone increasing
+            // to find the closest column that smaller than i in the left
+            while (!monoStack.isEmpty() && heights[monoStack.peek()] >= heights[i]) {
+                monoStack.pop();
             }
-            left[i] = (mono_stack.isEmpty() ? -1 : mono_stack.peek());
-            mono_stack.push(i);
+            // left[i] is the index of the left column
+            left[i] = (monoStack.isEmpty() ? -1 : monoStack.peek());
+            monoStack.push(i);
         }
 
-        mono_stack.clear();
+        // from right to left
+        monoStack.clear();
         for (int i = n - 1; i >= 0; --i) {
-            while (!mono_stack.isEmpty() && heights[mono_stack.peek()] >= heights[i]) {
-                mono_stack.pop();
+            // use mono stack to implement monotone increasing
+            // to find the closest column that smaller than i in the right
+            while (!monoStack.isEmpty() && heights[monoStack.peek()] >= heights[i]) {
+                monoStack.pop();
             }
-            right[i] = (mono_stack.isEmpty() ? n : mono_stack.peek());
-            mono_stack.push(i);
+            // right[i] is the index of the right column
+            right[i] = (monoStack.isEmpty() ? n : monoStack.peek());
+            monoStack.push(i);
         }
 
         int ans = 0;
