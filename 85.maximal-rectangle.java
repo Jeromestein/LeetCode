@@ -11,46 +11,51 @@ import java.util.Stack;
 
 class Solution {
     public int maximalRectangle(char[][] matrix) {
-        int m = matrix.length;
-        if (m == 0) {
+        int rows = matrix.length;
+        if (rows == 0) {
             return 0;
         }
-        int n = matrix[0].length;
-        int[][] left = new int[m][n];
+        int cols = matrix[0].length;
+        int[][] continuousOneCNT = new int[rows][cols];
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
                 if (matrix[i][j] == '1') {
-                    left[i][j] = (j == 0 ? 0 : left[i][j - 1]) + 1;
+                    // the number of left continuous '1'
+                    continuousOneCNT[i][j] = (j == 0 ? 0 : continuousOneCNT[i][j - 1]) + 1;
                 }
             }
         }
 
         int ret = 0;
-        for (int j = 0; j < n; j++) { // 对于每一列，使用基于柱状图的方法
-            int[] up = new int[m];
-            int[] down = new int[m];
+        for (int j = 0; j < cols; j++) {
+            int[] up = new int[rows];
+            int[] down = new int[rows];
 
             Deque<Integer> stack = new LinkedList<Integer>();
-            for (int i = 0; i < m; i++) {
-                while (!stack.isEmpty() && left[stack.peek()][j] >= left[i][j]) {
+            // find its up boundary
+            for (int i = 0; i < rows; i++) {
+                while (!stack.isEmpty() && continuousOneCNT[stack.peek()][j] >= continuousOneCNT[i][j]) {
                     stack.pop();
                 }
                 up[i] = stack.isEmpty() ? -1 : stack.peek();
                 stack.push(i);
             }
+
+            // find its down boundary
             stack.clear();
-            for (int i = m - 1; i >= 0; i--) {
-                while (!stack.isEmpty() && left[stack.peek()][j] >= left[i][j]) {
+            for (int i = rows - 1; i >= 0; i--) {
+                while (!stack.isEmpty() && continuousOneCNT[stack.peek()][j] >= continuousOneCNT[i][j]) {
                     stack.pop();
                 }
-                down[i] = stack.isEmpty() ? m : stack.peek();
+                down[i] = stack.isEmpty() ? rows : stack.peek();
                 stack.push(i);
             }
 
-            for (int i = 0; i < m; i++) {
+            for (int i = 0; i < rows; i++) {
+                // get height
                 int height = down[i] - up[i] - 1;
-                int area = height * left[i][j];
+                int area = height * continuousOneCNT[i][j];
                 ret = Math.max(ret, area);
             }
         }
