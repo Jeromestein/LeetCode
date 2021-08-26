@@ -7,8 +7,6 @@
 // @lc code=start
 
 class StreamChecker {
-
-    final static int ALPHABET_LENGTH = 26;
     TrieNode root;
     List<Character> stream;
 
@@ -18,7 +16,7 @@ class StreamChecker {
 
         TrieNode() {
             isWord = false;
-            next = new TrieNode[ALPHABET_LENGTH];
+            next = new TrieNode[26];
         }
     }
 
