@@ -11,7 +11,7 @@ import java.util.Set;
 class WordDictionary {
     public class TrieNode {
         public TrieNode[] children = new TrieNode[26];
-        public String item = "";
+        public boolean isWord = false;
     }
 
     private TrieNode root;
@@ -29,7 +29,8 @@ class WordDictionary {
             }
             node = node.children[c - 'a'];
         }
-        node.item = word;
+        // at last letter, make it a word.
+        node.isWord = true;
     }
 
     public boolean search(String word) {
@@ -38,10 +39,14 @@ class WordDictionary {
 
     private boolean match(char[] chs, int k, TrieNode node) {
         if (k == chs.length)
-            return !node.item.equals("");
+            return node.isWord;
+
         if (chs[k] != '.') {
-            return node.children[chs[k] - 'a'] != null && match(chs, k + 1, node.children[chs[k] - 'a']);
-        } else {
+            int index = chs[k] - 'a';
+            return node.children[index] != null && match(chs, k + 1, node.children[index]);
+        }
+
+        if (chs[k] == '.') {
             for (int i = 0; i < node.children.length; i++) {
                 if (node.children[i] != null) {
                     if (match(chs, k + 1, node.children[i])) {
