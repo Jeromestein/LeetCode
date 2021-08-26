@@ -17,17 +17,37 @@ import java.util.List;
  */
 class Solution {
     public int[] nextLargerNodes(ListNode head) {
-        ArrayList<Integer> A = new ArrayList<>();
-        for (ListNode node = head; node != null; node = node.next)
-            A.add(node.val);
-        int[] res = new int[A.size()];
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < A.size(); ++i) {
-            while (!stack.isEmpty() && A.get(stack.peek()) < A.get(i))
-                res[stack.pop()] = A.get(i);
-            stack.push(i);
+        ListNode tail = reverse(head);
+        Deque<Integer> stack = new LinkedList<>();
+        int[] res = new int[tail.val];
+        int index = tail.val - 1;
+        tail = tail.next;
+        while (index >= 0) {
+            while (!stack.isEmpty() && tail.val >= stack.peek()) {
+                stack.poll();
+            }
+            res[index--] = stack.isEmpty() ? 0 : stack.peek();
+            stack.push(tail.val);
+            tail = tail.next;
         }
         return res;
+    }
+
+    private ListNode reverse(ListNode head) {
+        // 之所以返回dummy是为了用dummy.val保存链表的长度
+        ListNode dummy = new ListNode(-1);
+        int count = 0;
+        ListNode cur = head, pre = null;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+            count++;
+        }
+        dummy.val = count;
+        dummy.next = pre;
+        return dummy;
     }
 }
 // @lc code=end
