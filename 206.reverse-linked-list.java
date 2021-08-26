@@ -18,20 +18,40 @@ class Solution {
             return head;
         }
 
-        ListNode pre = new ListNode(0, head);
+        ListNode pre = null;
+        ListNode cur = head;
 
-        ListNode cur = pre.next;
-        ListNode next;
-
-        while (cur.next != null) {
-            next = cur.next;
-            cur.next = next.next;
-            next.next = pre.next;
-            pre.next = next;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
         }
-        return pre.next;
+        return pre;
     }
 }
+
+// class Solution {
+// public ListNode reverseList(ListNode head) {
+// if (head == null || head.next == null) {
+// // if length of list < 2, return directly
+// return head;
+// }
+
+// ListNode pre = new ListNode(0, head);
+
+// ListNode cur = pre.next;
+// ListNode next;
+
+// while (cur.next != null) {
+// next = cur.next;
+// cur.next = next.next;
+// next.next = pre.next;
+// pre.next = next;
+// }
+// return pre.next;
+// }
+// }
 
 // class Solution {
 // public ListNode reverseList(ListNode head) {
