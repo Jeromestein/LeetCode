@@ -13,15 +13,17 @@ class Solution {
     private int[] ans;
 
     public List<Integer> countSmaller(int[] nums) {
-        this.index = new int[nums.length];
-        this.temp = new int[nums.length];
-        this.tempIndex = new int[nums.length];
-        this.ans = new int[nums.length];
+        index = new int[nums.length];
+        temp = new int[nums.length];
+        tempIndex = new int[nums.length];
+        ans = new int[nums.length];
+
         for (int i = 0; i < nums.length; ++i) {
             index[i] = i;
         }
-        int l = 0, r = nums.length - 1;
-        mergeSort(nums, l, r);
+
+        mergeSort(nums, 0, nums.length - 1);
+
         List<Integer> list = new ArrayList<Integer>();
         for (int num : ans) {
             list.add(num);
@@ -40,32 +42,33 @@ class Solution {
     }
 
     public void merge(int[] a, int l, int mid, int r) {
-        int i = l, j = mid + 1, p = l;
-        while (i <= mid && j <= r) {
-            if (a[i] <= a[j]) {
-                temp[p] = a[i];
-                tempIndex[p] = index[i];
-                ans[index[i]] += (j - mid - 1);
-                ++i;
+        int lPtr = l, rPtr = mid + 1, p = l;
+        while (lPtr <= mid && rPtr <= r) {
+            if (a[lPtr] <= a[rPtr]) {
+                temp[p] = a[lPtr];
+                tempIndex[p] = index[lPtr];
+                // get the no. of smaller right elements during the merging process
+                ans[index[lPtr]] += (rPtr - mid - 1);
+                ++lPtr;
                 ++p;
             } else {
-                temp[p] = a[j];
-                tempIndex[p] = index[j];
-                ++j;
+                temp[p] = a[rPtr];
+                tempIndex[p] = index[rPtr];
+                ++rPtr;
                 ++p;
             }
         }
-        while (i <= mid) {
-            temp[p] = a[i];
-            tempIndex[p] = index[i];
-            ans[index[i]] += (j - mid - 1);
-            ++i;
+        while (lPtr <= mid) {
+            temp[p] = a[lPtr];
+            tempIndex[p] = index[lPtr];
+            ans[index[lPtr]] += (rPtr - mid - 1);
+            ++lPtr;
             ++p;
         }
-        while (j <= r) {
-            temp[p] = a[j];
-            tempIndex[p] = index[j];
-            ++j;
+        while (rPtr <= r) {
+            temp[p] = a[rPtr];
+            tempIndex[p] = index[rPtr];
+            ++rPtr;
             ++p;
         }
         for (int k = l; k <= r; ++k) {
