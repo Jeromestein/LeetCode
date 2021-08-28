@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.TreeSet;
+
 /*
  * @lc app=leetcode id=715 lang=java
  *
@@ -23,15 +26,24 @@ class RangeModule {
      * @param right
      */
     public void addRange(int left, int right) {
+        // Returns all the intervals not in [0, left-1]
         Iterator<Interval> itr = ranges.tailSet(new Interval(0, left - 1)).iterator();
+
+        // walk through all the old intervals, check if any overlaps exisit.
         while (itr.hasNext()) {
             Interval iv = itr.next();
-            if (right < iv.left)
+            if (right < iv.left) {
+                // no overlap, skip
                 break;
-            left = Math.min(left, iv.left);
-            right = Math.max(right, iv.right);
-            itr.remove();
+            } else {
+                // overlap, get new left and right
+                left = Math.min(left, iv.left);
+                right = Math.max(right, iv.right);
+                itr.remove();
+            }
+
         }
+        // add Interval
         ranges.add(new Interval(left, right));
     }
 
@@ -85,7 +97,8 @@ class Interval implements Comparable<Interval> {
     public int compareTo(Interval that) {
         if (this.right == that.right)
             return this.left - that.left;
-        return this.right - that.right;
+        else
+            return this.right - that.right;
     }
 }
 
