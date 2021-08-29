@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * @lc app=leetcode id=460 lang=java
  *
@@ -8,48 +11,45 @@
 
 class LFUCache {
 
-    class Node {
-        int key;
-        int value;
-        int freq = 1;
-        Node prev;
-        Node next;
+    class DlinkedNode {
+        int key, value, freq = 1;
+        DlinkedNode prev, next;
 
-        public Node() {
+        public DlinkedNode() {
         }
 
-        public Node(int key, int value) {
+        public DlinkedNode(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
 
-    class DoublyLinkedList {
-        Node head;
-        Node tail;
+    class DLinkedList {
+        DlinkedNode head, tail;
 
-        public DoublyLinkedList() {
-            head = new Node();
-            tail = new Node();
+        public DLinkedList() {
+            head = new DlinkedNode();
+            tail = new DlinkedNode();
             head.next = tail;
             tail.prev = head;
         }
 
-        void removeNode(Node node) {
+        void removeNode(DlinkedNode node) {
             node.prev.next = node.next;
             node.next.prev = node.prev;
         }
 
-        void addToHead(Node node) {
+        void addToHead(DlinkedNode node) {
             node.next = head.next;
             head.next.prev = node;
             head.next = node;
             node.prev = head;
         }
+
     }
 
-    Map<Integer, Node> cache;
-    Map<Integer, DoublyLinkedList> freqMap;
+    Map<Integer, DlinkedNode> cache;
+    Map<Integer, DLinkedList> freqMap;
     int size, capacity, minFreq;
 
     public LFUCache(int capacity) {
@@ -59,7 +59,7 @@ class LFUCache {
     }
 
     public int get(int key) {
-        Node node = cache.get(key);
+        DlinkedNode node = cache.get(key);
         if (node == null) {
             return -1;
         } else {
@@ -73,14 +73,14 @@ class LFUCache {
         if (capacity == 0) {
             return;
         }
-        Node node = cache.get(key);
+        DlinkedNode node = cache.get(key);
         if (node != null) {
             node.value = value;
             updata_freqMap(node);
         } else {
             if (size == capacity) {
-                DoublyLinkedList minFreqList = freqMap.get(minFreq);
-                Node minFreqNode = minFreqList.tail.prev;
+                DLinkedList minFreqList = freqMap.get(minFreq);
+                DlinkedNode minFreqNode = minFreqList.tail.prev;
                 cache.remove(minFreqNode.key);
                 minFreqList.removeNode(minFreqNode);
                 size--;
@@ -89,20 +89,15 @@ class LFUCache {
             minFreq = 1;
             size++;
 
-            Node newNode = new Node(key, value);
+            DlinkedNode newNode = new DlinkedNode(key, value);
             cache.put(key, newNode);
-            DoublyLinkedList linkedList = freqMap.get(1);
-            if (linkedList == null) {
-                linkedList = new DoublyLinkedList();
-                freqMap.put(1, linkedList);
-            }
-            linkedList.addToHead(newNode);
+            addToFreqList(newNode, 1);
         }
     }
 
-    void updata_freqMap(Node node) {
+    void updata_freqMap(DlinkedNode node) {
         // remove node from freqList, and if the list is empty then update minFreq
-        DoublyLinkedList currFreqList = freqMap.get(node.freq);
+        DLinkedList currFreqList = freqMap.get(node.freq);
         currFreqList.removeNode(node);
         if (node.freq == minFreq && currFreqList.head.next == currFreqList.tail) {
             minFreq = node.freq + 1;
@@ -110,12 +105,17 @@ class LFUCache {
 
         // add node to newFreqList
         node.freq++;
-        DoublyLinkedList newFreqList = freqMap.get(node.freq);
-        if (newFreqList == null) {
-            newFreqList = new DoublyLinkedList();
-            freqMap.put(node.freq, newFreqList);
+
+        addToFreqList(node, node.freq);
+    }
+
+    void addToFreqList(DlinkedNode node, int freq) {
+        DLinkedList freqList = freqMap.get(freq);
+        if (freqList == null) {
+            freqList = new DLinkedList();
+            freqMap.put(freq, freqList);
         }
-        newFreqList.addToHead(node);
+        freqList.addToHead(node);
     }
 }
 
