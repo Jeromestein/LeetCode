@@ -10,7 +10,6 @@ import java.util.Map;
 // @lc code=start
 
 class LFUCache {
-
     class DlinkedNode {
         int key, value, freq = 1;
         DlinkedNode prev, next;
@@ -45,7 +44,6 @@ class LFUCache {
             head.next = node;
             node.prev = head;
         }
-
     }
 
     Map<Integer, DlinkedNode> cache;
@@ -66,7 +64,6 @@ class LFUCache {
             updata_freqMap(node);
             return node.value;
         }
-
     }
 
     public void put(int key, int value) {
@@ -91,8 +88,17 @@ class LFUCache {
 
             DlinkedNode newNode = new DlinkedNode(key, value);
             cache.put(key, newNode);
-            addToFreqList(newNode, 1);
+            addToFreqList(newNode);
         }
+    }
+
+    void addToFreqList(DlinkedNode node) {
+        DLinkedList freqList = freqMap.get(node.freq);
+        if (freqList == null) {
+            freqList = new DLinkedList();
+            freqMap.put(node.freq, freqList);
+        }
+        freqList.addToHead(node);
     }
 
     void updata_freqMap(DlinkedNode node) {
@@ -105,17 +111,7 @@ class LFUCache {
 
         // add node to newFreqList
         node.freq++;
-
-        addToFreqList(node, node.freq);
-    }
-
-    void addToFreqList(DlinkedNode node, int freq) {
-        DLinkedList freqList = freqMap.get(freq);
-        if (freqList == null) {
-            freqList = new DLinkedList();
-            freqMap.put(freq, freqList);
-        }
-        freqList.addToHead(node);
+        addToFreqList(node);
     }
 }
 
