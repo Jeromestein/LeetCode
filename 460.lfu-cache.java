@@ -7,11 +7,50 @@
 // @lc code=start
 
 class LFUCache {
-    Map<Integer, Node> cache; // 存储缓存的内容
-    Map<Integer, DoublyLinkedList> freqMap; // 存储每个频次对应的双向链表
-    int size;
-    int capacity;
-    int min; // 存储当前最小频次
+
+    class Node {
+        int key;
+        int value;
+        int freq = 1;
+        Node prev;
+        Node next;
+
+        public Node() {
+        }
+
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    class DoublyLinkedList {
+        Node head;
+        Node tail;
+
+        public DoublyLinkedList() {
+            head = new Node();
+            tail = new Node();
+            head.next = tail;
+            tail.prev = head;
+        }
+
+        void removeNode(Node node) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+        }
+
+        void addToHead(Node node) {
+            node.next = head.next;
+            head.next.prev = node;
+            head.next = node;
+            node.prev = head;
+        }
+    }
+
+    Map<Integer, Node> cache;
+    Map<Integer, DoublyLinkedList> freqMap;
+    int size, capacity, minFreq;
 
     public LFUCache(int capacity) {
         cache = new HashMap<>(capacity);
@@ -23,9 +62,11 @@ class LFUCache {
         Node node = cache.get(key);
         if (node == null) {
             return -1;
+        } else {
+            updata_freqMap(node);
+            return node.value;
         }
-        freqInc(node);
-        return node.value;
+
     }
 
     public void put(int key, int value) {
@@ -35,14 +76,19 @@ class LFUCache {
         Node node = cache.get(key);
         if (node != null) {
             node.value = value;
-            freqInc(node);
+            updata_freqMap(node);
         } else {
             if (size == capacity) {
-                DoublyLinkedList minFreqLinkedList = freqMap.get(min);
-                cache.remove(minFreqLinkedList.tail.pre.key);
-                minFreqLinkedList.removeNode(minFreqLinkedList.tail.pre); // 这里不需要维护min, 因为下面add了newNode后min肯定是1.
+                DoublyLinkedList minFreqList = freqMap.get(minFreq);
+                Node minFreqNode = minFreqList.tail.prev;
+                cache.remove(minFreqNode.key);
+                minFreqList.removeNode(minFreqNode);
                 size--;
             }
+
+            minFreq = 1;
+            size++;
+
             Node newNode = new Node(key, value);
             cache.put(key, newNode);
             DoublyLinkedList linkedList = freqMap.get(1);
@@ -50,68 +96,26 @@ class LFUCache {
                 linkedList = new DoublyLinkedList();
                 freqMap.put(1, linkedList);
             }
-            linkedList.addNode(newNode);
-            size++;
-            min = 1;
+            linkedList.addToHead(newNode);
         }
     }
 
-    void freqInc(Node node) {
-        // 从原freq对应的链表里移除, 并更新min
-        int freq = node.freq;
-        DoublyLinkedList linkedList = freqMap.get(freq);
-        linkedList.removeNode(node);
-        if (freq == min && linkedList.head.post == linkedList.tail) {
-            min = freq + 1;
+    void updata_freqMap(Node node) {
+        // remove node from freqList, and if the list is empty then update minFreq
+        DoublyLinkedList currFreqList = freqMap.get(node.freq);
+        currFreqList.removeNode(node);
+        if (node.freq == minFreq && currFreqList.head.next == currFreqList.tail) {
+            minFreq = node.freq + 1;
         }
-        // 加入新freq对应的链表
+
+        // add node to newFreqList
         node.freq++;
-        linkedList = freqMap.get(freq + 1);
-        if (linkedList == null) {
-            linkedList = new DoublyLinkedList();
-            freqMap.put(freq + 1, linkedList);
+        DoublyLinkedList newFreqList = freqMap.get(node.freq);
+        if (newFreqList == null) {
+            newFreqList = new DoublyLinkedList();
+            freqMap.put(node.freq, newFreqList);
         }
-        linkedList.addNode(node);
-    }
-}
-
-class Node {
-    int key;
-    int value;
-    int freq = 1;
-    Node pre;
-    Node post;
-
-    public Node() {
-    }
-
-    public Node(int key, int value) {
-        this.key = key;
-        this.value = value;
-    }
-}
-
-class DoublyLinkedList {
-    Node head;
-    Node tail;
-
-    public DoublyLinkedList() {
-        head = new Node();
-        tail = new Node();
-        head.post = tail;
-        tail.pre = head;
-    }
-
-    void removeNode(Node node) {
-        node.pre.post = node.post;
-        node.post.pre = node.pre;
-    }
-
-    void addNode(Node node) {
-        node.post = head.post;
-        head.post.pre = node;
-        head.post = node;
-        node.pre = head;
+        newFreqList.addToHead(node);
     }
 }
 
