@@ -40,7 +40,8 @@ class LRUCache {
     public LRUCache(int capacity) {
         this.size = 0;
         this.capacity = capacity;
-        // 使用伪头部和伪尾部节点
+
+        // creat dummy head and tail
         head = new DLinkedNode();
         tail = new DLinkedNode();
         head.next = tail;
@@ -57,10 +58,11 @@ class LRUCache {
         DLinkedNode node = cache.get(key);
         if (node == null) {
             return -1;
+        } else {
+            // if it exisits, then move it to the head of linkedlist
+            moveToHead(node);
+            return node.value;
         }
-        // 如果 key 存在，先通过哈希表定位，再移到头部
-        moveToHead(node);
-        return node.value;
     }
 
     /**
@@ -74,22 +76,21 @@ class LRUCache {
     public void put(int key, int value) {
         DLinkedNode node = cache.get(key);
         if (node == null) {
-            // 如果 key 不存在，创建一个新的节点
+            // if not exisits yet, create a new node
             DLinkedNode newNode = new DLinkedNode(key, value);
-            // 添加进哈希表
+            // add it to hashmap
             cache.put(key, newNode);
-            // 添加至双向链表的头部
+            // add it to the head of linkedlist
             addToHead(newNode);
-            ++size;
-            if (size > capacity) {
-                // 如果超出容量，删除双向链表的尾部节点
+            size++;
+            while (size > capacity) {
+                // if exceeds the capacity, delete the tail of linkedlist
                 DLinkedNode tail = removeTail();
-                // 删除哈希表中对应的项
                 cache.remove(tail.key);
-                --size;
+                size--;
             }
         } else {
-            // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            // if it exisits, upadaa its value, then move it to the head of linkedlist
             node.value = value;
             moveToHead(node);
         }
