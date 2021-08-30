@@ -9,12 +9,16 @@ import java.util.Set;
  */
 
 // @lc code=start
+
 class RandomizedSet {
-    Set<Integer> set;
+    Map<Integer, Integer> dict;
+    List<Integer> list;
+    Random rand = new Random();
 
     /** Initialize your data structure here. */
     public RandomizedSet() {
-        set = new HashSet<>();
+        dict = new HashMap();
+        list = new ArrayList();
     }
 
     /**
@@ -22,7 +26,12 @@ class RandomizedSet {
      * the specified element.
      */
     public boolean insert(int val) {
-        return set.add(val);
+        if (dict.containsKey(val))
+            return false;
+
+        dict.put(val, list.size());
+        list.add(val);
+        return true;
     }
 
     /**
@@ -30,21 +39,26 @@ class RandomizedSet {
      * element.
      */
     public boolean remove(int val) {
-        return set.remove(val);
+        if (!dict.containsKey(val))
+            return false;
+
+        // move the last element to the place idx of the element to delete
+        int lastElement = list.get(list.size() - 1);
+        if (lastElement != val) {
+            int idx = dict.get(val);
+            list.set(idx, lastElement);
+            dict.put(lastElement, idx);
+        }
+
+        // delete the last element
+        list.remove(list.size() - 1);
+        dict.remove(val);
+        return true;
     }
 
-    /**
-     * Get a random element from the set. Each element must have the same
-     * probability of being returned.
-     */
+    /** Get a random element from the set. */
     public int getRandom() {
-        Object[] nums = set.toArray();
-
-        Random random = new Random();
-        int upper = set.size() - 1, lower = 0;
-        int randIndex = random.nextInt(upper - lower + 1) + lower;
-
-        return (int) nums[randIndex];
+        return list.get(rand.nextInt(list.size()));
     }
 }
 
