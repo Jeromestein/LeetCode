@@ -45,22 +45,22 @@ class UndergroundSystem {
         }
     }
 
-    class SumAmount {
-        int sum;
-        int amount;
+    class TimePeople {
+        int totalTime;
+        int totalPeople;
 
-        public SumAmount(int sum, int amount) {
-            this.sum = sum;
-            this.amount = amount;
+        public TimePeople(int totalTime, int amount) {
+            this.totalTime = totalTime;
+            this.totalPeople = amount;
         }
     }
 
     Map<Integer, Start> startInfo;
-    Map<StartEnd, SumAmount> table;
+    Map<StartEnd, TimePeople> travalInfo;
 
     public UndergroundSystem() {
         startInfo = new HashMap<Integer, Start>();
-        table = new HashMap<StartEnd, SumAmount>();
+        travalInfo = new HashMap<StartEnd, TimePeople>();
     }
 
     public void checkIn(int id, String stationName, int t) {
@@ -69,19 +69,24 @@ class UndergroundSystem {
 
     public void checkOut(int id, String stationName, int t) {
         Start start = startInfo.get(id);
+        // A customer can only be checked into one place at a time.
         String startStation = start.station;
         int startTime = start.time;
+
         StartEnd startEnd = new StartEnd(startStation, stationName);
-        SumAmount sumAmount = table.getOrDefault(startEnd, new SumAmount(0, 0));
-        sumAmount.sum += t - startTime;
-        sumAmount.amount++;
-        table.put(startEnd, sumAmount);
+        TimePeople sumAmount = travalInfo.getOrDefault(startEnd, new TimePeople(0, 0));
+        sumAmount.totalTime += t - startTime;
+        sumAmount.totalPeople++;
+
+        travalInfo.put(startEnd, sumAmount);
     }
 
     public double getAverageTime(String startStation, String endStation) {
-        StartEnd index = new StartEnd(startStation, endStation);
-        SumAmount sumAmount = table.get(index);
-        int sum = sumAmount.sum, amount = sumAmount.amount;
+        StartEnd travel = new StartEnd(startStation, endStation);
+        TimePeople sumAmount = travalInfo.get(travel);
+
+        int sum = sumAmount.totalTime, amount = sumAmount.totalPeople;
+
         return 1.0 * sum / amount;
     }
 }
