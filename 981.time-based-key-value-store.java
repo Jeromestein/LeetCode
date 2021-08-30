@@ -21,7 +21,15 @@ class TimeMap {
     }
 
     public void set(String key, String value, int timestamp) {
+        // 1. Java8 new method, equal to old way
         map.computeIfAbsent(key, k -> new TreeMap()).put(timestamp, value);
+
+        // 2. old way
+        // if (!map.containsKey(key)) {
+        // map.put(key, new TreeMap<Integer, String>());
+        // }
+        // TreeMap<Integer, String> temp = map.get(key);
+        // temp.put(timestamp, value);
     }
 
     public String get(String key, int timestamp) {
