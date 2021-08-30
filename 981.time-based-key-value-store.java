@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /*
  * @lc app=leetcode id=981 lang=java
@@ -24,13 +25,17 @@ class TimeMap {
     }
 
     public String get(String key, int timestamp) {
+        // If there are no values, it returns "".
         if (!map.containsKey(key)) {
             return "";
         }
+        // If there are multiple such values,
+        // it returns the value associated with the largest timestamp_prev.
         Integer time = map.get(key).floorKey(timestamp);
         if (time == null) {
             return "";
         }
+
         return map.get(key).get(time);
     }
 }
