@@ -54,6 +54,7 @@ class Solution {
     public boolean isIsomorphic(String s, String t) {
         int length = s.length();
 
+        // s and t consist of any valid ascii character.
         char[] sm = new char[256];
         char[] tm = new char[256];
 
