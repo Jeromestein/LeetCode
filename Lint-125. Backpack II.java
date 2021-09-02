@@ -15,7 +15,7 @@ public class Solution {
         int[] dp = new int[m + 1];
 
         // Use rolling array to optimize the space complexity,
-        // time complexity is still the same.
+        // time complexity is still the same. (but a bit faster)
         // Still 2 for loops,
         // only the second should be inverted order
         // to make sure dp[j - A[i]] will not be updated in advance wrongly.
