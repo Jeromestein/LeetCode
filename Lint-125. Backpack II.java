@@ -25,7 +25,7 @@ public class Solution {
                 dp[j] = Integer.max(dp[j], dp[j - A[i]] + V[i]);
             }
         }
-        return dp[m];
 
+        return dp[m];
     }
 }
