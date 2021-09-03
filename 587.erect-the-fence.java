@@ -13,9 +13,14 @@ import java.util.Set;
 import java.util.Stack;
 
 public class Solution {
-
     public int[][] outerTrees(int[][] trees) {
-        Arrays.sort(trees, (p, q) -> q[0] - p[0] == 0 ? q[1] - p[1] : q[0] - p[0]);
+        Arrays.sort(trees, new Comparator<int[]>() {
+            public int compare(int[] p, int[] q) {
+                int x1 = p[0], y1 = p[1], x2 = q[0], y2 = q[1];
+                // compare x first, if equal then compare y
+                return x1 - x2 == 0 ? y1 - y2 : x1 - x2;
+            }
+        });
 
         Stack<int[]> hull = new Stack<>();
         for (int[] tree : trees) {
@@ -33,7 +38,7 @@ public class Solution {
             hull.push(trees[i]);
         }
 
-        // 去重
+        // delete duplicates
         Set<Point> hashSet = new HashSet<>();
         for (int[] tree : hull) {
             hashSet.add(new Point(tree[0], tree[1]));
@@ -76,7 +81,10 @@ public class Solution {
     }
 
     public int orientation(int[] p, int[] q, int[] r) {
-        return (q[1] - p[1]) * (r[0] - q[0]) - (q[0] - p[0]) * (r[1] - q[1]);
+        int x1 = p[0], y1 = p[1], x2 = q[0], y2 = q[1], x3 = r[0], y3 = r[1];
+        // > 0 : r is over the line between p and q
+        // < 0 : r is under the line between p and q
+        return (y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2);
     }
 }
 
