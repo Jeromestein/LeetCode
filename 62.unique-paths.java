@@ -31,7 +31,9 @@
 class Solution {
     public int uniquePaths(int m, int n) {
         long ans = 1;
-        for (int x = n, y = 1; y < m; ++x, ++y) {
+        // total m+n-2 moves, m-1 down moves, n-1 right moves.
+        // C(m-1,m+n-2)
+        for (int x = n, y = 1; y < m; x++, y++) {
             ans = ans * x / y;
         }
         return (int) ans;
