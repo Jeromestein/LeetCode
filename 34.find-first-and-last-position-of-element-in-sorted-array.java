@@ -40,7 +40,7 @@ class Solution {
         // 1. if target is greater than all the elements in nums[],
         // the return should be A.length
         // 2. if there is no target in nums[],
-        // matbe return nums[x] which is greater than target
+        // return nums[x], which is closest to but greater than target
         if (start == nums.length || nums[start] != target) {
             return new int[] { -1, -1 };
         }
@@ -55,19 +55,19 @@ class Solution {
     public static int findFirstGorE(int[] A, int target) {
         // if target is greater than all the elements in A[],
         // the return should be A.length
-        int lo = 0, hi = A.length;
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            // low <= mid < high
+        int left = 0, right = A.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            // left <= mid < right
             if (A[mid] < target) {
-                lo = mid + 1;
+                left = mid + 1;
             } else {
-                // should not be mid-1 when A[mid]==target.
-                // could be mid even if A[mid]>target because mid<high.
-                hi = mid;
+                // it should be hi = mid rather than hi = mid-1,
+                // bacause it might be A[mid]==target.
+                right = mid;
             }
         }
-        return lo;
+        return left;
     }
 }
 // @lc code=end
