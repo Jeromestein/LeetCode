@@ -19,17 +19,17 @@ class Solution {
      * space.
      */
     public int findMin(int[] nums) {
-        int lo = 0, hi = nums.length - 1;
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (nums[mid] < nums[hi]) {
-                hi = mid;
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < nums[right]) {
+                right = mid;
             } else {
-                lo = mid + 1;
+                left = mid + 1;
             }
         }
 
-        return nums[lo];
+        return nums[left];
     }
 }
 // @lc code=end
