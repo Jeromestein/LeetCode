@@ -13,10 +13,14 @@ class Solution {
         int left = 0, right = A.length - k;
         while (left < right) {
             int mid = left + (right - left) / 2;
-            if (x - A[mid] > A[mid + k] - x)
+
+            // |a - x| < |b - x|, or
+            // |a - x| == |b - x| and a < b
+            if (x - A[mid] > A[mid + k] - x) {
                 left = mid + 1;
-            else
+            } else {
                 right = mid;
+            }
         }
 
         List<Integer> ans = new ArrayList<>(k);
@@ -25,7 +29,6 @@ class Solution {
         }
         return ans;
 
-        // return Arrays.stream(A, left, left + k).boxed().collect(Collectors.toList());
     }
 }
 // @lc code=end
