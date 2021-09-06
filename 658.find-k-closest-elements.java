@@ -16,6 +16,9 @@ class Solution {
 
             // |a - x| < |b - x|, or
             // |a - x| == |b - x| and a < b
+            // not camparing A[i] and x,
+            // but x - A[mid] and A[mid + k] - x
+            // so we can find the start point of res
             if (x - A[mid] > A[mid + k] - x) {
                 left = mid + 1;
             } else {
@@ -23,11 +26,11 @@ class Solution {
             }
         }
 
-        List<Integer> ans = new ArrayList<>(k);
+        List<Integer> res = new ArrayList<>(k);
         for (int i = 0; i < k; i++) {
-            ans.add(A[left + i]);
+            res.add(A[left + i]);
         }
-        return ans;
+        return res;
 
     }
 }
