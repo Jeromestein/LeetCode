@@ -12,11 +12,12 @@ public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         int left = 1, right = n;
         while (left < right) {
-            int pivot = left + (right - left) / 2;
-            if (isBadVersion(pivot) == true) {
-                right = pivot;
+            // 1 <= bad <= n <= 2^31 - 1
+            int mid = left + (right - left) / 2;
+            if (isBadVersion(mid) == true) {
+                right = mid;
             } else {
-                left = pivot + 1;
+                left = mid + 1;
             }
         }
 
