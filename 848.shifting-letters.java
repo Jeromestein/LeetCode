@@ -7,7 +7,7 @@
 // @lc code=start
 class Solution {
     public String shiftingLetters(String s, int[] shifts) {
-        StringBuilder res = new StringBuilder();
+        char[] res = s.toCharArray();
         for (int i = shifts.length - 1; i >= 0; i--) {
             // wrapping around so that 'z' becomes 'a'
             if (i < shifts.length - 1) {
@@ -15,18 +15,15 @@ class Solution {
             }
             shifts[i] %= 26;
 
-            char curr = s.charAt(i);
-            if (curr + shifts[i] > 'z') {
-                int index = curr + shifts[i] - 'z' - 1;
-                curr = (char) ('a' + index);
+            if (res[i] + shifts[i] > 'z') {
+                int index = res[i] + shifts[i] - 'z' - 1;
+                res[i] = (char) ('a' + index);
             } else {
-                curr += shifts[i];
+                res[i] += shifts[i];
             }
-
-            res.insert(0, curr);
         }
 
-        return res.toString();
+        return String.valueOf(res);
     }
 }
 // @lc code=end
