@@ -7,46 +7,41 @@
 // @lc code=start
 
 class Solution {
-    public int orderOfLargestPlusSign(int N, int[][] mines) {
-        Set<Integer> bannedSet = new HashSet();
-        int[][] dp = new int[N][N];
-
-        // add those blocked points into set
-        for (int[] mine : mines) {
-            bannedSet.add(mine[0] * N + mine[1]);
-        }
-        int ans = 0, count;
-
-        for (int row = 0; row < N; ++row) {
-            count = 0;
-            for (int col = 0; col < N; ++col) {
-                count = bannedSet.contains(row * N + col) ? 0 : count + 1;
-                dp[row][col] = count;
+    public int orderOfLargestPlusSign(int n, int[][] mines) {
+        int[][] dis = new int[n][n];
+        for (int i = 0; i < n; i++)
+            Arrays.fill(dis[i], 1);
+        for (int[] one : mines)
+            dis[one[0]][one[1]] = 0;
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                count = dis[j][i] == 0 ? 0 : count + 1;
+                dis[j][i] = count;
             }
-
             count = 0;
-            for (int col = N - 1; col >= 0; --col) {
-                count = bannedSet.contains(row * N + col) ? 0 : count + 1;
-                dp[row][col] = Math.min(dp[row][col], count);
+            for (int j = n - 1; j >= 0; j--) {
+                count = dis[j][i] == 0 ? 0 : count + 1;
+                dis[j][i] = Math.min(dis[j][i], count);
             }
         }
-
-        for (int col = 0; col < N; ++col) {
-            count = 0;
-            for (int row = 0; row < N; ++row) {
-                count = bannedSet.contains(row * N + col) ? 0 : count + 1;
-                dp[row][col] = Math.min(dp[row][col], count);
+        int rs = 0;
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            int[] arr = new int[n];
+            for (int j = n - 1; j >= 0; j--) {
+                count = dis[i][j] == 0 ? 0 : count + 1;
+                dis[i][j] = Math.min(dis[i][j], count);
             }
-
             count = 0;
-            for (int row = N - 1; row >= 0; --row) {
-                count = bannedSet.contains(row * N + col) ? 0 : count + 1;
-                dp[row][col] = Math.min(dp[row][col], count);
-                ans = Math.max(ans, dp[row][col]);
+            for (int j = 0; j < n; j++) {
+                count = dis[i][j] == 0 ? 0 : count + 1;
+                dis[i][j] = Math.min(dis[i][j], count);
+                rs = Math.max(rs, dis[i][j]);
             }
         }
+        return rs;
 
-        return ans;
     }
 }
 
