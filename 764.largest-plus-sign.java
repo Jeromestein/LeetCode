@@ -11,12 +11,10 @@ class Solution {
         Set<Integer> bannedSet = new HashSet();
         int[][] dp = new int[N][N];
 
+        // add those blocked points into set
         for (int[] mine : mines) {
-            System.out.println(mine[0]);
-            System.out.println(mine[1]);
             bannedSet.add(mine[0] * N + mine[1]);
         }
-        System.out.println(bannedSet);
         int ans = 0, count;
 
         for (int row = 0; row < N; ++row) {
