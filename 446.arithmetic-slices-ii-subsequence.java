@@ -7,6 +7,7 @@ import java.util.Map;
  */
 
 // @lc code=start
+
 class Solution {
     public int numberOfArithmeticSlices(int[] nums) {
         /**
