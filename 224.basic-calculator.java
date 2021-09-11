@@ -38,8 +38,9 @@ class Solution {
                 ops.pop();
                 i++;
             } else {
+                // if it is digital, get a number
                 long num = 0;
-                // form string to int
+
                 while (i < n && Character.isDigit(s.charAt(i))) {
                     num = num * 10 + s.charAt(i) - '0';
                     i++;
