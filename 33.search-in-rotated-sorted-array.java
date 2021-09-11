@@ -7,42 +7,44 @@
 // @lc code=start
 class Solution {
     public int search(int[] nums, int target) {
-        int lo = 0, hi = nums.length - 1;
+        int left = 0, right = nums.length - 1;
 
         // findMin()
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (nums[mid] < nums[hi]) {
-                hi = mid;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < nums[right]) {
+                right = mid;
             } else {
-                lo = mid + 1;
+                left = mid + 1;
             }
         }
+        int min = left;
 
-        // lo/hi is the index of the smallest value
-        int min = lo;
-        lo = 0;
-        hi = nums.length - 1;
+        left = 0;
+        right = nums.length - 1;
 
         // based on min to do first binary search
-        if (target >= nums[min] && target <= nums[hi]) {
-            lo = min;
+        if (target >= nums[min] && target <= nums[right]) {
+            left = min;
         } else {
-            hi = min;
+            right = min - 1;
         }
 
         // The usual binary search and accounting for rotation.!!!
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
             if (target == nums[mid]) {
                 return mid;
-            } else if (target < nums[mid]) {
-                hi = mid - 1;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
             } else {
-                lo = mid + 1;
+                right = mid;
             }
         }
-        return -1;
+        if (left == right && nums[left] == target)
+            return left;
+        else
+            return -1;
     }
 }
 // @lc code=end
