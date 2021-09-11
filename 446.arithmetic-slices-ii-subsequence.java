@@ -1,3 +1,5 @@
+import java.util.Map;
+
 /*
  * @lc app=leetcode id=446 lang=java
  *
@@ -18,16 +20,20 @@ class Solution {
         // -2^31 <= nums[i] <= 2^31 - 1 long
         int ans = 0;
         int n = nums.length;
-        Map<Long, Integer>[] f = new Map[n];
+        Map<Long, Integer>[] dp = new Map[n];
         for (int i = 0; i < n; ++i) {
-            f[i] = new HashMap<Long, Integer>();
+            dp[i] = new HashMap<Long, Integer>();
         }
+
+        // i is the last one, j is the second last one
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < i; ++j) {
-                long d = 1L * nums[i] - nums[j];
-                int cnt = f[j].getOrDefault(d, 0);
+                long d = (long) nums[i] - nums[j];
+                int cnt = dp[j].getOrDefault(d, 0);
                 ans += cnt;
-                f[i].put(d, f[i].getOrDefault(d, 0) + cnt + 1);
+                // the second last one's cnt + the last one's cnt
+
+                dp[i].put(d, dp[i].getOrDefault(d, 0) + cnt + 1);
             }
         }
 
