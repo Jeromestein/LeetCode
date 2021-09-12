@@ -8,16 +8,16 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         int rowNum = matrix.length, colNum = matrix[0].length;
-        int lo = 0, hi = rowNum * colNum - 1;
-        while (lo <= hi) {
-            int pivot = lo + (hi - lo) / 2;
-            int pivotVal = matrix[pivot / colNum][pivot % colNum];
-            if (pivotVal == target) {
+        int left = 0, right = rowNum * colNum - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int midVal = matrix[mid / colNum][mid % colNum];
+            if (midVal == target) {
                 return true;
-            } else if (target > pivotVal) {
-                lo = pivot + 1;
-            } else if (target < pivotVal) {
-                hi = pivot - 1;
+            } else if (target > midVal) {
+                left = mid + 1;
+            } else if (target < midVal) {
+                right = mid - 1;
             }
         }
 
