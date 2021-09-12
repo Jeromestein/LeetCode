@@ -6,12 +6,13 @@
 
 // @lc code=start
 class Solution {
-    public int reachableNodes(int[][] edges, int M, int N) {
+    public int reachableNodes(int[][] edges, int maxMoves, int n) {
+        // adjacent map
         Map<Integer, Map<Integer, Integer>> graph = new HashMap();
         for (int[] edge : edges) {
-            int u = edge[0], v = edge[1], w = edge[2];
-            graph.computeIfAbsent(u, x -> new HashMap()).put(v, w);
-            graph.computeIfAbsent(v, x -> new HashMap()).put(u, w);
+            int u = edge[0], v = edge[1], weight = edge[2];
+            graph.computeIfAbsent(u, x -> new HashMap()).put(v, weight);
+            graph.computeIfAbsent(v, x -> new HashMap()).put(u, weight);
         }
 
         PriorityQueue<ANode> pq = new PriorityQueue<ANode>((a, b) -> Integer.compare(a.dist, b.dist));
@@ -19,47 +20,52 @@ class Solution {
 
         Map<Integer, Integer> dist = new HashMap();
         dist.put(0, 0);
+
+        // [We use the encoding (u, v) = u * N + v.]
         Map<Integer, Integer> used = new HashMap();
         int ans = 0;
 
+        // bfs, walk through all the nodes
         while (!pq.isEmpty()) {
             ANode anode = pq.poll();
-            int node = anode.node;
-            int d = anode.dist;
+            int currNode = anode.node;
+            int currNodeDist = anode.dist;
 
-            if (d > dist.getOrDefault(node, 0))
+            if (currNodeDist > dist.getOrDefault(currNode, 0))
                 continue;
             // Each node is only visited once. We've reached
             // a node in our original graph.
             ans++;
 
-            if (!graph.containsKey(node))
+            // for like node 0 itself
+            if (!graph.containsKey(currNode))
                 continue;
-            for (int nei : graph.get(node).keySet()) {
-                // M - d is how much further we can walk from this node;
-                // weight is how many new nodes there are on this edge.
-                // v is the maximum utilization of this edge.
-                int weight = graph.get(node).get(nei);
-                int v = Math.min(weight, M - d);
-                used.put(N * node + nei, v);
 
-                // d2 is the total distance to reach 'nei' (nei***or) node
-                // in the original graph.
-                int d2 = d + weight + 1;
-                if (d2 < dist.getOrDefault(nei, M + 1)) {
-                    pq.offer(new ANode(nei, d2));
-                    dist.put(nei, d2);
+            // walk through all the next nodes
+            for (int nextNode : graph.get(currNode).keySet()) {
+                // maxMoves - currNodeDist: how much further we can walk from this node;
+                // weight: how many new nodes there are on this edge.
+                // val: the maximum utilization of this edge.
+                int weight = graph.get(currNode).get(nextNode);
+                int val = Math.min(weight, maxMoves - currNodeDist);
+                used.put(n * currNode + nextNode, val);
+
+                // nextNodeDist: the total distance for node 0 to reach 'nextNode'
+                int nextNodeDist = currNodeDist + weight + 1;
+                if (nextNodeDist < dist.getOrDefault(nextNode, maxMoves + 1)) {
+                    pq.offer(new ANode(nextNode, nextNodeDist));
+                    dist.put(nextNode, nextNodeDist);
                 }
             }
         }
 
-        // At the end, each edge (u, v, w) can be used with a maximum
+        // At the end, each edge (u, v, weight) can be used with a maximum
         // of w new nodes: a max of used[u, v] nodes from one side,
         // and used[v, u] nodes from the other.
         // [We use the encoding (u, v) = u * N + v.]
         for (int[] edge : edges) {
-            ans += Math.min(edge[2],
-                    used.getOrDefault(edge[0] * N + edge[1], 0) + used.getOrDefault(edge[1] * N + edge[0], 0));
+            int u = edge[0], v = edge[1], weight = edge[2];
+            ans += Math.min(weight, used.getOrDefault(u * n + v, 0) + used.getOrDefault(v * n + u, 0));
         }
 
         return ans;
