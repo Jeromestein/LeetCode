@@ -5,33 +5,31 @@
  */
 
 // @lc code=start
+
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        // 1 <= h <= 109
-        int lo = 1, hi = 1000000000;
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (hours(piles, mid) > h) {
-                lo = mid + 1;
+        int left = 1, right = 1000000000;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (getHours(piles, mid) > h) {
+                left = mid + 1;
             } else {
-                hi = mid;
+                right = mid;
             }
         }
-        return lo;
+
+        return left;
     }
 
-    public int hours(int[] piles, int k) {
-        int sumHours = 0;
-        for (int i = 0; i < piles.length; i++) {
-            int a = piles[i] / k;
-            int b = piles[i] % k;
-            if (b != 0) {
-                sumHours += a + 1;
-            } else {
-                sumHours += a;
-            }
+    public int getHours(int[] piles, int speed) {
+        int res = 0;
+        for (int p : piles) {
+            // res+=Math.ceil(p*1./speed);
+            res += (p - 1) / speed + 1;
         }
-        return sumHours;
+
+        return res;
     }
 }
 // @lc code=end
