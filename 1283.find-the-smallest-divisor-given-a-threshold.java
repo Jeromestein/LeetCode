@@ -5,25 +5,32 @@
  */
 
 // @lc code=start
+
 class Solution {
     public int smallestDivisor(int[] nums, int threshold) {
-        // 1 <= nums.length <= threshold <= 106
-        int lo = 1, hi = 1000000;
+        // Find the smallest divisor such that the result mentioned above is less than
+        // or equal to // threshold.
+        int left = 1, right = 1000000;
 
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            int sum = 0;
-            for (float i : nums) {
-                sum += Math.ceil(i / mid);
-            }
-            if (sum > threshold) {
-                // need bigger divisor
-                lo = mid + 1;
+        while (left < right) {
+            int mid = (left + right) / 2;
+
+            if (getSum(nums, mid) <= threshold) {
+                right = mid;
             } else {
-                hi = mid;
+                left = mid + 1;
             }
         }
-        return lo;
+
+        return left;
+    }
+
+    public int getSum(int[] nums, int mid) {
+        int sum = 0;
+        for (int n : nums) {
+            sum += (n - 1) / mid + 1;
+        }
+        return sum;
     }
 }
 // @lc code=end
