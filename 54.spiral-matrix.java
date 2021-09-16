@@ -12,36 +12,52 @@ import java.util.List;
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
-        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            return res;
-        }
-        int row = matrix.length, col = matrix[0].length;
-        int num = row * col;
-        int left = 0, right = col - 1, top = 0, bottom = row - 1;
 
-        while (num >= 1) {
-            for (int i = left; i <= right && num >= 1; i++) {
-                res.add(matrix[top][i]);
-                num--;
+        int m = matrix.length, n = matrix[0].length;
+        int left = 0, right = n, top = 0, down = m;
+        int cnt = 0;
+
+        int i = 0, j = 0;
+
+        while (cnt < m * n) {
+            // go right
+            while (cnt < m * n && j < right) {
+                res.add(matrix[i][j]);
+                j++;
+                cnt++;
             }
+            j--;
+            i++;
             top++;
 
-            for (int i = top; i <= bottom && num >= 1; i++) {
-                res.add(matrix[i][right]);
-                num--;
+            // go down
+            while (cnt < m * n && i < down) {
+                res.add(matrix[i][j]);
+                i++;
+                cnt++;
             }
+            i--;
+            j--;
             right--;
 
-            for (int i = right; i >= left && num >= 1; i--) {
-                res.add(matrix[bottom][i]);
-                num--;
+            // go left
+            while (cnt < m * n && j >= left) {
+                res.add(matrix[i][j]);
+                j--;
+                cnt++;
             }
-            bottom--;
+            j++;
+            i--;
+            down--;
 
-            for (int i = bottom; i >= top && num >= 1; i--) {
-                res.add(matrix[i][left]);
-                num--;
+            // go up
+            while (cnt < m * n && i >= top) {
+                res.add(matrix[i][j]);
+                i--;
+                cnt++;
             }
+            i++;
+            j++;
             left++;
         }
         return res;
