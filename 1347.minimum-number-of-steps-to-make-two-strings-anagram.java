@@ -13,21 +13,20 @@ class Solution {
         // s and t contain lower-case English letters only.
         int n = s.length();
         int[] scnt = new int[256];
-        int[] tcnt = new int[256];
-        // count
-        for (int i = 0; i < n; i++) {
-            char curr = t.charAt(i);
-            tcnt[curr]++;
-        }
+
+        // count s
         for (int i = 0; i < n; i++) {
             char curr = s.charAt(i);
             scnt[curr]++;
         }
-
         int res = 0;
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-            if (scnt[ch] > tcnt[ch])
-                res += scnt[ch] - tcnt[ch];
+        for (int i = 0; i < n; i++) {
+            char curr = t.charAt(i);
+            if (scnt[curr] == 0) {
+                res++;
+            } else {
+                scnt[curr]--;
+            }
         }
 
         return res;
