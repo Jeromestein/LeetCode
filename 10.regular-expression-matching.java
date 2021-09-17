@@ -11,25 +11,27 @@ class Solution {
         int m = s.length();
         int n = p.length();
 
-        boolean[][] f = new boolean[m + 1][n + 1];
-        f[0][0] = true;
+        // dp[i][j]: can the first i characters in s match the first j characters in p
+        boolean[][] dp = new boolean[m + 1][n + 1];
+        dp[0][0] = true;
         for (int i = 0; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
                 if (p.charAt(j - 1) == '*') {
-                    f[i][j] = f[i][j - 2];
+                    dp[i][j] = dp[i][j - 2];
                     if (matches(s, p, i, j - 1)) {
-                        f[i][j] = f[i][j] || f[i - 1][j];
+                        dp[i][j] = dp[i][j] || dp[i - 1][j];
                     }
                 } else {
                     if (matches(s, p, i, j)) {
-                        f[i][j] = f[i - 1][j - 1];
+                        dp[i][j] = dp[i - 1][j - 1];
                     }
                 }
             }
         }
-        return f[m][n];
+        return dp[m][n];
     }
 
+    // Can s[i-1] match p[j-1]
     public boolean matches(String s, String p, int i, int j) {
         if (i == 0) {
             return false;
