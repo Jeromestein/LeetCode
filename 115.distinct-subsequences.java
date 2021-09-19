@@ -12,10 +12,17 @@ class Solution {
         if (m < n) {
             return 0;
         }
+
+        // dp[i][j]: the times of t[j:n] appearance in s[i:m]
         int[][] dp = new int[m + 1][n + 1];
+        // dp[i][n]: the times of t[n:n] ("", empty string) appearance in s[i:m]
+        // for 0<=i<=m, dp[i][n]=1;
+        // dp[m][j]: the times of t[j:n] appearance in s[m:m] ("", empty string)
+        // for 0<=j<n, dp[m][j]=0;
         for (int i = 0; i <= m; i++) {
             dp[i][n] = 1;
         }
+
         for (int i = m - 1; i >= 0; i--) {
             char sChar = s.charAt(i);
             for (int j = n - 1; j >= 0; j--) {
