@@ -13,9 +13,9 @@ class Solution {
             return "";
 
         char[] p1 = p.toCharArray();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n / 2; i++) {
             // find first not 'a', also make sure it is not the center
-            if (p1[i] != 'a' && !(i == n / 2 && n % 2 == 1)) {
+            if (p1[i] != 'a') {
                 p1[i] = 'a';
                 return String.valueOf(p1);
             }
