@@ -26,15 +26,15 @@ class Solution {
             return allTrees;
         }
 
-        // 枚举可行根节点
+        // walk through all the possibel root nodes
         for (int i = start; i <= end; i++) {
-            // 获得所有可行的左子树集合
+            // get all the possible left subtree set, LSS
             List<TreeNode> leftTrees = generateTrees(start, i - 1);
 
-            // 获得所有可行的右子树集合
+            // get all the possible right subtree set, RSS
             List<TreeNode> rightTrees = generateTrees(i + 1, end);
 
-            // 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子树，拼接到根节点上
+            // pick one from LSS and one from RSS, add to root
             for (TreeNode left : leftTrees) {
                 for (TreeNode right : rightTrees) {
                     TreeNode currTree = new TreeNode(i);
