@@ -25,6 +25,8 @@ class Solution {
 
         for (int i = 2; i <= n; ++i) {
             for (int j = 1; j <= i; ++j) {
+                // G[j - 1] * G[i - j] means: i nodes, rooting in node j, the number of BSTs
+                // G[j - 1] is the no. of left subtree, G[i - j] is the number of right subtree.
                 G[i] += G[j - 1] * G[i - j];
             }
         }
