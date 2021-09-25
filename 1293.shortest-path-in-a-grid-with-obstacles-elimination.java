@@ -37,19 +37,21 @@ class Solution {
                     int nx = currPos[0] + dirs[j][0];
                     int ny = currPos[1] + dirs[j][1];
                     int currK = currPos[2];
-                    // 保证下一步的位置在矩阵中
+                    // make sure its in matrix
                     if (nx >= 0 && nx < row && ny >= 0 && ny < col) {
-                        // 判断是否到达右下角
-                        // 题目中明确了 grid[0][0] == grid[m-1][n-1] == 0，若目标点可以为1，需要修改此部分
+                        // check if get rightdown point
+                        // assumed grid[0][0] == grid[m-1][n-1] == 0，if grid[m-1][n-1] could be 1???
                         if (nx == row - 1 && ny == col - 1) {
                             return step;
                         }
 
-                        currK = grid[nx][ny] == 0 ? currK : --currK;
+                        currK = grid[nx][ny] == 0 ? currK : currK - 1;
 
                         if (currK >= 0) {
+                            // -1 means never pass here before
                             if (visited[nx][ny] == -1 || (visited[nx][ny] != -1 && currK > visited[nx][ny])) {
                                 queue.offerLast(new int[] { nx, ny, currK });
+                                // record the currK at that step
                                 visited[nx][ny] = currK;
                             }
                         }
@@ -57,6 +59,7 @@ class Solution {
                 }
             }
         }
+
         return -1;
     }
 }
