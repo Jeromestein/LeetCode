@@ -9,17 +9,22 @@
 class Solution {
     public int[] sortArrayByParityII(int[] nums) {
         int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            if (i % 2 != nums[i] % 2) {
-                for (int j = i + 1; j < n; j += 2) {
-                    if (j % 2 != nums[j] % 2) {
-                        // swap
-                        int temp = nums[i];
-                        nums[i] = nums[j];
-                        nums[j] = temp;
-                    }
+
+        // two pointers, i for even, j for odd
+        int i = 0, j = 1;
+        while (i < n) {
+            if (nums[i] % 2 != 0) {
+                while (nums[j] % 2 == 1) {
+                    j += 2;
                 }
+
+                // swap
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
             }
+
+            i += 2;
         }
 
         return nums;
