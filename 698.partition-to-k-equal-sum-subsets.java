@@ -7,7 +7,6 @@
 // @lc code=start
 class Solution {
     private boolean backtrack(int[] arr, int index, int count, int currSum, int k, int targetSum, boolean[] taken) {
-
         int n = arr.length;
 
         // We made k - 1 subsets with target sum and last subset will also have target
@@ -70,7 +69,7 @@ class Solution {
             return false;
         }
 
-        // Sort in decreasing order.
+        // Sort in decreasing order to decrease branches
         Arrays.sort(arr);
         reverse(arr);
 
