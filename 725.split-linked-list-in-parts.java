@@ -23,6 +23,7 @@ class Solution {
 
         ListNode[] parts = new ListNode[k];
         ListNode curr = head;
+        // each time, break into 2, return next head
         for (int i = 0; i < k && curr != null; i++) {
             parts[i] = curr;
             int partSize = quotient + (i < remainder ? 1 : 0);
