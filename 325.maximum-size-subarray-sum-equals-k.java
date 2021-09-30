@@ -27,6 +27,7 @@ class Solution {
 
             // Only add the current prefix_sum index pair to the
             // map if the prefix_sum is not already in the map.
+            // so only save the samllest index, and will get max length
             if (!indices.containsKey(prefixSum)) {
                 indices.put(prefixSum, i);
             }
