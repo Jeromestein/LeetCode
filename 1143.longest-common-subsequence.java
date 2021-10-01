@@ -10,6 +10,7 @@ class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
         // DP[i][j] represents the longest common subsequence
         // of text1[0 ... i] & text2[0 ... j].
+        // DP[i][0]=DP[0][j]=0, since the empty string have 0 common subsequence.
         int len1 = text1.length(), len2 = text2.length();
         int[][] dp = new int[len1 + 1][len2 + 1];
 
