@@ -6,6 +6,7 @@
 
 // @lc code=start
 
+// Top Down DP + Binary Search
 class Solution {
     // maximum number of jobs are 50000
     int[] memo = new int[50001];
