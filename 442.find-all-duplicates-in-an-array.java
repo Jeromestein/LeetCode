@@ -10,18 +10,17 @@ import java.util.List;
 // @lc code=start
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
-        List<Integer> res = new ArrayList<>();
         int n = nums.length;
+        List<Integer> res = new ArrayList<>();
+        // walk through all the elements
+        // use those elements as index visit array
+        // first time visit, get opposite number (negtive)
+        // and if this number is already negtive, then add it to res
         for (int i = 0; i < n; i++) {
-            // walk through all the elements
-            // use those elements as index visit array
-            // first time visit, get opposite number (negtive)
-            // and if this number is already negtive, then add it to res
-            if (nums[Math.abs(nums[i]) - 1] > 0) {
-                nums[Math.abs(nums[i]) - 1] *= -1;
-            } else {
-                res.add(Math.abs(nums[i]));
-            }
+            int idx = Math.abs(nums[i]);
+            nums[idx - 1] *= -1;
+            if (nums[idx - 1] > 0)
+                res.add(idx);
         }
 
         return res;
