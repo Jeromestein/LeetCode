@@ -17,12 +17,15 @@ class Solution {
         for (char i : instructions.toCharArray()) {
             switch (i) {
                 case 'L':
+                    // change direction, go left
                     idx = (idx + 3) % 4;
                     break;
                 case 'R':
+                    // change direction, go right
                     idx = (idx + 1) % 4;
                     break;
                 case 'G':
+                    // one step
                     x += dirs[idx][0];
                     y += dirs[idx][1];
                     break;
