@@ -13,14 +13,7 @@ class Solution {
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
             public int compare(int[] a, int[] b) {
-                if (a[0] > b[0]) {
-                    return 1;
-                } else if (a[0] < b[0]) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-
+                return a[0] - b[0];
             }
         });
 
