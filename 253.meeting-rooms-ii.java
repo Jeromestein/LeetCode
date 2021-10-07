@@ -8,7 +8,6 @@
 
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
-
         // Check for the base case. If there are no intervals, return 0
         if (intervals.length == 0) {
             return 0;
@@ -28,12 +27,11 @@ class Solution {
             }
         });
 
-        // Add the first meeting
+        // Add the first meeting, finishing time
         allocator.add(intervals[0][1]);
 
         // Iterate over remaining intervals
         for (int i = 1; i < intervals.length; i++) {
-
             // If the room due to free up the earliest is free, assign that room to this
             // meeting.
             if (intervals[i][0] >= allocator.peek()) {
