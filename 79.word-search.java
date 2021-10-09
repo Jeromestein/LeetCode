@@ -16,10 +16,13 @@ class Solution {
         this.ROWS = board.length;
         this.COLS = board[0].length;
 
-        for (int row = 0; row < this.ROWS; ++row)
-            for (int col = 0; col < this.COLS; ++col)
-                if (this.backtrack(row, col, word, 0))
+        for (int row = 0; row < this.ROWS; ++row) {
+            for (int col = 0; col < this.COLS; ++col) {
+                if (this.backtrack(row, col, word, 0)) {
                     return true;
+                }
+            }
+        }
         return false;
     }
 
