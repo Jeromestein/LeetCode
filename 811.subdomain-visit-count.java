@@ -13,14 +13,15 @@ class Solution {
     public List<String> subdomainVisits(String[] cpdomains) {
         Map<String, Integer> map = new HashMap();
 
-        for (String domain : cpdomains) {
-            String[] cpinfo = domain.split(" ");
-            String[] frags = cpinfo[1].split("\\.");
-            int count = Integer.valueOf(cpinfo[0]);
-            String cur = "";
-            for (int i = frags.length - 1; i >= 0; --i) {
-                cur = frags[i] + (i < frags.length - 1 ? "." : "") + cur;
-                map.put(cur, map.getOrDefault(cur, 0) + count);
+        for (String str : cpdomains) {
+            // cpNdom[0]: no. pairs; cpNdom[1]: domain
+            String[] cpNdom = str.split(" ");
+            String[] domains = cpNdom[1].split("\\.");
+            int count = Integer.valueOf(cpNdom[0]);
+            String currDomain = "";
+            for (int i = domains.length - 1; i >= 0; --i) {
+                currDomain = domains[i] + (i < domains.length - 1 ? "." : "") + currDomain;
+                map.put(currDomain, map.getOrDefault(currDomain, 0) + count);
             }
         }
 
