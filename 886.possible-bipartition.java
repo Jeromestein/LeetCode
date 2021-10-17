@@ -8,7 +8,7 @@
 
 class Solution {
     public boolean possibleBipartition(int n, int[][] dislikes) {
-        Unionfind uf = new Unionfind(n << 1);
+        Unionfind uf = new Unionfind(2 * n);
         int cnt = 0;
         for (int[] d : dislikes) {
             int x = d[0];
@@ -16,14 +16,15 @@ class Solution {
             uf.union(x, y + n);
             uf.union(x + n, y);
         }
+
         for (int i = 1; i <= n; i++) {
             if (uf.find(i) == uf.find(i + n)) {
                 return false;
             }
         }
+
         return true;
     }
-
 }
 
 class Unionfind {
