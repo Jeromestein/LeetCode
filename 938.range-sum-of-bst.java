@@ -48,6 +48,7 @@
  * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
  * = left; this.right = right; } }
  */
+
 class Solution {
     public int rangeSumBST(TreeNode root, int low, int high) {
         if (root == null)
