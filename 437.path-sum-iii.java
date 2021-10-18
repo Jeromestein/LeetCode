@@ -15,7 +15,7 @@
 class Solution {
     int count = 0;
     int k;
-    HashMap<Integer, Integer> h = new HashMap();
+    HashMap<Integer, Integer> preSumCnt = new HashMap();
 
     public void preorder(TreeNode node, int currSum) {
         if (node == null)
@@ -31,11 +31,11 @@ class Solution {
         // number of times the curr_sum − k has occured already,
         // determines the number of times a path with sum k
         // has occured upto the current node
-        count += h.getOrDefault(currSum - k, 0);
+        count += preSumCnt.getOrDefault(currSum - k, 0);
 
         // add the current sum into hashmap
         // to use it during the child nodes processing
-        h.put(currSum, h.getOrDefault(currSum, 0) + 1);
+        preSumCnt.put(currSum, preSumCnt.getOrDefault(currSum, 0) + 1);
 
         // process left subtree
         preorder(node.left, currSum);
@@ -45,7 +45,7 @@ class Solution {
         // remove the current sum from the hashmap
         // in order not to use it during
         // the parallel subtree processing
-        h.put(currSum, h.get(currSum) - 1);
+        preSumCnt.put(currSum, preSumCnt.get(currSum) - 1);
     }
 
     public int pathSum(TreeNode root, int sum) {
