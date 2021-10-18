@@ -5,6 +5,8 @@
  */
 
 // @lc code=start
+
+// hash map
 class SparseVector {
     // Map the index to value for all non-zero values in the vector
     Map<Integer, Integer> mapping;
