@@ -12,13 +12,16 @@ public class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums2.length; i++) {
-            while (!stack.empty() && nums2[i] > stack.peek())
+            // find first greater element
+            while (!stack.empty() && nums2[i] > stack.peek()) {
                 map.put(stack.pop(), nums2[i]);
+            }
             stack.push(nums2[i]);
         }
 
-        while (!stack.empty())
+        while (!stack.empty()) {
             map.put(stack.pop(), -1);
+        }
 
         int[] res = new int[nums1.length];
         for (int i = 0; i < nums1.length; i++) {
