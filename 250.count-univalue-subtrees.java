@@ -25,10 +25,12 @@ public class Solution {
         }
 
         // return if a univalue tree exists here and increment if it does
-        if (!is_unival)
+        if (!is_unival) {
             return false;
-        count++;
-        return true;
+        } else {
+            count++;
+            return true;
+        }
     }
 
     public int countUnivalSubtrees(TreeNode root) {
