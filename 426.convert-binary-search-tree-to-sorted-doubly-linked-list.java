@@ -28,14 +28,15 @@ class Node {
 
 class Solution {
     // the smallest (first) and the largest (last) nodes
-    Node first = null;
-    Node last = null;
+    Node first = null, last = null;
 
-    public void helper(Node node) {
-        if (node != null) {
+    public void inOrder(Node node) {
+        if (node == null) {
+            return;
+        } else {
             // use in-order travesal walk through all the nodes
             // left
-            helper(node.left);
+            inOrder(node.left);
             // node
             if (last != null) {
                 // link the previous node (last)
@@ -50,7 +51,7 @@ class Solution {
             // make current node as the last node
             last = node;
             // right
-            helper(node.right);
+            inOrder(node.right);
         }
     }
 
@@ -58,7 +59,7 @@ class Solution {
         if (root == null)
             return null;
 
-        helper(root);
+        inOrder(root);
         // close DLL
         last.right = first;
         first.left = last;
