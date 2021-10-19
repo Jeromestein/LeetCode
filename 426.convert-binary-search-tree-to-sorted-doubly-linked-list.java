@@ -33,6 +33,7 @@ class Solution {
 
     public void helper(Node node) {
         if (node != null) {
+            // use in-order travesal walk through all the nodes
             // left
             helper(node.left);
             // node
@@ -46,6 +47,7 @@ class Solution {
                 // to close DLL later on
                 first = node;
             }
+            // make current node as the last node
             last = node;
             // right
             helper(node.right);
