@@ -13,28 +13,21 @@
  */
 
 class Solution {
-    int res;
-    double target;
-
     public int closestValue(TreeNode root, double target) {
-        this.res = root.val;
-        this.target = target;
-        dfs(root);
+        int closest = root.val;
+        while (root != null) {
+            if (Math.abs(root.val - target) < Math.abs(closest - target)) {
+                closest = root.val;
+            }
 
-        return res;
-
-    }
-
-    public void dfs(TreeNode root) {
-        if (root == null)
-            return;
-
-        if (Math.abs((double) root.val - target) < Math.abs((double) res - target)) {
-            res = root.val;
+            if (target < root.val) {
+                root = root.left;
+            } else {
+                root = root.right;
+            }
         }
 
-        dfs(root.left);
-        dfs(root.right);
+        return closest;
     }
 }
 
