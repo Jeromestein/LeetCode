@@ -38,10 +38,9 @@ class Unionfind {
     }
 
     public int find(int x) {
-        if (root[x] == x) {
-            return x;
-        }
-        return root[x] = find(root[x]);
+        if (root[x] != x)
+            root[x] = find(root[x]);
+        return root[x];
     }
 
     public void union(int a, int b) {
