@@ -29,6 +29,7 @@ class Solution {
                 seenExponent = true;
                 seenDigit = false;
             } else if (curr == '.') {
+                // only one dot, cannot occur after e/E
                 if (seenDot || seenExponent) {
                     return false;
                 }
