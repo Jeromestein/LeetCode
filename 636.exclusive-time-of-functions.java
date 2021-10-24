@@ -13,12 +13,15 @@ class Solution {
         int prevTime = 0;
         for (String log : logs) {
             String[] parts = log.split(":");
-            if (!stack.isEmpty())
+            if (!stack.isEmpty()) {
                 res[stack.peek()] += Integer.parseInt(parts[2]) - prevTime;
+            }
             prevTime = Integer.parseInt(parts[2]);
-            if (parts[1].equals("start"))
+            if ("start".equals(parts[1])) {
                 stack.push(Integer.parseInt(parts[0]));
-            else {
+            } else if ("end".equals(parts[1])) {
+                // end:x means ending at the begin of x+1
+                // so it should actually be x+1
                 res[stack.pop()]++;
                 prevTime++;
             }
