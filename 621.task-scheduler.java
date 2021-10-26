@@ -9,18 +9,18 @@
 class Solution {
     public int leastInterval(char[] tasks, int n) {
         // frequencies of the tasks
-        int[] cnt = new int[26];
+        int[] freq = new int[26];
         for (int t : tasks) {
-            cnt[t - 'A']++;
+            freq[t - 'A']++;
         }
 
-        Arrays.sort(cnt);
+        Arrays.sort(freq);
 
         // max frequency
-        int idle_time = (cnt[25] - 1) * n;
+        int idle_time = (freq[25] - 1) * n;
 
-        for (int i = cnt.length - 2; i >= 0 && idle_time > 0; --i) {
-            idle_time -= Math.min(cnt[25] - 1, cnt[i]);
+        for (int i = freq.length - 2; i >= 0 && idle_time > 0; --i) {
+            idle_time -= Math.min(freq[25] - 1, freq[i]);
         }
         idle_time = Math.max(0, idle_time);
 
