@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.Queue;
+
 /*
  * @lc app=leetcode id=314 lang=java
  *
@@ -19,34 +22,33 @@ class Solution {
             return output;
         }
 
-        Map<Integer, ArrayList> columnTable = new HashMap();
+        Map<Integer, ArrayList> columns = new HashMap();
         // Pair of node and its column offset
         Queue<Pair<TreeNode, Integer>> queue = new ArrayDeque();
-        int column = 0;
-        queue.offer(new Pair(root, column));
+        int idx = 0;
+        queue.add(new Pair(root, idx));
 
         int minColumn = 0, maxColumn = 0;
 
         while (!queue.isEmpty()) {
             Pair<TreeNode, Integer> p = queue.poll();
             root = p.getKey();
-            column = p.getValue();
+            idx = p.getValue();
 
             if (root != null) {
-                if (!columnTable.containsKey(column)) {
-                    columnTable.put(column, new ArrayList<Integer>());
-                }
-                columnTable.get(column).add(root.val);
-                minColumn = Math.min(minColumn, column);
-                maxColumn = Math.max(maxColumn, column);
+                // colums[idx].add(root.val)
+                columns.computeIfAbsent(idx, v -> new ArrayList<>()).add(root.val);
+                // updatae left bound and right bound
+                minColumn = Math.min(minColumn, idx);
+                maxColumn = Math.max(maxColumn, idx);
 
-                queue.offer(new Pair(root.left, column - 1));
-                queue.offer(new Pair(root.right, column + 1));
+                queue.add(new Pair(root.left, idx - 1));
+                queue.add(new Pair(root.right, idx + 1));
             }
         }
 
-        for (int i = minColumn; i < maxColumn + 1; ++i) {
-            output.add(columnTable.get(i));
+        for (int i = minColumn; i <= maxColumn; i++) {
+            output.add(columns.get(i));
         }
 
         return output;
