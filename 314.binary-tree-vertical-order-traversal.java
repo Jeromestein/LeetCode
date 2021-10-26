@@ -17,9 +17,9 @@ import java.util.Queue;
 
 class Solution {
     public List<List<Integer>> verticalOrder(TreeNode root) {
-        List<List<Integer>> output = new ArrayList();
+        List<List<Integer>> res = new ArrayList();
         if (root == null) {
-            return output;
+            return res;
         }
 
         Map<Integer, ArrayList> columns = new HashMap();
@@ -48,10 +48,10 @@ class Solution {
         }
 
         for (int i = minColumn; i <= maxColumn; i++) {
-            output.add(columns.get(i));
+            res.add(columns.get(i));
         }
 
-        return output;
+        return res;
     }
 }
 
