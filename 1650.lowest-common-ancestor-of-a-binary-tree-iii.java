@@ -17,16 +17,17 @@ class Node {
 
 class Solution {
     public Node lowestCommonAncestor(Node p, Node q) {
-        // 1. find parents of p, store as a list
-        // 2. find parents of q, find the LCA
-        // T-O(h), S-O(h)
+        // the length of p (len1) and the length of q (len2)
+        // we make ptr1=p and then q, ptr2=q and then p
+        // because len1+len2=len2+len1
+        // so in the worst case, T-O(len1+len2), S-O(1)
 
-        Node a = p, b = q;
-        while (a != b) {
-            a = a == null ? q : a.parent;
-            b = b == null ? p : b.parent;
+        Node ptr1 = p, ptr2 = q;
+        while (ptr1 != ptr2) {
+            ptr1 = (ptr1 == null) ? q : ptr1.parent;
+            ptr2 = (ptr2 == null) ? p : ptr2.parent;
         }
-        return a;
+        return ptr1;
 
     }
 }
