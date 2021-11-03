@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /*
  * @lc app=leetcode id=71 lang=java
  *
@@ -34,6 +36,9 @@ class Solution {
                 stack.add(directory);
             }
         }
+        if (stack.isEmpty()) {
+            return "/";
+        }
 
         // Stich together all the directory names together
         StringBuilder result = new StringBuilder();
@@ -42,7 +47,7 @@ class Solution {
             result.append(dir);
         }
 
-        return result.length() > 0 ? result.toString() : "/";
+        return result.toString();
     }
 }
 
