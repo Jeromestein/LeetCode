@@ -6,25 +6,29 @@
 
 // @lc code=start
 class Solution {
-    boolean isDeleted = false;
-
     public boolean validPalindrome(String s) {
-        return isPalindrome(s, 0, s.length() - 1);
+        int i = 0, j = s.length() - 1;
+
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return isPalindrome(s, i + 1, j) || isPalindrome(s, i, j - 1);
+            }
+            i++;
+            j--;
+        }
+
+        return true;
     }
 
-    public boolean isPalindrome(final String s, int leftIndex, int rightIndex) {
-        while (leftIndex < rightIndex) {
-            if (s.charAt(leftIndex) != s.charAt(rightIndex)) {
-                if (isDeleted == true) {
-                    return false;
-                } else {
-                    isDeleted = true;
-                    return isPalindrome(s, leftIndex + 1, rightIndex) || isPalindrome(s, leftIndex, rightIndex - 1);
-                }
-            }
+    /* Check is s[i...j] is palindrome. */
+    private boolean isPalindrome(String s, int i, int j) {
 
-            leftIndex++;
-            rightIndex--;
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
         }
 
         return true;
