@@ -7,6 +7,11 @@
 // @lc code=start
 
 class Solution {
+    // 1. find the min and sum/k+1 (left & right) in sweetness
+    // 2. binary search between left & right,
+    // and Check if we can cut the chocolate into k + 1 pieces
+    // with sweetness no less than mid
+    // 3. ouput the right, which is the optimal answer.
     public int maximizeSweetness(int[] sweetness, int k) {
         // Initialize the left and right boundaries.
         // left = 1 and right = total sweetness / number of people.
