@@ -11,17 +11,13 @@ class Solution {
         Map<String, List<String>> map = new HashMap<>();
 
         for (String s : strings) {
-            String key = getKey(s);
-            List<String> list = map.getOrDefault(key, new ArrayList<>());
-            list.add(s);
-
-            map.put(key, list);
+            map.computeIfAbsent(getKey(s), l -> new ArrayList<>()).add(s);
         }
         return new ArrayList<>(map.values());
     }
 
     // get key to form the same group, for example:
-    // acf = "0,2,3", and pru = "0,2,3".
+    // acf = "2,3", and pru = "2,3".
     private String getKey(String s) {
         char[] chars = s.toCharArray();
         String key = "";
