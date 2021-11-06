@@ -8,7 +8,9 @@
 
 class Solution {
     public int[] singleNumber(int[] nums) {
+        // we use XOR operation to find the
         // difference between two numbers (x and y) which were seen only once
+        // (a^b^b^x^y^a=x^y)
         int bitmask = 0;
         for (int num : nums)
             bitmask ^= num;
@@ -19,6 +21,7 @@ class Solution {
         int x = 0;
         // bitmask which will contain only x
         for (int num : nums)
+            // use diff as a filter to skip y (and maybe other element, doesnt matter)
             if ((num & diff) != 0)
                 x ^= num;
 
