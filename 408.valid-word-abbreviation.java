@@ -16,9 +16,9 @@ class Solution {
         int ptr1 = 0, ptr2 = 0;
 
         while (ptr1 < len1 && ptr2 < len2) {
-            int num = 0;
             if (Character.isDigit(abbr.charAt(ptr2))) {
                 // get num
+                int num = 0;
                 while (ptr2 < len2 && Character.isDigit(abbr.charAt(ptr2))) {
                     num *= 10;
                     num += abbr.charAt(ptr2) - '0';
