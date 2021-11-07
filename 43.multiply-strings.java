@@ -9,8 +9,9 @@
 class Solution {
     public String multiply(String num1, String num2) {
         // for each digits in nums, do the mul with num2
-        // 1. from right to left, num1[i]*num2[j]=mul={cin, cout}
-        // 2. out[i+j]+=cin, out[i+j-1]+=cout;
+        // 1. from right to left, num1[i]*num2[j]=mul={cin, cout} O(m*n)
+        // 2. out[i+j]+=cin, out[i+j-1]+=cout; O(m+n)
+        // 3. use stringbuilder to get string
         int m = num1.length(), n = num2.length();
         int[] out = new int[m + n];
 
