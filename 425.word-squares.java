@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
 /*
  * @lc app=leetcode id=425 lang=java
  *
@@ -7,64 +12,63 @@
 // @lc code=start
 
 class Solution {
-    int N = 0;
+    int wordLen = 0;
     String[] words = null;
-    HashMap<String, List<String>> prefixHashTable = null;
+    Map<String, List<String>> prefixMap = null;
 
     public List<List<String>> wordSquares(String[] words) {
-        this.words = words;
-        this.N = words[0].length();
+        // based on backtracking method
 
-        List<List<String>> results = new ArrayList<List<String>>();
-        this.buildPrefixHashTable(words);
+        // 1. In the first part, we add a new function buildPrefixHashTable(words)
+        // to build a hashtable out of the input words.
+
+        // 2. Then in the second part, in the function getWordsWithPrefix(),
+        // we simply query the hashtable to retrieve all the words that possess the
+        // given prefix.
+
+        this.words = words;
+        this.wordLen = words[0].length();
+
+        List<List<String>> res = new ArrayList<>();
+        // build prefixMap
+        prefixMap = new HashMap<>();
 
         for (String word : words) {
-            LinkedList<String> wordSquares = new LinkedList<String>();
-            wordSquares.addLast(word);
-            this.backtracking(1, wordSquares, results);
+            for (int i = 1; i < wordLen; ++i) {
+                String prefix = word.substring(0, i);
+                prefixMap.computeIfAbsent(prefix, v -> new ArrayList<>()).add(word);
+            }
         }
-        return results;
+
+        // try each word in the first line
+        for (String word : words) {
+            List<String> wordSquares = new ArrayList<>();
+            wordSquares.add(word);
+            backtracking(1, wordSquares, res);
+        }
+        return res;
     }
 
-    protected void backtracking(int step, LinkedList<String> wordSquares, List<List<String>> results) {
-        if (step == N) {
-            results.add((List<String>) wordSquares.clone());
+    public void backtracking(int step, List<String> wordSquares, List<List<String>> res) {
+        if (step == wordLen) {
+            // can derectly add(wordSquares), should create a new list, like clone()
+            res.add(new ArrayList<>(wordSquares));
             return;
         }
 
+        // get the prefix of current square
         StringBuilder prefix = new StringBuilder();
         for (String word : wordSquares) {
             prefix.append(word.charAt(step));
         }
 
-        for (String candidate : this.getWordsWithPrefix(prefix.toString())) {
-            wordSquares.addLast(candidate);
-            this.backtracking(step + 1, wordSquares, results);
-            wordSquares.removeLast();
+        // get the candidates from the prefix
+        List<String> candidates = prefixMap.computeIfAbsent(prefix.toString(), v -> new ArrayList<>());
+        for (String candidate : candidates) {
+            wordSquares.add(candidate);
+            backtracking(step + 1, wordSquares, res);
+            wordSquares.remove(wordSquares.size() - 1);
         }
-    }
-
-    protected void buildPrefixHashTable(String[] words) {
-        this.prefixHashTable = new HashMap<String, List<String>>();
-
-        for (String word : words) {
-            for (int i = 1; i < this.N; ++i) {
-                String prefix = word.substring(0, i);
-                List<String> wordList = this.prefixHashTable.get(prefix);
-                if (wordList == null) {
-                    wordList = new ArrayList<String>();
-                    wordList.add(word);
-                    this.prefixHashTable.put(prefix, wordList);
-                } else {
-                    wordList.add(word);
-                }
-            }
-        }
-    }
-
-    protected List<String> getWordsWithPrefix(String prefix) {
-        List<String> wordList = this.prefixHashTable.get(prefix);
-        return (wordList != null ? wordList : new ArrayList<String>());
     }
 }
 
