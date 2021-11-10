@@ -12,36 +12,35 @@ import java.util.Map;
 class Solution {
     public boolean isAlienSorted(String[] words, String order) {
         int[] index = new int[26];
-        for (int i = 0; i < order.length(); ++i)
+        for (int i = 0; i < 26; i++) {
             index[order.charAt(i) - 'a'] = i;
+        }
 
-        boolean isDifferent = false;
-        for (int i = 0; i < words.length - 1; ++i) {
-            String word1 = words[i];
-            String word2 = words[i + 1];
+        for (int i = 1; i < words.length; i++) {
+            String pre = words[i - 1], curr = words[i];
 
-            // Find the first difference word1[k] != word2[k].
-            for (int k = 0; k < Math.min(word1.length(), word2.length()); ++k) {
-                if (word1.charAt(k) != word2.charAt(k)) {
-                    isDifferent = true;
+            for (int j = 0; j < pre.length(); j++) {
+                // If we do not find a mismatch letter between words[i] and words[i + 1],
+                // we need to examine the case when words are like ("apple", "app").
+                if (j >= curr.length())
+                    return false;
 
-                    int val1 = index[word1.charAt(k) - 'a'], val2 = index[word2.charAt(k) - 'a'];
-                    if (val1 > val2) {
-                        // If they compare badly, it's not sorted.
+                char preC = pre.charAt(j), currC = curr.charAt(j);
+                if (preC != currC) {
+                    if (index[preC - 'a'] > index[currC - 'a']) {
                         return false;
-                    } else if (val1 < val2) {
+                    } else {
+                        // if we find the first different letter and they are sorted,
+                        // then there's no need to check remaining letters
                         break;
                     }
                 }
-            }
 
-            // If we didn't find a first difference, which is not different (!isDifferent)
-            // the words are like ["apple","app"].
-            if (!isDifferent && word1.length() > word2.length())
-                return false;
+            }
         }
 
         return true;
     }
 }
+
 // @lc code=end

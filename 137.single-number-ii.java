@@ -1,21 +1,10 @@
 /*
- * @lc app=leetcode id=136 lang=java
+ * @lc app=leetcode id=137 lang=java
  *
- * [136] Single Number
+ * [137] Single Number II
  */
 
 // @lc code=start
-
-// class Solution {
-//     public int singleNumber(int[] nums) {
-//         int single = 0;
-//         for (int num : nums) {
-//             single ^= num;
-//         }
-//         return single;
-//     }
-// }
-
 class Solution {
     public int singleNumber(int[] nums) {
         int ans = 0;

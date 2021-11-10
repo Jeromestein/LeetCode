@@ -19,18 +19,24 @@
 
 class Solution {
     public int numTrees(int n) {
-        int[] G = new int[n + 1];
-        G[0] = 1;
-        G[1] = 1;
-
-        for (int i = 2; i <= n; ++i) {
-            for (int j = 1; j <= i; ++j) {
-                // G[j - 1] * G[i - j] means: i nodes, rooting in node j, the number of BSTs
-                // G[j - 1] is the no. of left subtree, G[i - j] is the number of right subtree.
-                G[i] += G[j - 1] * G[i - j];
+        // 1. n: [1, 19]
+        // backtrace, preorder ?
+        // recurrsive, numTress(int n)=numTressLeft+numTressRight
+        // x, i, left [1,i-1], right[i,x]
+        // numTress(x)= numTress[i-1]*numTress[x-i]
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        // x is the no. of nodes
+        for (int x = 2; x <= n; x++) {
+            // i is the index of root
+            for (int i = 1; i <= x; i++) {
+                dp[x] += (dp[i - 1] * dp[x - i]);
             }
         }
-        return G[n];
+
+        return dp[n];
+
     }
 }
 

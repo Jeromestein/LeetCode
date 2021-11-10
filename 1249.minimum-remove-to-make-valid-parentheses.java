@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -10,35 +11,31 @@ import java.util.LinkedList;
 // @lc code=start
 class Solution {
     public String minRemoveToMakeValid(String s) {
-        Deque<Character> stk = new LinkedList<>();
-        StringBuilder res = new StringBuilder();
-
-        // walk though string s, remove extra ), if there are
+        Set<Integer> indexesToRemove = new HashSet<>();
+        Deque<Integer> stack = new LinkedList<>();
         for (int i = 0; i < s.length(); i++) {
-            char currDigit = s.charAt(i);
-            res.append(currDigit);
-
-            if (currDigit == '(') {
-                stk.addLast(currDigit);
+            if (s.charAt(i) == '(') {
+                stack.push(i);
             }
-            if (currDigit == ')') {
-                if (!stk.isEmpty() && stk.peekLast() == '(') {
-                    stk.removeLast();
-                } else if (stk.isEmpty()) {
-                    // remove current digit, aka the ')'
-                    res.deleteCharAt(res.length() - 1);
+            if (s.charAt(i) == ')') {
+                if (stack.isEmpty()) {
+                    indexesToRemove.add(i);
+                } else {
+                    stack.pop();
                 }
             }
         }
+        // Put any indexes remaining on stack into the set.
+        while (!stack.isEmpty())
+            indexesToRemove.add(stack.pop());
 
-        // double check stack, remove extra (, if there are
-        while (!stk.isEmpty()) {
-            int index = res.lastIndexOf("(");
-            res.deleteCharAt(index);
-            stk.removeLast();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (!indexesToRemove.contains(i)) {
+                sb.append(s.charAt(i));
+            }
         }
-
-        return res.toString();
+        return sb.toString();
     }
 }
 // @lc code=end
