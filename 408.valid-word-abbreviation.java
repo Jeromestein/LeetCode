@@ -17,24 +17,23 @@ class Solution {
 
         while (ptr1 < len1 && ptr2 < len2) {
             if (Character.isDigit(abbr.charAt(ptr2))) {
-                // get num
-                int num = 0;
+                // no leading zeros, no empty
+                if (abbr.charAt(ptr2) == '0')
+                    return false;
+                // get num, from the substring
+                int start = ptr2;
                 while (ptr2 < len2 && Character.isDigit(abbr.charAt(ptr2))) {
-                    num *= 10;
-                    num += abbr.charAt(ptr2) - '0';
                     ptr2++;
-                    // no leading zeros, no empty
-                    if (num == 0)
-                        return false;
                 }
-                ptr1 += num;
+                ptr1 += Integer.valueOf(abbr.substring(start, ptr2));
 
             } else {
-                if (word.charAt(ptr1) != abbr.charAt(ptr2))
+                if (word.charAt(ptr1) != abbr.charAt(ptr2)) {
                     return false;
-
-                ptr1++;
-                ptr2++;
+                } else {
+                    ptr1++;
+                    ptr2++;
+                }
             }
 
         }
