@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+
+// 2^15=4^7*2=16^3*4*2=256*16*4*2
+
 class Solution {
     public double myPow(double x, int n) {
         // FOR N= -2^31
@@ -14,14 +17,15 @@ class Solution {
             N = -N;
         }
         double ans = 1;
-        double current_product = x;
+        double A = x;
         // O(logn)
+        // A=x^(n/2), if n is even, A*A=x^n, else A*A=x^(n-1)
         for (long i = N; i > 0; i /= 2) {
             // if N is odd
             if ((i % 2) == 1) {
-                ans = ans * current_product;
+                ans = ans * A;
             }
-            current_product = current_product * current_product;
+            A = A * A;
         }
         return ans;
     }
