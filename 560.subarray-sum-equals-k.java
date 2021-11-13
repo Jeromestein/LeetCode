@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * @lc app=leetcode id=560 lang=java
@@ -9,21 +10,33 @@ import java.util.HashMap;
 // @lc code=start
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        // return the total number of continuous subarrays
-        // whose sum equals to k.
-        HashMap<Integer, Integer> prefixFreq = new HashMap<>();
-        // we dont need pre[]
-        int pre = 0;
-        int cnt = 0;
+        // 1. double for loop, O(n^2), O(1)
+        // int n=nums.length, cnt=0;
+        // for (int i=0;i<n;i++){
+        // int sum=0;
+        // for (int j=i;j<n;j++) {
+        // sum+=nums[j];
+        // if(sum==k)
+        // cnt++;
+        // }
+
+        // }
+        // return cnt;
+
+        // 2. hashmap O(n) O(n)
+        Map<Integer, Integer> map = new HashMap<>();
+        // if sum[i] - sum[j] = k,
+        // the sum of elements lying between indices i and j is k.
+        int sum = 0, cnt = 0;
         // of course, there is a 0.
-        prefixFreq.put(0, 1);
+        map.put(0, 1);
         for (int i = 0; i < nums.length; i++) {
-            pre += nums[i];
-            if (prefixFreq.containsKey(pre - k) == true) {
-                cnt += prefixFreq.get(pre - k);
+            sum += nums[i];
+            if (map.containsKey(sum - k) == true) {
+                cnt += map.get(sum - k);
             }
             // get the times
-            prefixFreq.put(pre, prefixFreq.getOrDefault(pre, 0) + 1);
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
         return cnt;
 

@@ -5,39 +5,45 @@
  */
 
 // @lc code=start
-
-public class Solution {
+class Solution {
     public void nextPermutation(int[] nums) {
-        int i = nums.length - 2;
-        // 1. find nums[i]<nums[i+1]
+        // 1 2 3 -> 1 3 2
+        // 1 7 6 5 4 3 -> 3 1 4 5 6 7
+        // 1 7 6 4 2 5 4 3 2 -> 1 7 6 4 3 2 4 5
+        // 7 7 6 5 4 3 -> 3 4 5 6 7 7
+
+        int n = nums.length;
+        // 1. find first nums[i]<nums[i+1], from r to l
+        int i = n - 2;
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
         }
-        // 2. find the smallest element greater nums[i] in nums[i+1...n-1], swap
         if (i >= 0) {
-            int j = nums.length - 1;
-            while (nums[j] <= nums[i]) {
-                j--;
+            // 2. find first nums[k] greater than nums[i], from r to l
+            int k = n - 1;
+            while (k >= 0 && nums[i] >= nums[k]) {
+                k--;
             }
-            swap(nums, i, j);
+            // 3. swap nums[i] and nums[k]
+
+            int tmp = nums[i];
+            nums[i] = nums[k];
+            nums[k] = tmp;
         }
-        // 3. reverse nums[i+1...n-1]
-        reverse(nums, i + 1);
+
+        // 4. revert sums[i+1:...]
+        int left = i + 1, right = n - 1;
+        while (left < right) {
+            swap(nums, left, right);
+            left++;
+            right--;
+        }
     }
 
-    private void reverse(int[] nums, int start) {
-        int i = start, j = nums.length - 1;
-        while (i < j) {
-            swap(nums, i, j);
-            i++;
-            j--;
-        }
-    }
-
-    private void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+    public void swap(int[] nums, int i, int k) {
+        int tmp = nums[i];
+        nums[i] = nums[k];
+        nums[k] = tmp;
     }
 }
 
