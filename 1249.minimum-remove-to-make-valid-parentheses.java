@@ -11,6 +11,8 @@ import java.util.LinkedList;
 // @lc code=start
 class Solution {
     public String minRemoveToMakeValid(String s) {
+        // use a stack to walk through all the brackets, only store left ones
+        // use a set to store all the index should be removed
         Set<Integer> indexesToRemove = new HashSet<>();
         Deque<Integer> stack = new LinkedList<>();
         for (int i = 0; i < s.length(); i++) {
@@ -25,12 +27,14 @@ class Solution {
                 }
             }
         }
-        // Put any indexes remaining on stack into the set.
+        // Put indexes (redundant left brackets) on the stack into the set.
         while (!stack.isEmpty())
             indexesToRemove.add(stack.pop());
 
         StringBuilder sb = new StringBuilder();
+        // O(n)
         for (int i = 0; i < s.length(); i++) {
+            // O(1)
             if (!indexesToRemove.contains(i)) {
                 sb.append(s.charAt(i));
             }
