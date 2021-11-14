@@ -12,6 +12,11 @@
 // But doing this in this problem would lead to TLE.
 // For this reason, BFS is the best choice here.
 
+// Why does DP not work?
+// DP doesn't work because you will not calculate all 8 paths before calculating a path. 
+// Let see 1,1 now all the 8 paths are valid but not all 8 paths are available to you. 
+// That's the difference between this and other DP problems.
+
 // Why should we consider non-overwriting method?
 // You should always discuss the possibility of overwriting the input with your interviewer 
 // and clarify what kind of environment your algorithm is expected to run in. 
