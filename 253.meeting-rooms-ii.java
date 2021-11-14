@@ -13,7 +13,7 @@ class Solution {
             return 0;
         }
 
-        // Min heap
+        // Min heap, pq, defaultly increasing order
         PriorityQueue<Integer> allocator = new PriorityQueue<>();
 
         // Sort the intervals by start time
@@ -24,20 +24,16 @@ class Solution {
 
         // Iterate over remaining intervals
         for (int i = 1; i < intervals.length; i++) {
-            // If the room due to free up the earliest is free, assign that room to this
-            // meeting.
+            // If the current interval starts after the min ending time
+            // update the ending time
             if (intervals[i][0] >= allocator.peek()) {
                 allocator.poll();
             }
 
-            // If a new room is to be assigned, then also we add to the heap,
-            // If an old room is allocated, then also we have to add to the heap with
-            // updated end time.
+            // 1. no more room, update the ending time, add current interval
+            // 2. one more room, add current interval
             allocator.add(intervals[i][1]);
         }
-
-        // The size of the heap tells us the minimum rooms required for all the
-        // meetings.
         return allocator.size();
     }
 }
