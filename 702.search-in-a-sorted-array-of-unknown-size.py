@@ -19,7 +19,13 @@ class Solution:
         :type target: int
         :rtype: int
         """
-        l, r = 0, 10001
+        # 1. get bound
+        l, r = 0, 1
+        while reader.get(r) < target:
+            l = r
+            r <<= 1
+
+        # 2. binary search
         while l <= r:
             mid = (l+r)//2
             if reader.get(mid) == target:
