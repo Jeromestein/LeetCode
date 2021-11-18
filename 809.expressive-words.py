@@ -6,6 +6,13 @@
 
 # @lc code=start
 class Solution:
+    # Loop through all words. check(string S, string W) checks if W is stretchy to S.
+
+    # In check function, use two pointer:
+
+    # If S[i] == W[j, i++, j++
+    # If S[i - 2] == S[i - 1] == S[i] or S[i - 1] == S[i] == S[i + 1], i++
+    # return false
     def expressiveWords(self, s, words):
         return sum(self.check(s, word) for word in words)
 
