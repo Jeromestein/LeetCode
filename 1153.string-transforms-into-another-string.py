@@ -5,6 +5,7 @@
 #
 
 # @lc code=start
+
 class Solution:
     def canConvert(self, str1: str, str2: str) -> bool:
         if str1 == str2:
@@ -20,6 +21,11 @@ class Solution:
             elif convertMap[char1] != char2:
                 return False
 
+        # if len(letterSet) == 26,
+        # "abcdefghijklmnopqrstuvwxyz" -> "bcdefghijklmnopqrstuvwxyza"
+        # 1. "abcdefghijklmnopqrstuvwxyz" -> "abcdefghijklmnopqrstuvwxya"
+        # 2. "abcdefghijklmnopqrstuvwxya" -> "bbcdefghijklmnopqrstuvwxyb"
+        # ... impossible
         return len(letterSet) < 26
 
 
