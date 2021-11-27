@@ -10,15 +10,16 @@ public class Main {
     }
 
     public static String GetSExpression(String s) {
+        // [p][c]
         boolean graph[][] = new boolean[26][26];
         Set<Character> nodes = new HashSet<>();
         // construct graph and check error E2: duplicate edges
         boolean E2 = false;
         for (int i = 1; i < s.length(); i += 6) {
-            int x = s.charAt(i) - 'A', y = s.charAt(i + 2) - 'A';
-            if (graph[x][y]) // duplicate edge
+            int parent = s.charAt(i) - 'A', child = s.charAt(i + 2) - 'A';
+            if (graph[parent][child]) // duplicate edge
                 E2 = true;
-            graph[x][y] = true;
+            graph[parent][child] = true;
             nodes.add(s.charAt(i));
             nodes.add(s.charAt(i + 2));
         }
