@@ -27,7 +27,6 @@ class Solution {
     }
 
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-
         this.target = graph.length - 1;
         this.graph = graph;
         this.results = new ArrayList<List<Integer>>();
