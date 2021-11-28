@@ -6,36 +6,33 @@
 
 // @lc code=start
 class Solution {
-    private int target;
-    private int[][] graph;
-    private List<List<Integer>> results;
-
-    protected void backtrack(int currNode, LinkedList<Integer> path) {
-        if (currNode == this.target) {
-            // Note: one should make a deep copy of the path
-            this.results.add(new ArrayList<Integer>(path));
-            return;
-        }
-        // explore the neighbor nodes one after another.
-        for (int nextNode : this.graph[currNode]) {
-            // mark the choice, before backtracking.
-            path.addLast(nextNode);
-            this.backtrack(nextNode, path);
-            // remove the previous choice, to try the next choice
-            path.removeLast();
-        }
-    }
+    List<List<Integer>> res;
+    int n;
+    int[][] graph;
 
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        this.target = graph.length - 1;
         this.graph = graph;
-        this.results = new ArrayList<List<Integer>>();
-        // adopt the LinkedList for fast access to the tail element.
-        LinkedList<Integer> path = new LinkedList<Integer>();
-        path.addLast(0);
-        // kick of the backtracking, starting from the source (node 0)
-        this.backtrack(0, path);
-        return this.results;
+        this.n = graph.length;
+        this.res = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
+        path.add(0);
+        backtracing(0, path);
+
+        return this.res;
+    }
+
+    public void backtracing(int curr, List<Integer> path) {
+        if (curr == n - 1) {
+            this.res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int next : graph[curr]) {
+            path.add(next);
+            backtracing(next, path);
+            path.remove(path.size() - 1);
+        }
+
     }
 }
 // @lc code=end
