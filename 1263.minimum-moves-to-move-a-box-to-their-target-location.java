@@ -14,41 +14,47 @@ class Solution {
         g = grid;
         m = g.length;
         n = g[0].length;
-        int step = 0;
-        boolean[][][] vs = new boolean[m][n][4];
+
+        // 2D is not enough, still need one more dimension to represent four direction
+        boolean[][][] visit = new boolean[m][n][4];
 
         Queue<int[]> q = new LinkedList<>();
-        int[] st = new int[] { -1, -1 }, ed = new int[] { -1, -1 }, pl = new int[] { -1, -1 };
+        int[] st = new int[] { -1, -1 }, target = new int[] { -1, -1 }, pl = new int[] { -1, -1 };
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (g[i][j] == 'B')
                     st = new int[] { i, j };
                 if (g[i][j] == 'T')
-                    ed = new int[] { i, j };
+                    target = new int[] { i, j };
                 if (g[i][j] == 'S')
                     pl = new int[] { i, j };
             }
         }
+        // alwasys add the current box coordinate and the player current coordinate
         q.offer(new int[] { st[0], st[1], pl[0], pl[1] });
+        int step = 0;
         while (!q.isEmpty()) {
             for (int i = 0, l = q.size(); i < l; i++) {
                 int[] curr = q.poll();
-                if (curr[0] == ed[0] && curr[1] == ed[1])
+                // get to the target
+                if (curr[0] == target[0] && curr[1] == target[1])
                     return step;
-                for (int j = 0; j < dir.length; j++) {
-                    if (vs[curr[0]][curr[1]][j])
+                for (int k = 0; k < 4; k++) {
+                    if (visit[curr[0]][curr[1]][k])
                         continue;
-                    int[] d = dir[j];
-                    int r0 = curr[0] + d[0], c0 = curr[1] + d[1]; // where pl stands, have room to push;
+                    // where pl stands, have room to push;
+                    int r0 = curr[0] + dir[k][0], c0 = curr[1] + dir[k][1];
                     if (r0 < 0 || r0 >= m || c0 < 0 || c0 >= n || g[r0][c0] == '#')
                         continue;
-                    int r = curr[0] - d[0], c = curr[1] - d[1]; // box next spots;
-                    if (r < 0 || r >= m || c < 0 || c >= n || g[r][c] == '#')
+                    // box next spots;
+                    int nextr = curr[0] - dir[k][0], nextc = curr[1] - dir[k][1];
+                    if (nextr < 0 || nextr >= m || nextc < 0 || nextc >= n || g[nextr][nextc] == '#')
                         continue;
                     if (!reachable(r0, c0, curr))
                         continue;
-                    vs[curr[0]][curr[1]][j] = true;
-                    q.offer(new int[] { r, c, curr[0], curr[1] });
+                    visit[curr[0]][curr[1]][k] = true;
+                    int plr = curr[0], plc = curr[1];
+                    q.offer(new int[] { nextr, nextc, plr, plc });
                 }
             }
             step++;
@@ -56,20 +62,26 @@ class Solution {
         return -1;
     }
 
+    /**
+     * 1. has room to push the box; 2. has a way to go to the room to push the box.
+     * Therefore you need another bfs to find if the path exist;
+     */
     private boolean reachable(int i, int j, int[] curr) {
         Queue<int[]> q = new LinkedList<>();
+        // start from the player's current place
         q.offer(new int[] { curr[2], curr[3] });
-        boolean[][] vs = new boolean[m][n];
-        vs[curr[0]][curr[1]] = true;
+        boolean[][] visit = new boolean[m][n];
+        // set the box position as a block
+        visit[curr[0]][curr[1]] = true;
         while (!q.isEmpty()) {
             int[] cur = q.poll();
             if (cur[0] == i && cur[1] == j)
                 return true;
             for (int[] d : dir) {
                 int r = cur[0] - d[0], c = cur[1] - d[1]; // box next spots;
-                if (r < 0 || r >= m || c < 0 || c >= n || vs[r][c] || g[r][c] == '#')
+                if (r < 0 || r >= m || c < 0 || c >= n || visit[r][c] || g[r][c] == '#')
                     continue;
-                vs[r][c] = true;
+                visit[r][c] = true;
                 q.offer(new int[] { r, c });
             }
         }
