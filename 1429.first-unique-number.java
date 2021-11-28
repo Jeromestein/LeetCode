@@ -7,9 +7,9 @@
 // @lc code=start
 
 class FirstUnique {
-
-    private Set<Integer> setQueue = new LinkedHashSet<>();
-    private Map<Integer, Boolean> isUnique = new HashMap<>();
+    // LinkedHashSet support O(1) remove, even element is in the middle
+    Set<Integer> setQueue = new LinkedHashSet<>();
+    Map<Integer, Boolean> isUnique = new HashMap<>();
 
     public FirstUnique(int[] nums) {
         for (int num : nums) {
