@@ -26,37 +26,36 @@ class Node {
 
 class Solution {
     public Node insert(Node head, int insertVal) {
+        Node insert = new Node(insertVal);
         if (head == null) {
-            Node newNode = new Node(insertVal);
-            newNode.next = newNode;
-            return newNode;
+            insert.next = insert;
+            return insert;
         }
 
-        Node prev = head;
+        Node pre = head;
         Node curr = head.next;
         boolean toInsert = false;
 
-        do {
-            if (prev.val <= insertVal && insertVal <= curr.val) {
+        while (curr != head) {
+            if (pre.val <= insertVal && insertVal <= curr.val) {
                 // Case 1).
-                toInsert = true;
-            } else if (prev.val > curr.val) {
+                pre.next = insert;
+                insert.next = curr;
+                return head;
+            } else if (pre.val > curr.val && (insertVal >= pre.val || insertVal <= curr.val)) {
                 // Case 2).
-                if (insertVal >= prev.val || insertVal <= curr.val)
-                    toInsert = true;
-            }
-
-            if (toInsert) {
-                prev.next = new Node(insertVal, curr);
+                pre.next = insert;
+                insert.next = curr;
                 return head;
             }
 
-            prev = curr;
+            pre = pre.next;
             curr = curr.next;
-        } while (prev != head);
+        }
 
         // Case 3).
-        prev.next = new Node(insertVal, curr);
+        pre.next = insert;
+        insert.next = curr;
         return head;
     }
 }
