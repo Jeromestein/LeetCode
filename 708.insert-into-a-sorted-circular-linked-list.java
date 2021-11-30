@@ -23,7 +23,6 @@ class Node {
     }
 };
 */
-
 class Solution {
     public Node insert(Node head, int insertVal) {
         Node insert = new Node(insertVal);
@@ -38,12 +37,12 @@ class Solution {
 
         while (curr != head) {
             if (pre.val <= insertVal && insertVal <= curr.val) {
-                // Case 1).
+                // Case 1). pre<=insert<=curr
                 pre.next = insert;
                 insert.next = curr;
                 return head;
             } else if (pre.val > curr.val && (insertVal >= pre.val || insertVal <= curr.val)) {
-                // Case 2).
+                // Case 2). pre>curr && pre<=insert||insert<=curr
                 pre.next = insert;
                 insert.next = curr;
                 return head;
@@ -53,7 +52,8 @@ class Solution {
             curr = curr.next;
         }
 
-        // Case 3).
+        // Case 3). walk through all the elements, if cannot insert, which means all the
+        // values are same, then insert any position.
         pre.next = insert;
         insert.next = curr;
         return head;
