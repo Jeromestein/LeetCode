@@ -21,6 +21,9 @@
 // You should always discuss the possibility of overwriting the input with your interviewer 
 // and clarify what kind of environment your algorithm is expected to run in. 
 
+// How to mark the path?
+// We can mark the value of cell as the current distance (step), so after reaching 
+// target, we can implement the backtracing method, check all the currDis-1 cell to find the pre step.
 class Solution {
     int[][] dirs = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 }, { 1, 1 }, { -1, -1 }, { -1, 1 }, { 1, -1 } };
 
