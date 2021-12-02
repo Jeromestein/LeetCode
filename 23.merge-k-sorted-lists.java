@@ -12,19 +12,35 @@
  */
 
 class Solution {
-    public ListNode mergeKLists(ListNode[] lists) {
-        return merge(lists, 0, lists.length - 1);
-    }
+    // Divide and Conquer, recursion
+    // public ListNode mergeKLists(ListNode[] lists) {
+    // return merge(lists, 0, lists.length - 1);
+    // }
 
-    public ListNode merge(ListNode[] lists, int l, int r) {
-        if (l == r) {
-            return lists[l];
-        }
-        if (l > r) {
+    // public ListNode merge(ListNode[] lists, int l, int r) {
+    // if (l == r) {
+    // return lists[l];
+    // }
+    // if (l > r) {
+    // return null;
+    // }
+    // int mid = (l + r) >> 1;
+    // return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+    // }
+
+    // Divide and Conquer, iteration
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
-        int mid = (l + r) >> 1;
-        return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+        int interval = 1;
+        while (interval < lists.length) {
+            for (int i = 0; i < lists.length - interval; i = i + 2 * interval) {
+                lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
+            }
+            interval *= 2;
+        }
+        return lists[0];
     }
 
     public ListNode mergeTwoLists(ListNode a, ListNode b) {
