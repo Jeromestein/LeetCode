@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+
 class MovingAverage {
     int maxSize;
     double sum;
