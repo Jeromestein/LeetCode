@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /*
  * @lc app=leetcode id=398 lang=java
  *
@@ -7,7 +9,6 @@
 // @lc code=start
 
 // class Solution {
-
 //     Map<Integer, List<Integer>> map;
 
 //     public Solution(int[] nums) {
@@ -23,11 +24,9 @@
 //         return map.get(target).get(r);
 //     }
 // }
-
 class Solution {
-
-    private int[] nums;
-    private Random rand;
+    int[] nums;
+    Random rand;
 
     public Solution(int[] nums) {
         this.nums = nums;
@@ -46,6 +45,8 @@ class Solution {
                 // available to be chosen uniformly at random
                 count++;
                 // we pick the current number with probability 1 / count (reservoir sampling)
+                // Returns a pseudorandom, uniformly distributed int value between 0 (inclusive)
+                // and the specified value (exclusive)
                 if (rand.nextInt(count) == 0) {
                     idx = i;
                 }

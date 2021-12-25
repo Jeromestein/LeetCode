@@ -6,49 +6,68 @@
 
 // @lc code=start
 class Solution {
-    char[][] g;
+    // Time : O(n^2) ?
+    // Space: O(m*n) ?
+    char[][] grid;
     int m, n;
-    int[][] dir = new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
+    int[][] dir = new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } }; // right, down, left, up
 
     public int minPushBox(char[][] grid) {
-        g = grid;
-        m = g.length;
-        n = g[0].length;
+        this.grid = grid;
+        m = grid.length;
+        n = grid[0].length;
         int step = 0;
-        boolean[][][] vs = new boolean[m][n][4];
+        // considering 4 directons
+        boolean[][][] visited = new boolean[m][n][4];
 
-        Queue<int[]> q = new LinkedList<>();
-        int[] st = new int[] { -1, -1 }, ed = new int[] { -1, -1 }, pl = new int[] { -1, -1 };
+        Queue<int[]> boxQ = new LinkedList<>();
+        Queue<int[]> playerQ = new LinkedList<>();
+        int[] boxLoc = new int[2], targetLoc = new int[2], playerLoc = new int[2];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (g[i][j] == 'B')
-                    st = new int[] { i, j };
-                if (g[i][j] == 'T')
-                    ed = new int[] { i, j };
-                if (g[i][j] == 'S')
-                    pl = new int[] { i, j };
+                if (grid[i][j] == 'B')
+                    boxLoc = new int[] { i, j };
+                if (grid[i][j] == 'T')
+                    targetLoc = new int[] { i, j };
+                if (grid[i][j] == 'S')
+                    playerLoc = new int[] { i, j };
             }
         }
-        q.offer(new int[] { st[0], st[1], pl[0], pl[1] });
-        while (!q.isEmpty()) {
-            for (int i = 0, l = q.size(); i < l; i++) {
-                int[] curr = q.poll();
-                if (curr[0] == ed[0] && curr[1] == ed[1])
+        boxQ.offer(new int[] { boxLoc[0], boxLoc[1] });
+        playerQ.offer(new int[] { playerLoc[0], playerLoc[1] });
+
+        while (!boxQ.isEmpty()) {
+            for (int i = 0, l = boxQ.size(); i < l; i++) {
+                // as we care about all directions, it should be like
+                // this.--> it's related to calculating 'step'
+                int[] currBoxLoc = boxQ.poll();
+                int[] currPlayerLoc = playerQ.poll();
+                if (currBoxLoc[0] == targetLoc[0] && currBoxLoc[1] == targetLoc[1])
+                    // If box arrives at the target, it returns 'step'
                     return step;
                 for (int j = 0; j < dir.length; j++) {
-                    if (vs[curr[0]][curr[1]][j])
+                    // Checking all directions
+                    if (visited[currBoxLoc[0]][currBoxLoc[1]][j])
                         continue;
                     int[] d = dir[j];
-                    int r0 = curr[0] + d[0], c0 = curr[1] + d[1]; // where pl stands, have room to push;
-                    if (r0 < 0 || r0 >= m || c0 < 0 || c0 >= n || g[r0][c0] == '#')
+                    // where player stands, need a space to push
+                    int r0 = currBoxLoc[0] + d[0], c0 = currBoxLoc[1] + d[1];
+                    // if no space, ignore(/continue)
+                    if (r0 < 0 || r0 >= m || c0 < 0 || c0 >= n || grid[r0][c0] == '#')
                         continue;
-                    int r = curr[0] - d[0], c = curr[1] - d[1]; // box next spots;
-                    if (r < 0 || r >= m || c < 0 || c >= n || g[r][c] == '#')
+                    // the box location after pushed
+                    int r = currBoxLoc[0] - d[0], c = currBoxLoc[1] - d[1];
+                    // if no space for box, ignore(/continue)
+                    if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] == '#')
                         continue;
-                    if (!reachable(r0, c0, curr))
+                    // Check if the player can reach (r0, c0). if not, continue
+                    if (!reachable(r0, c0, currBoxLoc, currPlayerLoc))
                         continue;
-                    vs[curr[0]][curr[1]][j] = true;
-                    q.offer(new int[] { r, c, curr[0], curr[1] });
+                    // After pushed, the player is at 'currBoxLoc'.
+                    visited[currBoxLoc[0]][currBoxLoc[1]][j] = true;
+                    // update queues accordingly.
+                    boxQ.offer(new int[] { r, c });
+                    playerQ.offer(new int[] { currBoxLoc[0], currBoxLoc[1] });
                 }
             }
             step++;
@@ -56,20 +75,25 @@ class Solution {
         return -1;
     }
 
-    private boolean reachable(int i, int j, int[] curr) {
+    private boolean reachable(int i, int j, int[] boxLoc, int[] playerLoc) {
+        // (i,j) is a location where the play will push the box.
         Queue<int[]> q = new LinkedList<>();
-        q.offer(new int[] { curr[2], curr[3] });
-        boolean[][] vs = new boolean[m][n];
-        vs[curr[0]][curr[1]] = true;
+        q.offer(playerLoc);
+        boolean[][] visited = new boolean[m][n];
+        // player cannot go through the spot where the box is located at.
+        visited[boxLoc[0]][boxLoc[1]] = true;
         while (!q.isEmpty()) {
-            int[] cur = q.poll();
-            if (cur[0] == i && cur[1] == j)
+            int[] currPlLoc = q.poll();
+            if (currPlLoc[0] == i && currPlLoc[1] == j)
                 return true;
             for (int[] d : dir) {
-                int r = cur[0] - d[0], c = cur[1] - d[1]; // box next spots;
-                if (r < 0 || r >= m || c < 0 || c >= n || vs[r][c] || g[r][c] == '#')
+                // player's location after moving
+                int r = currPlLoc[0] + d[0], c = currPlLoc[1] + d[1];
+                // check if player can move to (r,c)
+                if (r < 0 || r >= m || c < 0 || c >= n || visited[r][c] || grid[r][c] == '#')
                     continue;
-                vs[r][c] = true;
+                // if possible, check it visited.
+                visited[r][c] = true;
                 q.offer(new int[] { r, c });
             }
         }
