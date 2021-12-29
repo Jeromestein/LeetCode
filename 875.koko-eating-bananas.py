@@ -30,7 +30,7 @@ class Solution:
 
         # Once the left and right boundaries coincide, we find the target value,
         # that is, the minimum workable eating speed.
-        return r
+        return l
 
 
 # @lc code=end
