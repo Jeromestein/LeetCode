@@ -8,7 +8,7 @@
 
 class Solution:
     def smallestRepunitDivByK(self, k: int) -> int:
-        # 1, 11, 111, 1111, ..., 111...111
+        # 1, 11, 111, 1111, ..., 111...1111
         # 1. use remainder to avoid the overflow
         # 2. len should never longer than k itself
         remainder = 0
