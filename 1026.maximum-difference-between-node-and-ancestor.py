@@ -11,6 +11,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         # first intuition: dfs
