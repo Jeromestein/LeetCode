@@ -11,37 +11,40 @@ import java.util.LinkedList;
 
 class Solution {
     public int calculate(String s) {
-        Deque<Integer> stack = new LinkedList<Integer>();
-        char preSign = '+';
-        int num = 0;
+        // s consists of integers and operators ('+', '-', '*', '/')
+        // separated by some number of spaces.
+        // 1. use stack to process all the * and /,
+        // we don't even need an actual stack, only a preNum
+        // Stack<Integer> st=new Stack<>();
         int n = s.length();
-        for (int i = 0; i < n; ++i) {
-            if (Character.isDigit(s.charAt(i))) {
-                num = num * 10 + s.charAt(i) - '0';
+        int preNum = 0, num = 0, res = 0;
+        char preSign = '+';
+        for (int i = 0; i < n; i++) {
+            char curr = s.charAt(i);
+            if (Character.isDigit(curr)) {
+                num = num * 10 + curr - '0';
             }
-            if (!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == n - 1) {
-                switch (preSign) {
-                case '+':
-                    stack.push(num);
-                    break;
-                case '-':
-                    stack.push(-num);
-                    break;
-                case '*':
-                    stack.push(stack.pop() * num);
-                    break;
-                default:
-                    stack.push(stack.pop() / num);
+            // two situations:
+            // 1. ops sign
+            // 2. the last char in string
+            if (!Character.isDigit(curr) && curr != ' ' || i == n - 1) {
+                if (preSign == '+') {
+                    res += preNum;
+                    preNum = num;
+                } else if (preSign == '-') {
+                    res += preNum;
+                    preNum = -num;
+                } else if (preSign == '*') {
+                    preNum *= num;
+                } else if (preSign == '/') {
+                    preNum /= num;
                 }
-                preSign = s.charAt(i);
+                preSign = curr;
                 num = 0;
             }
         }
-        int ans = 0;
-        while (!stack.isEmpty()) {
-            ans += stack.pop();
-        }
-        return ans;
+        res += preNum;
+        return res;
     }
 }
 // @lc code=end
