@@ -8,7 +8,7 @@
 
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
-        # special case
+        # special case, make it much faster
         if len(nums) > 1 and len(set(nums)) == 1:
             return (nums[0] ** 3) * (len(nums) - 2) + nums[0] ** 2 + nums[0]
 
@@ -17,7 +17,7 @@ class Solution:
         n = len(nums)
         # dp[i][j] represents
         # maximum if we burst all nums[left]...nums[right], inclusive
-        dp = [[0] * n for _ in range(n)]
+        dp = [[0 for _ in range(n)] for _ in range(n)]
 
         # do not include the first one and the last one
         # since they are both fake balloons added by ourselves and we can not
