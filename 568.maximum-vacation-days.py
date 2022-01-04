@@ -16,7 +16,8 @@ class Solution:
 
         for week in range(k):
             curr = [float('-inf') for _ in range(n)]
-
+            # double-for loop,
+            # walk through all the permutations of start and end city
             for start in range(n):
                 # end, haveFlight
                 # 0, flights[start][0]
@@ -25,9 +26,8 @@ class Solution:
                 # n-1, flights[start][n-1]
                 for end, haveFlight in enumerate(flights[start]):
                     if haveFlight or start == end:
-                        curr[end] = max(
-                            curr[end], dp[start] + days[end][week])
-
+                        curr[end] = max(curr[end], dp[start] + days[end][week])
+            # update DP table
             dp = curr
 
         return max(dp)
