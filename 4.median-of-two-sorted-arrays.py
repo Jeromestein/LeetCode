@@ -20,23 +20,23 @@ class Solution:
             return b[k]
         if not b:
             return a[k]
-        ia, ib = len(a) // 2, len(b) // 2
-        ma, mb = a[ia], b[ib]
+        medianIdxA, medianIdxB = len(a) // 2, len(b) // 2
+        medianA, medianB = a[medianIdxA], b[medianIdxB]
 
         # when k is bigger than the sum of a and b's median indices
-        if ia + ib < k:
+        if medianIdxA + medianIdxB < k:
             # if a's median is bigger than b's, b's first half doesn't include k
-            if ma > mb:
-                return self.kth(a, b[ib + 1:], k - ib - 1)
+            if medianA > medianB:
+                return self.kth(a, b[medianIdxB + 1:], k - medianIdxB - 1)
             else:
-                return self.kth(a[ia + 1:], b, k - ia - 1)
+                return self.kth(a[medianIdxA + 1:], b, k - medianIdxA - 1)
         # when k is smaller than the sum of a and b's indices
         else:
             # if a's median is bigger than b's, a's second half doesn't include k
-            if ma > mb:
-                return self.kth(a[:ia], b, k)
+            if medianA > medianB:
+                return self.kth(a[:medianIdxA], b, k)
             else:
-                return self.kth(a, b[:ib], k)
+                return self.kth(a, b[:medianIdxB], k)
 
 
 # @lc code=end
