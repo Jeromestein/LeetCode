@@ -9,6 +9,7 @@
 
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
+        # nums[-1] = nums[n] = -∞ guarantees at least one peak
         l, r = 0, len(nums)-1
 
         while l < r:
