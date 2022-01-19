@@ -14,14 +14,19 @@
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow = fast = head
+
+        # use slow and fast pointer to find some point in the cycle, p
         while fast and fast.next:
             slow, fast = slow.next, fast.next.next
             if slow == fast:
                 break
         else:
             return None  # if not (fast and fast.next): return None
-        while head != slow:
-            head, slow = head.next, slow.next
+        p = slow
+
+        # each time head and p move 1 step, until they meet at the start of cycle.
+        while head != p:
+            head, p = head.next, p.next
         return head
 
 
