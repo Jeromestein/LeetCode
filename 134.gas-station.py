@@ -26,7 +26,10 @@ class Solution:
                 # Start with an empty tank.
                 curr_tank = 0
 
-        return starting_station if total_tank >= 0 else -1
+        if total_tank >= 0:
+            return starting_station
+        else:
+            return -1
 
 
 # @lc code=end
