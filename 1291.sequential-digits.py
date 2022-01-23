@@ -9,13 +9,13 @@
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
         sample = "123456789"
-        n = 10
         nums = []
-
-        for length in range(len(str(low)), len(str(high)) + 1):
-            for start in range(n - length):
+        lowLen, highLen = len(str(low)), len(str(high))
+        for length in range(lowLen, highLen + 1):
+            # from 0 to 10-length
+            for start in range(10 - length):
                 num = int(sample[start: start + length])
-                if num >= low and num <= high:
+                if low <= num and num <= high:
                     nums.append(num)
 
         return nums
