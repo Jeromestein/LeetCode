@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
  * @lc app=leetcode id=967 lang=java
  *
@@ -6,13 +8,13 @@
 
 // @lc code=start
 class Solution {
-    ArrayList<Integer> res = new ArrayList<>();
+    List<Integer> res = new ArrayList<>();
 
     public int[] numsSameConsecDiff(int n, int k) {
         // backtracing
-
         backtracing(n, k, 0, 0);
-        return res.stream().mapToInt(i -> i).toArray();
+        // List<Integer> -> int[]
+        return res.stream().mapToInt(Integer::valueOf).toArray();
     }
 
     private void backtracing(int n, int k, int idx, int num) {
@@ -23,22 +25,22 @@ class Solution {
         }
 
         if (idx > 0) {
-            // highest digit should start with 1
-            int last = num % 10;
-            int curr1 = last - k, curr2 = last + k;
-            if (curr1 < 0 && curr2 < 0)
+            int lastDigit = num % 10;
+            int newDigit1 = lastDigit - k, newDigit2 = lastDigit + k;
+            if (newDigit1 < 0 && newDigit2 < 0)
                 return;
 
-            if (curr1 >= 0 && curr1 < 10) {
-                int next = num * 10 + curr1;
+            if (newDigit1 >= 0 && newDigit1 < 10) {
+                int next = num * 10 + newDigit1;
                 backtracing(n, k, idx + 1, next);
             }
-            if (curr1 != curr2 && curr2 >= 0 && curr2 < 10) {
-                int next = num * 10 + curr2;
+            if (newDigit1 != newDigit2 && newDigit2 >= 0 && newDigit2 < 10) {
+                int next = num * 10 + newDigit2;
                 backtracing(n, k, idx + 1, next);
             }
         }
         if (idx == 0) {
+            // highest digit should start with 1
             for (int i = 1; i < 10; i++) {
                 backtracing(n, k, idx + 1, i);
             }
