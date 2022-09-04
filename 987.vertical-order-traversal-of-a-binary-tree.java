@@ -17,54 +17,52 @@ import java.util.Map;
  * TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left
  * = left; this.right = right; } }
  */
-
 class Solution {
-    Map<Integer, ArrayList<Pair<Integer, Integer>>> colTable = new HashMap();
-    int minColumn = 0, maxColumn = 0;
+    Map<Integer, ArrayList<Pair<Integer, Integer>>> colTable = new HashMap<>();
+    int minCol = 0, maxCol = 0;
 
     public List<List<Integer>> verticalTraversal(TreeNode root) {
-        List<List<Integer>> output = new ArrayList();
-        if (root == null) {
-            return output;
-        }
-
-        // step 1). DFS traversal
-        DFS(root, 0, 0);
-
-        // step 2). retrieve the value from the columnTable
-        for (int i = minColumn; i <= maxColumn; i++) {
-            // order by both "row" and "value"
+        List<List<Integer>> res = new ArrayList<>();
+        // 1. dfs, get all the elements in colTable
+        dfs(root, 0, 0);
+        // 2. for each colum, sort colTable
+        for (int i = minCol; i <= maxCol; i++) {
             Collections.sort(colTable.get(i), new Comparator<Pair<Integer, Integer>>() {
                 @Override
                 public int compare(Pair<Integer, Integer> p1, Pair<Integer, Integer> p2) {
-                    if (p1.getKey().equals(p2.getKey()))
+                    if (p1.getKey() == p2.getKey())
+                        // ascending order
                         return p1.getValue() - p2.getValue();
                     else
+                        // ascending order
                         return p1.getKey() - p2.getKey();
                 }
             });
 
-            List<Integer> sortedCol = new ArrayList();
+            // 3. convert from colTable to 2D list
+            List<Integer> sortedCol = new ArrayList<>();
             for (Pair<Integer, Integer> p : colTable.get(i)) {
                 sortedCol.add(p.getValue());
             }
-            output.add(sortedCol);
+            res.add(sortedCol);
         }
 
-        return output;
+        return res;
     }
 
-    private void DFS(TreeNode node, Integer row, Integer col) {
-        if (node == null)
+    private void dfs(TreeNode root, int row, int col) {
+        if (root == null)
             return;
 
         colTable.computeIfAbsent(col, k -> new ArrayList<Pair<Integer, Integer>>());
-        colTable.get(col).add(new Pair<Integer, Integer>(row, node.val));
-        minColumn = Math.min(minColumn, col);
-        maxColumn = Math.max(maxColumn, col);
-        // preorder DFS traversal
-        DFS(node.left, row + 1, col - 1);
-        DFS(node.right, row + 1, col + 1);
+        colTable.get(col).add(new Pair<Integer, Integer>(row, root.val));
+
+        minCol = Math.min(minCol, col);
+        maxCol = Math.max(maxCol, col);
+
+        dfs(root.left, row + 1, col - 1);
+        dfs(root.right, row + 1, col + 1);
+
     }
 }
 
