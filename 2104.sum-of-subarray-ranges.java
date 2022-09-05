@@ -8,12 +8,13 @@ import java.util.Deque;
 
 // @lc code=start
 class Solution {
+    // subArrayRanges = sumSubarrayMaxs - sumSubarrayMins
     public long subArrayRanges(int[] nums) {
         int n = nums.length;
         long res = 0;
 
         Deque<Integer> s = new LinkedList<>();
-        // res -= sumSubarrayMins
+        // 1. subArrayRanges -= sumSubarrayMins (907. Sum of Subarray Minimums)
         for (int i = -1; i <= n; i++) {
             while (!s.isEmpty() && getElement1(nums, s.peek()) > getElement1(nums, i)) {
                 int currIdx = s.pop();
@@ -23,7 +24,7 @@ class Solution {
             s.push(i);
         }
 
-        // res += sumSubarrayMaxs
+        // 2. subArrayRanges += sumSubarrayMaxs
         for (int i = -1; i <= n; i++) {
             while (!s.isEmpty() && getElement2(nums, s.peek()) < getElement2(nums, i)) {
                 int currIdx = s.pop();
