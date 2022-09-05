@@ -21,44 +21,45 @@ class Trie {
         if (word == null || word.length() == 0) {
             return;
         }
-        TrieNode cur = root;
+        TrieNode node = root;
         for (int i = 0; i < word.length(); i++) {
             char currChar = word.charAt(i);
-            if (cur.children[currChar - 'a'] == null) {
-                cur.children[currChar - 'a'] = new TrieNode();
+            if (node.children[currChar - 'a'] == null) {
+                node.children[currChar - 'a'] = new TrieNode();
             }
-            cur = cur.children[currChar - 'a'];
+            node = node.children[currChar - 'a'];
         }
-        cur.isEnd = true;
+        node.isEnd = true;
     }
 
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
-        TrieNode cur = searchPrefix(word);
-        return cur != null && cur.isEnd;
+        TrieNode node = searchPrefix(word);
+        return node != null && node.isEnd;
     }
 
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
      */
     public boolean startWith(String prefix) {
-        TrieNode cur = searchPrefix(prefix);
-        return cur != null;
+        TrieNode node = searchPrefix(prefix);
+        return node != null;
     }
 
     private TrieNode searchPrefix(String prefix) {
+        // This check depends on specific definitaion of prefix...
         if (prefix == null || prefix.length() == 0) {
             return null;
         }
-        TrieNode cur = root;
+        TrieNode node = root;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
-            if (cur.children[c - 'a'] == null) {
+            if (node.children[c - 'a'] == null) {
                 return null;
             }
-            cur = cur.children[c - 'a'];
+            node = node.children[c - 'a'];
         }
-        return cur;
+        return node;
     }
 }
 
