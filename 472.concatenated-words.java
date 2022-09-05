@@ -6,44 +6,45 @@
 
 // @lc code=start
 class Solution {
+    // use trie to check concatenated words
     Trie trie = new Trie();
 
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
-        List<String> ans = new ArrayList<String>();
+        List<String> res = new ArrayList<String>();
+        // 1. for convience, sort it length-ascendingly
         Arrays.sort(words, (a, b) -> a.length() - b.length());
+        // 2. walk thourgh all the words, recursively check if it is concatenated
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
-            if (word.length() == 0) {
-                continue;
-            }
             boolean[] visited = new boolean[word.length()];
-            if (dfs(word, 0, visited)) {
-                ans.add(word);
+            if (isConcatenated(word, 0, visited)) {
+                res.add(word);
             } else {
-                insert(word);
+                insert2Trie(word);
             }
         }
-        return ans;
+        return res;
     }
 
-    public boolean dfs(String word, int start, boolean[] visited) {
+    public boolean isConcatenated(String word, int start, boolean[] visited) {
         if (word.length() == start) {
             return true;
         }
         if (visited[start]) {
             return false;
         }
+
         visited[start] = true;
         Trie node = trie;
         for (int i = start; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            int index = ch - 'a';
-            node = node.children[index];
+            char currChar = word.charAt(i);
+            node = node.children[currChar - 'a'];
+
             if (node == null) {
                 return false;
             }
             if (node.isEnd) {
-                if (dfs(word, i + 1, visited)) {
+                if (isConcatenated(word, i + 1, visited)) {
                     return true;
                 }
             }
@@ -51,15 +52,16 @@ class Solution {
         return false;
     }
 
-    public void insert(String word) {
+    // insert word to Trie
+    public void insert2Trie(String word) {
         Trie node = trie;
         for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
-            int index = ch - 'a';
-            if (node.children[index] == null) {
-                node.children[index] = new Trie();
+            char currChar = word.charAt(i);
+
+            if (node.children[currChar - 'a'] == null) {
+                node.children[currChar - 'a'] = new Trie();
             }
-            node = node.children[index];
+            node = node.children[currChar - 'a'];
         }
         node.isEnd = true;
     }
