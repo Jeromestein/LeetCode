@@ -78,4 +78,33 @@ class Trie {
         queue = new PriorityQueue<>((o1, o2) -> o2.compareTo(o1));
     }
 }
+
+// class Solution {
+// public List<List<String>> suggestedProducts(String[] products, String
+// searchWord) {
+// Arrays.sort(products);
+// List<List<String>> ans = new ArrayList<>();
+// int n = searchWord.length();
+// int left = 0;
+// int right = products.length;
+// for (int i = 0; i < n; i++) {
+// char c = searchWord.charAt(i);
+// while (left < right && (products[left].length() <= i ||
+// products[left].charAt(i) < c))
+// ++left;
+// while (left < right && products[right - 1].length() > i && products[right -
+// 1].charAt(i) > c)
+// --right;
+
+// List<String> curr = new ArrayList<>();
+// for (int j = left; j < right && j < left + 3; j++) {
+// curr.add(products[j]);
+// }
+// ans.add(curr);
+// }
+
+// return ans;
+// }
+// }
+
 // @lc code=end
