@@ -8,8 +8,8 @@
 class Solution {
     int MOD = (int) 1e9 + 7;
 
-    private int getElement(int[] arr, int n, int i) {
-        return (i == -1 || i == n) ? Integer.MIN_VALUE : arr[i];
+    private int getElement(int[] arr, int i) {
+        return (i == -1 || i == arr.length) ? Integer.MIN_VALUE : arr[i];
     }
 
     public int sumSubarrayMins(int[] arr) {
@@ -21,7 +21,7 @@ class Solution {
         // 2 sentinels: set arr[-1] & arr[n] as MIN_VALUE
         for (int i = -1; i <= n; i++) {
             // Find left closest element, e <= A[i]
-            while (!stack.isEmpty() && getElement(arr, n, stack.peek()) > getElement(arr, n, i)) {
+            while (!stack.isEmpty() && getElement(arr, stack.peek()) > getElement(arr, i)) {
                 // for each stack.pop(),
                 // i is its right boundary and stack.peek() is left boundary.
                 int currIdx = stack.pop();
