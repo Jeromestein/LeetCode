@@ -24,9 +24,10 @@ class Solution {
             while (!stack.isEmpty() && getElement(arr, n, stack.peek()) > getElement(arr, n, i)) {
                 // for each stack.pop(),
                 // i is its right boundary and stack.peek() is left boundary.
-                int curr = stack.pop();
+                int currIdx = stack.pop();
+                int left = stack.peek(), right = i;
                 // calculate contribution
-                ans = (ans + (long) (curr - stack.peek()) * (i - curr) * arr[curr]) % MOD;
+                ans = (ans + (long) (currIdx - left) * (right - currIdx) * arr[currIdx]) % MOD;
             }
             stack.push(i);
         }
