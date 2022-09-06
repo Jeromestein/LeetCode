@@ -28,13 +28,11 @@ class Solution {
         if (root.right != null)
             root.right = pruneTree(root.right);
 
-        // firat dfs, mark all the subtree not containing 1
-
-        // second dfs, prune
         if (root.left == null && root.right == null && root.val == 0) {
             return null;
-        } else
+        } else {
             return root;
+        }
     }
 }
 
