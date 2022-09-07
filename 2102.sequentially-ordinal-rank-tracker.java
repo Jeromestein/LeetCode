@@ -5,6 +5,8 @@
  */
 
 // @lc code=start
+
+// max-min heap
 class SORTracker {
     class Location {
         String name;
