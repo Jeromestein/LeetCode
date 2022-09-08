@@ -6,39 +6,45 @@
 
 // @lc code=start
 class HitCounter {
-    Deque<int[]> deque;
+    // <timestamp, hits>
+    class Second {
+        int timestamp;
+        int hits;
+
+        public Second(int timestamp, int hits) {
+            this.timestamp = timestamp;
+            this.hits = hits;
+        }
+    }
+
+    List<Second> secList;
 
     public HitCounter() {
-        deque = new LinkedList<>();
-        deque.addFirst(new int[] { 0, 0 });
+        secList = new ArrayList<>();
     }
 
-    // Time:O(1)
     public void hit(int timestamp) {
-        // multiple hits arriving at the "same" timestamps.
-        if (deque.peekLast()[0] == timestamp)
-            deque.peekLast()[1]++;
+        // 1. try to find it in the list
+        if (!secList.isEmpty() && secList.get(secList.size() - 1).timestamp == timestamp)
+            secList.get(secList.size() - 1).hits++;
+        // 2. add new Second
         else
-            deque.addLast(new int[] { timestamp, deque.peekLast()[1] + 1 });
+            secList.add(new Second(timestamp, 1));
     }
 
-    // Time:O(N) N <= 300
     public int getHits(int timestamp) {
+        int sum = 0, left = Math.max(1, timestamp - 299);
+        for (Second sec : secList) {
+            if (sec.timestamp > timestamp)
+                break;
+            else if (left <= sec.timestamp) {
+                sum += sec.hits;
+            }
+        }
 
-        int[] guardian = null;
-        while (!deque.isEmpty() && timestamp - deque.peekFirst()[0] >= 300)
-            guardian = deque.pollFirst();
-
-        if (deque.isEmpty())
-            deque.addFirst(new int[] { 0, 0 });
-        else if (guardian != null)
-            deque.addFirst(guardian);
-
-        return deque.peekLast()[1] - deque.peekFirst()[1];
+        return sum;
     }
-
 }
-
 /**
  * Your HitCounter object will be instantiated and called as such:
  * HitCounter obj = new HitCounter();
