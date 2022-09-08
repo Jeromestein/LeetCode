@@ -60,26 +60,26 @@ import jdk.nashorn.api.tree.IfTree;
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        TreeNode node = root, pre = null;
+        TreeNode curr = root, pre = null;
 
-        while (node != null) {
-            pre = node.left;
+        while (curr != null) {
+            pre = curr.left;
             if (pre != null) {
-                while (pre.right != null && pre.right != node) {
+                while (pre.right != null && pre.right != curr) {
                     pre = pre.right;
                 }
                 if (pre.right == null) {
-                    res.add(node.val);
-                    pre.right = node;
-                    node = node.left;
+                    res.add(curr.val);
+                    pre.right = curr;
+                    curr = curr.left;
                     continue;
                 } else {
                     pre.right = null;
                 }
             } else {
-                res.add(node.val);
+                res.add(curr.val);
             }
-            node = node.right;
+            curr = curr.right;
         }
         return res;
     }
