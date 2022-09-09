@@ -20,80 +20,71 @@
  * }
  * }
  */
-class Solution {
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        // root
-        res.add(root.val);
-        if (root.left == null && root.right == null)
-            return res;
-
-        // left boundary
-        if (root.left != null) {
-            res.addAll(getLeftBoundary(root.left));
-        }
-        // leaves
-        res.addAll(getLeaves(root));
-        // reverse order right boundary
-        if (root.right != null) {
-            List<Integer> rightBoundary = getRightBoundary(root.right);
-            Collections.reverse(rightBoundary);
-            res.addAll(rightBoundary);
-        }
-
-        return res;
+        List<Integer> left_boundary = new LinkedList<>(), right_boundary = new LinkedList<>(),
+                leaves = new LinkedList<>();
+        preorder(root, left_boundary, right_boundary, leaves, 0);
+        left_boundary.addAll(leaves);
+        left_boundary.addAll(right_boundary);
+        return left_boundary;
     }
 
-    private List<Integer> getLeftBoundary(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        if (root.left == null && root.right == null)
-            return res;
-
-        if (root.left != null) {
-            res.add(root.val);
-            res.addAll(getLeftBoundary(root.left));
-        } else if (root.right != null) {
-            res.add(root.val);
-            res.addAll(getLeftBoundary(root.right));
-        }
-
-        return res;
+    public void preorder(TreeNode cur, List<Integer> left_boundary, List<Integer> right_boundary, List<Integer> leaves,
+            int flag) {
+        if (cur == null)
+            return;
+        if (isRightBoundary(flag))
+            right_boundary.add(0, cur.val);
+        else if (isLeftBoundary(flag) || isRoot(flag))
+            left_boundary.add(cur.val);
+        else if (isLeaf(cur))
+            leaves.add(cur.val);
+        preorder(cur.left, left_boundary, right_boundary, leaves, leftChildFlag(cur, flag));
+        preorder(cur.right, left_boundary, right_boundary, leaves, rightChildFlag(cur, flag));
     }
 
-    private List<Integer> getLeaves(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        // use stack, inorder traversal, get leaves
-        Stack<TreeNode> st = new Stack<>();
-        while (!st.isEmpty() || root != null) {
-            while (root != null) {
-                st.push(root);
-                root = root.left;
-            }
-
-            root = st.pop();
-            if (root.left == null && root.right == null) {
-                res.add(root.val);
-            }
-            root = root.right;
-        }
-
-        return res;
+    public boolean isLeaf(TreeNode cur) {
+        return (cur.left == null && cur.right == null);
     }
 
-    private List<Integer> getRightBoundary(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        if (root.left == null && root.right == null)
-            return res;
+    public boolean isRightBoundary(int flag) {
+        return (flag == 2);
+    }
 
-        if (root.right != null) {
-            res.add(root.val);
-            res.addAll(getRightBoundary(root.right));
-        } else if (root.left != null) {
-            res.add(root.val);
-            res.addAll(getRightBoundary(root.left));
-        }
+    public boolean isLeftBoundary(int flag) {
+        return (flag == 1);
+    }
 
-        return res;
+    public boolean isRoot(int flag) {
+        return (flag == 0);
+    }
+
+    public int leftChildFlag(TreeNode cur, int flag) {
+        if (isLeftBoundary(flag) || isRoot(flag))
+            return 1;
+        else if (isRightBoundary(flag) && cur.right == null)
+            return 2;
+        else
+            return 3;
+    }
+
+    public int rightChildFlag(TreeNode cur, int flag) {
+        if (isRightBoundary(flag) || isRoot(flag))
+            return 2;
+        else if (isLeftBoundary(flag) && cur.left == null)
+            return 1;
+        else
+            return 3;
     }
 }
 // @lc code=end
