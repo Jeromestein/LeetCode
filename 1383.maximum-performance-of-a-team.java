@@ -6,14 +6,18 @@
 
 // @lc code=start
 class Solution {
+    // greedy method:
+    //
     public int maxPerformance(int n, int[] speed, int[] efficiency, int k) {
         int modulo = (int) Math.pow(10, 9) + 7;
-        // build tuples of (efficiency, speed)
+        // candidates: (efficiency, speed)
         List<int[]> candidates = new ArrayList<>();
         for (int i = 0; i < n; ++i) {
             candidates.add(new int[] { efficiency[i], speed[i] });
         }
-        // sort the members by their efficiencies
+        // sort the members by their efficiencies descendingly
+        // so when we walk throught it,
+        // the currEfficiency will always be the min speed
         Collections.sort(candidates, (o1, o2) -> o2[0] - o1[0]);
 
         // create a heap to keep the top (k-1) speeds
