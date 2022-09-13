@@ -6,24 +6,32 @@
 
 // @lc code=start
 class Solution {
-    public int bagOfTokensScore(int[] tokens, int P) {
+    public int bagOfTokensScore(int[] tokens, int power) {
+        // 1. sort it ascendingly
+        // 2. check the min tokens < power
+        // 3. 2 pointers? left: -=tokens[i], score++; right: +=tokens[i], score--
         Arrays.sort(tokens);
-        int lo = 0, hi = tokens.length - 1;
-        int points = 0, ans = 0;
-        while (lo <= hi && (P >= tokens[lo] || points > 0)) {
-            while (lo <= hi && P >= tokens[lo]) {
-                P -= tokens[lo++];
-                points++;
+
+        int left = 0, right = tokens.length - 1;
+        int score = 0, maxScore = 0;
+        // We should always play tokens face up until exhaustion,
+        // then play one token face down and continue.
+        while (left <= right && (power >= tokens[left] || score > 0)) {
+            while (left <= right && power >= tokens[left]) {
+                power -= tokens[left];
+                left++;
+                score++;
+                maxScore = Math.max(maxScore, score);
             }
 
-            ans = Math.max(ans, points);
-            if (lo <= hi && points > 0) {
-                P += tokens[hi--];
-                points--;
+            if (left <= right && score > 0) {
+                power += tokens[right];
+                right--;
+                score--;
             }
         }
 
-        return ans;
+        return maxScore;
     }
 }
 // @lc code=end
