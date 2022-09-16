@@ -7,40 +7,36 @@
 // @lc code=start
 class Solution {
     public int[] findOriginalArray(int[] changed) {
-        // It can't be doubled array, if the size is odd
-        if (changed.length % 2 == 1) {
+        if (changed.length % 2 == 1)
             return new int[0];
+        // use a integer array to count
+        int max = 0;
+        for (int n : changed) {
+            max = Math.max(max, n);
         }
 
-        int maxNum = 0;
-        // Find the max element in the array
-        for (int num : changed) {
-            maxNum = Math.max(maxNum, num);
-        }
-
-        int[] freq = new int[2 * maxNum + 1];
-        // Store the frequency in the map
-        for (int num : changed) {
-            freq[num]++;
+        // to pass [3,3,3,3] situation,
+        // max/2 is smaller than all the elements
+        int[] cnt = new int[2 * max + 1];
+        for (int n : changed) {
+            cnt[n]++;
         }
 
         int[] original = new int[changed.length / 2];
-        int index = 0;
-        for (int num = 0; num <= maxNum; num++) {
-            // If element exists
-            if (freq[num] > 0) {
-                freq[num]--;
+        int idx = 0;
+        for (int i = 0; i <= max; i++) {
+            if (cnt[i] > 0) {
+                cnt[i]--;
 
-                int twiceNum = num * 2;
-                if (freq[twiceNum] > 0) {
-                    // Pair up the elements, decrement the count
-                    freq[twiceNum]--;
-                    // Add the original number to answer
-                    original[index++] = num;
-                    num--;
+                if (cnt[i * 2] > 0) {
+                    cnt[i * 2]--;
+                    original[idx++] = i;
+                    // try 2 times, to pass [1,2,4,2,4,8] situation
+                    i--;
                 } else {
                     return new int[0];
                 }
+
             }
         }
 
