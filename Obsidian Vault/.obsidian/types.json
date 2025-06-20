@@ -1,0 +1,12 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "times": "number",
+    "attempts": "number",
+    "duration": "number",
+    "Solve Time": "number",
+    "First Updat": "date"
+  }
+}

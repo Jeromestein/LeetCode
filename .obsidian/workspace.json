@@ -1,0 +1,189 @@
+{
+  "main": {
+    "id": "7af24913a5ae00fc",
+    "type": "split",
+    "children": [
+      {
+        "id": "5305600ef2c4b934",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d64e26509d75dfcf",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6f83e777af79d30a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4700cc37a6875ef4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0efcc7dd9cf06fa6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8bb81b7945ab6a02",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "43d4d5747f331cbf",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "147541f632902bab",
+    "type": "split",
+    "children": [
+      {
+        "id": "b7abd0018d48e413",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2f2a123b69824af",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "353806b92aa79801",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9f195afd40fbd178",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "4bba57dee4807378",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0efcc7dd9cf06fa6",
+  "lastOpenFiles": [
+    "Obsidian Vault/Pasted image 20250619111957.png",
+    "Obsidian Vault/Pasted image 20250619112041.png",
+    "Obsidian Vault/刷题笔记 - 算法篇/Time and Space Complexity of Recursive Algorithms.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/FQA.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/4. 第四章 程序基础.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/3. 第三章 刷题方法.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/2. 第二章 刷题笔记体系.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/1. 第一章 一些“方法论”.md",
+    "Obsidian Vault/刷题笔记 - 算法篇",
+    "Obsidian Vault/Pasted image 20250619150306.png",
+    "Obsidian Vault/Pasted image 20250619111908.png",
+    "Obsidian Vault/Pasted image 20250619150235.png",
+    "Obsidian Vault/刷题笔记 - 记录/刷题记录表.md",
+    "Obsidian Vault/刷题笔记 - 记录/2966. Divide Array Into Arrays With Max Difference.md",
+    "Obsidian Vault/刷题笔记 - 记录/刷题记录表.xlsx",
+    "Obsidian Vault/刷题笔记 - 记录/2294. Partition Array Such That Maximum Difference Is K.md",
+    "Obsidian Vault/刷题笔记 - 记录/1. Two Sum.md",
+    "Obsidian Vault/刷题笔记 - 记录",
+    "Obsidian Vault/Welcome.md",
+    "Obsidian Vault/Pasted image 20250619112149.png",
+    "Obsidian Vault"
+  ]
+}
