@@ -11,10 +11,14 @@
             "id": "d64e26509d75dfcf",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "3085. Minimum Deletions to Make String K-Special"
             }
           }
         ]
@@ -161,8 +165,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "d64e26509d75dfcf",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
     "Obsidian Vault/刷题笔记 - 记录/3443. Maximum Manhattan Distance After K Changes.md",
     "Obsidian Vault/3443. Maximum Manhattan Distance After K Changes.md",
     "Obsidian Vault/Untitled.md",
