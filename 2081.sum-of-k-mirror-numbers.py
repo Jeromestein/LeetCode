@@ -7,16 +7,17 @@
 # @lc code=start
 class Solution:
     def kMirror(self, k: int, n: int) -> int:
-        def isPalindrome(num: int) -> bool:
+        def isPalindromeBaseK(num: int) -> bool:
             digit = list()
             while num:
                 digit.append(num % k)
                 num //= k
+            # sequence[start:stop:step]
             return digit == digit[::-1]
         
         left = 1
         count = 0
-        res = 0
+        sum = 0
 
         while count < n:
             right = left * 10
@@ -29,19 +30,20 @@ class Solution:
                         break
 
                     combined = i
-                    if op ==0:
+                    if op == 0:
                         num = i // 10
                     else:
                         num = i
 
                     while num:
+                        # combine the digits in reverse order
                         combined = combined * 10 + num % 10
                         num //= 10
-                    if isPalindrome(combined):
+                    # We don't 
+                    if isPalindromeBaseK(combined):
                         count += 1
-                        res += combined
+                        sum += combined
             left = right
 
-        return res    
+        return sum
 # @lc code=end
-
