@@ -7,34 +7,43 @@
 # @lc code=start
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        start = self.findBound(nums, target, True)
-        if start == -1:
+        if len(nums)==0:
             return [-1, -1]
-        else:
-            end = self.findBound(nums, target, False)
-            return [start, end]
-
-    def findBound(self, nums: List[int], target: int, isFirst: bool) -> int:
-        l, r = 0, len(nums)-1
-        while l <= r:
-            mid = (l+r)//2
-            if nums[mid] == target:
-                if isFirst:
-                    if mid == l or nums[mid-1] < target:
-                        return mid
-                    else:
-                        r = mid-1
-                else:
-                    if mid == r or nums[mid+1] > target:
-                        return mid
-                    else:
-                        l = mid+1
-
-            elif nums[mid] > target:
-                r = mid-1
+        # 1. find the first target
+        def firstTarget(nums: List[int], target: int) -> List[int]:
+            left, right = 0, len(nums)-1
+            while left < right:
+                mid = (left + right )//2
+                if nums[mid] >= target:
+                    right = mid
+                else: 
+                    left = mid+1
+            
+            if nums[right] == target:
+                print(right)
+                return right
             else:
-                l = mid+1
+                return -1
 
-        return -1
+        # 2. find the last target
+        def lastTarget(nums: List[int], target: int) -> List[int]:
+            left, right = 0, len(nums)-1
+            while left < right:
+                mid = (left + right+1 )//2
+                if nums[mid] <= target:
+                    left = mid
+                else: 
+                    right = mid-1
+            
+            if nums[left] == target:
+                print(left)
+                return left
+            else:
+                return -1
+
+        left = firstTarget(nums, target)
+        right = lastTarget(nums, target)
+
+        return [left, right]
 
 # @lc code=end
