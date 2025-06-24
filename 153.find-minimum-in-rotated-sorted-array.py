@@ -7,16 +7,31 @@
 # @lc code=start
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        l, r = 0, len(nums)-1
-
-        while l < r:
-            mid = (l+r)//2
-            # All the integers of nums are unique.
-            if nums[mid] < nums[r]:
-                r = mid
+        # unique elements, so it is monotonically increasing
+        n = len(nums)
+        left, right = 0, n-1
+        # since we need to find minimum, it is unique, we use '<='
+        while left<=right:
+            mid = (left+right)//2
+            if nums[mid]>=nums[right]:
+                left=mid+1
             else:
-                l = mid+1
+                right=mid
 
-        return nums[l]
+        return nums[right]
+    
+# class Solution:
+#     def findMin(self, nums: List[int]) -> int:
+#         l, r = 0, len(nums)-1
+
+#         while l < r:
+#             mid = (l+r)//2
+#             # All the integers of nums are unique.
+#             if nums[mid] < nums[r]:
+#                 r = mid
+#             else:
+#                 l = mid+1
+
+#         return nums[l]
 
 # @lc code=end
