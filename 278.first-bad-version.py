@@ -11,20 +11,17 @@
 # def isBadVersion(version):
 
 class Solution:
-    def firstBadVersion(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        l, r = 0, n
-        while l < r:
-            mid = l+(r-l)//2
-            if isBadVersion(mid):
-                r = mid
-            else:
-                l = mid+1
+    def firstBadVersion(self, n: int) -> int:
+        left, right = 1, n
 
-        return l
+        while left < right:
+            mid = (left+right)//2
+            if isBadVersion(mid):
+                right=mid
+            else:
+                left=mid+1
+
+        return right
 
 
 # @lc code=end
