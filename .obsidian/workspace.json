@@ -13,86 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/704. Binary Search.md",
+                "file": "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "704. Binary Search"
+              "title": "5. 第五章 二分法"
             }
           },
           {
-            "id": "c2ab698c7166a675",
+            "id": "dda1eb4a218f9e46",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/658. Find K Closest Elements.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2311. Longest Binary Subsequence Less Than or Equal to K.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "658. Find K Closest Elements"
-            }
-          },
-          {
-            "id": "2e674edeee9e8c5c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2040. Kth Smallest Product of Two Sorted Arrays.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2040. Kth Smallest Product of Two Sorted Arrays"
-            }
-          },
-          {
-            "id": "45268ebd6c39ddee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/278. First Bad Version.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "278. First Bad Version"
-            }
-          },
-          {
-            "id": "99122d0e6723a23e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/153. Find Minimum in Rotated Sorted Array.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "153. Find Minimum in Rotated Sorted Array"
-            }
-          },
-          {
-            "id": "867b7b9d55060e4b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/154. Find Minimum in Rotated Sorted Array II.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "154. Find Minimum in Rotated Sorted Array II"
+              "title": "2311. Longest Binary Subsequence Less Than or Equal to K"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2040. Kth Smallest Product of Two Sorted Arrays.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2311. Longest Binary Subsequence Less Than or Equal to K.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2040. Kth Smallest Product of Two Sorted Arrays"
+              "title": "Backlinks for 2311. Longest Binary Subsequence Less Than or Equal to K"
             }
           },
           {
@@ -212,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2040. Kth Smallest Product of Two Sorted Arrays.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2311. Longest Binary Subsequence Less Than or Equal to K.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2040. Kth Smallest Product of Two Sorted Arrays"
+              "title": "Outline of 2311. Longest Binary Subsequence Less Than or Equal to K"
             }
           }
         ],
@@ -238,14 +182,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2e674edeee9e8c5c",
+  "active": "dda1eb4a218f9e46",
   "lastOpenFiles": [
-    "Obsidian Vault/刷题笔记 - 记录/658. Find K Closest Elements.md",
-    "2040. Kth Smallest Product of Two Sorted Arrays.md",
-    "2040.kth-smallest-product-of-two-sorted-arrays.py",
-    "Obsidian Vault/刷题笔记 - 记录/704. Binary Search.md",
-    "Obsidian Vault/刷题笔记 - 记录/278. First Bad Version.md",
     "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
+    "Obsidian Vault/刷题笔记 - 记录/2040. Kth Smallest Product of Two Sorted Arrays.md",
+    "Obsidian Vault/刷题笔记 - 记录/2311. Longest Binary Subsequence Less Than or Equal to K.md",
+    "Obsidian Vault/刷题笔记 - 记录/704. Binary Search.md",
+    "2311.longest-binary-subsequence-less-than-or-equal-to-k.py",
+    "Obsidian Vault/刷题笔记 - 记录/658. Find K Closest Elements.md",
+    "2040.kth-smallest-product-of-two-sorted-arrays.py",
+    "Obsidian Vault/刷题笔记 - 记录/278. First Bad Version.md",
     "Obsidian Vault/刷题笔记 - 记录/154. Find Minimum in Rotated Sorted Array II.md",
     "Obsidian Vault/刷题笔记 - 记录/153. Find Minimum in Rotated Sorted Array.md",
     "Obsidian Vault/刷题笔记 - 记录/2200. Find All K-Distant Indices in an Array.md",
@@ -277,7 +223,6 @@
     "Obsidian Vault/刷题笔记 - 记录/2966. Divide Array Into Arrays With Max Difference.md",
     "Obsidian Vault/刷题笔记 - 记录/刷题记录表.xlsx",
     "Obsidian Vault/刷题笔记 - 记录",
-    "Obsidian Vault/Welcome.md",
     "Obsidian Vault/Pasted image 20250619112149.png",
     "Obsidian Vault"
   ]
