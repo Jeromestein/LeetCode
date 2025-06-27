@@ -7,43 +7,43 @@
 # @lc code=start
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        if len(nums)==0:
-            return [-1, -1]
-        # 1. find the first target
-        def firstTarget(nums: List[int], target: int) -> List[int]:
-            left, right = 0, len(nums)-1
-            while left < right:
-                mid = (left + right )//2
-                if nums[mid] >= target:
-                    right = mid
-                else: 
-                    left = mid+1
-            
-            if nums[right] == target:
-                print(right)
-                return right
+        # 1. find one target
+        left, right = 0, len(nums)-1
+        while left<=right:
+            mid = (left+right)//2
+            if nums[mid]==target:
+                left=mid
+                break
+            elif nums[mid]<target:
+                left=mid+1
             else:
-                return -1
-
-        # 2. find the last target
-        def lastTarget(nums: List[int], target: int) -> List[int]:
-            left, right = 0, len(nums)-1
-            while left < right:
-                mid = (left + right+1 )//2
-                if nums[mid] <= target:
-                    left = mid
-                else: 
-                    right = mid-1
-            
-            if nums[left] == target:
-                print(left)
-                return left
+                right=mid-1
+        x=left
+        if len(nums)==x or nums[x]!= target:
+            return [-1,-1]
+        # 2. find first 
+        left, right = 0, x
+        while left<right:
+            mid = (left+right)//2
+            # all e in nums[0,x] <= target
+            if nums[mid]==target:
+                right=mid
             else:
-                return -1
+                left=mid+1
 
-        left = firstTarget(nums, target)
-        right = lastTarget(nums, target)
+        first=left
+        # 3. find last
+        left, right = x, len(nums)-1
+        while left<right:
+            mid = (left+right+1)//2
+            # all e in nums[0,x] >= target
+            if nums[mid]==target:
+                left=mid
+            else:
+                right=mid-1
 
-        return [left, right]
+        last=left
+
+        return [first, last]
 
 # @lc code=end
