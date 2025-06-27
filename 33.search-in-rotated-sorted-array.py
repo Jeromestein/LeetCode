@@ -9,38 +9,32 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         # All values of nums are unique.
-
-        # 1. find min index
-        l, r = 0, len(nums)-1
-        while l < r:
-            mid = (l+r)//2
-            if nums[mid] < nums[r]:
-                r = mid
+        # 1. find minimum's index
+        left, right = 0, len(nums)-1
+        while left<right:
+            mid = (left+right)//2
+            if nums[mid]>nums[right]:
+                left=mid+1
             else:
-                l = mid+1
-
-        min = l
-        # 2. decide the left and right index
-        l, r = 0, len(nums)-1
-        if nums[min] <= target and target <= nums[r]:
-            l = min
+                right=mid
+        
+        minIdx=left
+        # 2. which half to search target?
+        left, right = 0, len(nums)-1
+        if target > nums[right]:
+            right=minIdx-1
         else:
-            r = min-1
-
-        # 3. binary search again
-        while l < r:
-            mid = (l+r)//2
-            if nums[mid] == target:
+            left=minIdx
+        # 3. binary search
+        while left<=right:
+            mid = (left+right)//2
+            if nums[mid]==target:
                 return mid
-            elif nums[mid] > target:
-                r = mid
+            elif nums[mid]<target:
+                left=mid+1
             else:
-                l = mid+1
-
-        if nums[l] == target:
-            return l
-        else:
-            return -1
+                right=mid-1
+        return -1
 
 
 # @lc code=end
