@@ -8,24 +8,25 @@
 
 class Solution:
     def search(self, nums: List[int], target: int) -> bool:
-        l, r = 0, len(nums)-1
-        while l < r:
-            mid = (l+r)//2
+        left, right = 0, len(nums)-1
+        while left < right:
+            mid = (left+right)//2
 
             if nums[mid] == target:
                 return True
-            elif nums[mid] > nums[r]:
-                if nums[l] <= target and target < nums[mid]:
-                    r = mid-1
+            elif nums[mid] > nums[right]:
+                if nums[left] <= target and target < nums[mid]:
+                    right = mid-1
                 else:
-                    l = mid+1
-            elif nums[mid] < nums[r]:
-                if nums[mid] < target and target <= nums[r]:
-                    l = mid+1
+                    left = mid+1
+            elif nums[mid] < nums[right]:
+                if nums[mid] < target and target <= nums[right]:
+                    left = mid+1
                 else:
-                    r = mid-1
+                    right = mid-1
             else:
-                r -= 1
+                right -= 1
 
-        return l == r and nums[l] == target
+        return left == right and nums[left] == target
+    
 # @lc code=end
