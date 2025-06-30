@@ -9,13 +9,14 @@
 
 class Solution:
     def findMedianSortedArrays(self, A, B):
-        l = len(A) + len(B)
-        if l % 2 == 1:
-            return self.kth(A, B, l // 2)
+        length = len(A) + len(B)
+        if length % 2 == 1:
+            return self.findKthMin(A, B, length // 2)
         else:
-            return (self.kth(A, B, l // 2) + self.kth(A, B, l // 2 - 1)) / 2.
+            return (self.findKthMin(A, B, length // 2) + self.findKthMin(A, B, length // 2 - 1)) / 2.
 
-    def kth(self, a, b, k):
+    def findKthMin(self, a, b, k):
+        # 1. if one of the arrays is empty, return the k-th element of the other array
         if not a:
             return b[k]
         if not b:
@@ -23,20 +24,20 @@ class Solution:
         medianIdxA, medianIdxB = len(a) // 2, len(b) // 2
         medianA, medianB = a[medianIdxA], b[medianIdxB]
 
-        # when k is bigger than the sum of a and b's median indices
+        # if k is bigger than the sum of a and b's median indices
         if medianIdxA + medianIdxB < k:
             # if a's median is bigger than b's, b's first half doesn't include k
             if medianA > medianB:
-                return self.kth(a, b[medianIdxB + 1:], k - medianIdxB - 1)
+                return self.findKthMin(a, b[medianIdxB + 1:], k - (medianIdxB + 1))
             else:
-                return self.kth(a[medianIdxA + 1:], b, k - medianIdxA - 1)
+                return self.findKthMin(a[medianIdxA + 1:], b, k - (medianIdxA + 1))
         # when k is smaller than the sum of a and b's indices
         else:
             # if a's median is bigger than b's, a's second half doesn't include k
             if medianA > medianB:
-                return self.kth(a[:medianIdxA], b, k)
+                return self.findKthMin(a[:medianIdxA], b, k)
             else:
-                return self.kth(a, b[:medianIdxB], k)
+                return self.findKthMin(a, b[:medianIdxB], k)
 
 
 # @lc code=end
