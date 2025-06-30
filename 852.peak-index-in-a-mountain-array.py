@@ -9,15 +9,15 @@
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
         # guaranteed to be a mountain
-        l, r = 0, len(arr)-1
-        while l < r:
-            mid = (l+r)//2
+        left, right = 0, len(arr)-1
+        while left < right:
+            mid = (left+right)//2
             # of course, arr[mid+1] exists
             if arr[mid] < arr[mid+1]:
-                l = mid+1
+                left = mid+1
             else:
-                r = mid
-        return l
+                right = mid
+        return left
 
 
 # @lc code=end
