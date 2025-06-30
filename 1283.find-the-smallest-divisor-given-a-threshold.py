@@ -8,17 +8,17 @@
 
 class Solution:
     def smallestDivisor(self, nums: List[int], threshold: int) -> int:
-        l, r = 1, max(nums)
-        while l < r:
-            m = (l + r) // 2
+        left, right = 1, max(nums)
+        while left < right:
+            mid = (left + right) // 2
             sum = 0
             for num in nums:
-                sum += math.ceil(num/m)
+                sum += math.ceil(num/mid)
             if sum <= threshold:
-                r = m
+                right = mid
             else:
-                l = m + 1
-        return l
+                left = mid + 1
+        return left
 
 
 # @lc code=end
