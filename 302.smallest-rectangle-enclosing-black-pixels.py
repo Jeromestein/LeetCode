@@ -5,38 +5,57 @@
 #
 
 # @lc code=start
-
-class Solution(object):
-    def minArea(self, image, x, y):
-        m, n = len(image), len(image[0])
-        # binary search [0, x) to find top
-        top = self.searchRows(image, 0, x, True)
-        # [x+1, m)
-        bottom = self.searchRows(image, x + 1, m, False)
-        # [0, y)
-        left = self.searchColumns(image, 0, y, top, bottom, True)
-        # [y+1, n)
-        right = self.searchColumns(image, y + 1, n, top, bottom, False)
-        return (right - left) * (bottom - top)
-
-    def searchRows(self, image, i, j, opt):
-        while i != j:
-            m = (i + j) // 2
-            # find '1' in string image[m]
-            if ('1' in image[m]) == opt:
-                j = m
+class Solution:
+    def minArea(self, image: List[List[str]], x: int, y: int) -> int:
+        # use double bs O(logmn) to find boundaries
+        # (x2-x1)(y2-y1)
+        m,n=len(image), len(image[0])
+        def colHasBlack(col):
+            for i in range(m):
+                if image[i][col]=='1':
+                    return True
+            return False
+        def rowHasBlack(row):
+            for j in range(n):
+                if image[row][j]=='1':
+                    return True
+            return False
+        # 1. x1
+        left, right=0, y
+        while left<right:
+            mid=(left+right)//2
+            if colHasBlack(mid):
+                right=mid
             else:
-                i = m + 1
-        return i
-
-    def searchColumns(self, image, i, j, top, bottom, opt):
-        while i != j:
-            m = (i + j) // 2
-            if any(image[k][m] == '1' for k in range(top, bottom)) == opt:
-                j = m
+                left=mid+1
+        x1=left
+        # x2
+        left, right=y, n-1
+        while left<right:
+            mid=(left+right+1)//2
+            if colHasBlack(mid):
+                left=mid
             else:
-                i = m + 1
-        return i
+                right=mid-1
+        x2=left
+        # y1
+        top, bot = 0, x
+        while top<bot:
+            mid=(top+bot)//2
+            if rowHasBlack(mid):
+                bot=mid
+            else:
+                top=mid+1
+        y1=top
+        # y2
+        top, bot = x, m-1
+        while top<bot:
+            mid=(top+bot+1)//2
+            if rowHasBlack(mid):
+                top=mid
+            else:
+                bot=mid-1
+        y2=top
 
-
+        return (y2-y1+1)*(x2-x1+1)
 # @lc code=end
