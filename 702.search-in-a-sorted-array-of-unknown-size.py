@@ -19,21 +19,19 @@ class Solution:
         :type target: int
         :rtype: int
         """
-        # 1. get bound
-        l, r = 0, 1
-        while reader.get(r) < target:
-            l = r
-            r <<= 1
-
-        # 2. binary search
-        while l <= r:
-            mid = (l+r)//2
-            if reader.get(mid) == target:
+        left, right = 0, 1
+        while reader.get(right)<target:
+            left=right
+            right*=2
+            
+        while left<=right:
+            mid=(left+right)//2
+            if reader.get(mid)==target:
                 return mid
-            elif reader.get(mid) > target:
-                r = mid-1
+            elif reader.get(mid)<target:
+                left=mid+1
             else:
-                l = mid+1
+                right=mid-1
 
         return -1
 # @lc code=end
