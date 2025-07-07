@@ -24,31 +24,17 @@
             }
           },
           {
-            "id": "3674efa625834e0d",
+            "id": "3cde20fb39ff36d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
+                "file": "142. Linked List Cycle II.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "328. Odd Even Linked List"
-            }
-          },
-          {
-            "id": "9f0737bc1dfa363f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1394. Find Lucky Integer in an Array"
+              "title": "142. Linked List Cycle II"
             }
           }
         ],
@@ -125,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
+                "file": "142. Linked List Cycle II.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +121,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 328. Odd Even Linked List"
+              "title": "Backlinks for 142. Linked List Cycle II"
             }
           },
           {
@@ -144,12 +130,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
+                "file": "142. Linked List Cycle II.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 328. Odd Even Linked List"
+              "title": "Outgoing links from 142. Linked List Cycle II"
             }
           },
           {
@@ -173,13 +159,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
+                "file": "142. Linked List Cycle II.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 328. Odd Even Linked List"
+              "title": "Outline of 142. Linked List Cycle II"
             }
           }
         ],
@@ -200,9 +186,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "3cde20fb39ff36d6",
   "lastOpenFiles": [
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "142. Linked List Cycle II.md",
     "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
     "328.odd-even-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
