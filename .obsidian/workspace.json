@@ -24,45 +24,31 @@
             }
           },
           {
-            "id": "5a3227aca8edc9ad",
+            "id": "3674efa625834e0d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "160. Intersection of Two Linked Lists.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "160. Intersection of Two Linked Lists"
+              "title": "328. Odd Even Linked List"
             }
           },
           {
-            "id": "02a9055b674025b5",
+            "id": "9f0737bc1dfa363f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/141. Linked List Cycle.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "141. Linked List Cycle"
-            }
-          },
-          {
-            "id": "a2aededbb7db01f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/86. Partition List.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "86. Partition List"
+              "title": "1394. Find Lucky Integer in an Array"
             }
           }
         ],
@@ -139,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "160. Intersection of Two Linked Lists.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +135,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 160. Intersection of Two Linked Lists"
+              "title": "Backlinks for 328. Odd Even Linked List"
             }
           },
           {
@@ -158,12 +144,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "160. Intersection of Two Linked Lists.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 160. Intersection of Two Linked Lists"
+              "title": "Outgoing links from 328. Odd Even Linked List"
             }
           },
           {
@@ -187,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "160. Intersection of Two Linked Lists.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 160. Intersection of Two Linked Lists"
+              "title": "Outline of 328. Odd Even Linked List"
             }
           }
         ],
@@ -214,11 +200,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5a3227aca8edc9ad",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
-    "160.intersection-of-two-linked-lists.py",
-    "160. Intersection of Two Linked Lists.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
+    "328.odd-even-linked-list.py",
+    "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
+    "Obsidian Vault/刷题笔记 - 记录/1865. Finding Pairs With a Certain Sum.md",
+    "1394.find-lucky-integer-in-an-array.py",
+    "Obsidian Vault/刷题笔记 - 记录/1. Two Sum.md",
+    "1865.finding-pairs-with-a-certain-sum.py",
+    "Obsidian Vault/刷题笔记 - 记录/1353. Maximum Number of Events That Can Be Attended.md",
+    "Obsidian Vault/刷题笔记 - 记录/234. Palindrome Linked List.md",
+    "1353.maximum-number-of-events-that-can-be-attended.py",
+    "Obsidian Vault/刷题笔记 - 记录/160. Intersection of Two Linked Lists.md",
+    "160.intersection-of-two-linked-lists.py",
     "Obsidian Vault/刷题笔记 - 记录/141. Linked List Cycle.md",
     "141.linked-list-cycle.py",
     "Obsidian Vault/刷题笔记 - 记录/86. Partition List.md",
@@ -233,25 +229,14 @@
     "969.pancake-sorting.py",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
     "Obsidian Vault/刷题笔记 - 记录/3304. Find the K-th Character in String Game.md",
-    "3307.find-the-k-th-character-in-string-game-ii.py",
-    "43.multiply-strings.py",
     "Obsidian Vault/Welcome.md",
-    "42.trapping-rain-water.py",
     "Obsidian Vault/刷题笔记 - 记录/845. Longest Mountain in Array.md",
-    "845.longest-mountain-in-array.py",
     "Obsidian Vault/刷题笔记 - 记录/349. Intersection of Two Arrays.md",
     "Obsidian Vault/刷题笔记 - 记录/350. Intersection of Two Arrays II.md",
-    "350.intersection-of-two-arrays-ii.py",
     "Obsidian Vault/刷题笔记 - 记录/347. Top K Frequent Elements.md",
     "Obsidian Vault/刷题笔记 - 记录/215. Kth Largest Element in an Array.md",
     "Obsidian Vault/刷题笔记 - 记录/283. Move Zeroes.md",
     "Obsidian Vault/刷题笔记 - 记录/80. Remove Duplicates from Sorted Array II.md",
-    "Obsidian Vault/刷题笔记 - 记录/88. Merge Sorted Array.md",
-    "Obsidian Vault/刷题笔记 - 记录/26. Remove Duplicates from Sorted Array.md",
-    "Obsidian Vault/刷题笔记 - 记录/3333. Find the Original Typed String II.md",
-    "Obsidian Vault/刷题笔记 - 记录/3330. Find the Original Typed String I.md",
-    "Obsidian Vault/刷题笔记 - 记录/75. Sort Colors.md",
-    "Obsidian Vault/刷题笔记 - 记录/702. Search in a Sorted Array of Unknown Size.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
