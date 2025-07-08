@@ -24,12 +24,26 @@
             }
           },
           {
+            "id": "da26782dd3a1bd02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "287. Find the Duplicate Number.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "287. Find the Duplicate Number"
+            }
+          },
+          {
             "id": "3cde20fb39ff36d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "142. Linked List Cycle II.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
                 "mode": "source",
                 "source": false
               },
@@ -37,8 +51,7 @@
               "title": "142. Linked List Cycle II"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -111,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "142. Linked List Cycle II.md",
+                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 142. Linked List Cycle II"
+              "title": "Backlinks for 6. 第六章 多指针"
             }
           },
           {
@@ -130,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "142. Linked List Cycle II.md",
+                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 142. Linked List Cycle II"
+              "title": "Outgoing links from 6. 第六章 多指针"
             }
           },
           {
@@ -159,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "142. Linked List Cycle II.md",
+                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 142. Linked List Cycle II"
+              "title": "Outline of 6. 第六章 多指针"
             }
           }
         ],
@@ -186,10 +199,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3cde20fb39ff36d6",
+  "active": "ced489a6272bf11f",
   "lastOpenFiles": [
+    "287. Find the Duplicate Number.md",
+    "287.find-the-duplicate-number.py",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "142. Linked List Cycle II.md",
+    "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
     "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
     "328.odd-even-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
@@ -213,7 +228,6 @@
     "21.merge-two-sorted-lists.py",
     "Obsidian Vault/刷题笔记 - 记录/42. Trapping Rain Water.md",
     "Obsidian Vault/刷题笔记 - 记录/969. Pancake Sorting.md",
-    "969.pancake-sorting.py",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
     "Obsidian Vault/刷题笔记 - 记录/3304. Find the K-th Character in String Game.md",
     "Obsidian Vault/Welcome.md",
@@ -222,8 +236,6 @@
     "Obsidian Vault/刷题笔记 - 记录/350. Intersection of Two Arrays II.md",
     "Obsidian Vault/刷题笔记 - 记录/347. Top K Frequent Elements.md",
     "Obsidian Vault/刷题笔记 - 记录/215. Kth Largest Element in an Array.md",
-    "Obsidian Vault/刷题笔记 - 记录/283. Move Zeroes.md",
-    "Obsidian Vault/刷题笔记 - 记录/80. Remove Duplicates from Sorted Array II.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
