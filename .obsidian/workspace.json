@@ -24,17 +24,17 @@
             }
           },
           {
-            "id": "da26782dd3a1bd02",
+            "id": "31fabe0391e0eb53",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "287. Find the Duplicate Number.md",
+                "file": "56. Merge Intervals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "287. Find the Duplicate Number"
+              "title": "56. Merge Intervals"
             }
           },
           {
@@ -51,7 +51,8 @@
               "title": "142. Linked List Cycle II"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -124,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "56. Merge Intervals.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +135,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 6. 第六章 多指针"
+              "title": "Backlinks for 56. Merge Intervals"
             }
           },
           {
@@ -143,12 +144,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "56. Merge Intervals.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 6. 第六章 多指针"
+              "title": "Outgoing links from 56. Merge Intervals"
             }
           },
           {
@@ -172,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "56. Merge Intervals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6. 第六章 多指针"
+              "title": "Outline of 56. Merge Intervals"
             }
           }
         ],
@@ -199,12 +200,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ced489a6272bf11f",
+  "active": "31fabe0391e0eb53",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "56. Merge Intervals.md",
+    "56.merge-intervals.py",
+    "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
+    "876. Middle of the Linked List.md",
+    "876.middle-of-the-linked-list.py",
     "287. Find the Duplicate Number.md",
     "287.find-the-duplicate-number.py",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
     "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
     "328.odd-even-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
@@ -222,10 +227,8 @@
     "Obsidian Vault/刷题笔记 - 记录/86. Partition List.md",
     "86.partition-list.py",
     "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
-    "837.new-21-game.py",
     "Obsidian Vault/刷题笔记 - 记录/21. Merge Two Sorted Lists.md",
     "Obsidian Vault/刷题笔记 - 记录/43. Multiply Strings.md",
-    "21.merge-two-sorted-lists.py",
     "Obsidian Vault/刷题笔记 - 记录/42. Trapping Rain Water.md",
     "Obsidian Vault/刷题笔记 - 记录/969. Pancake Sorting.md",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
@@ -234,8 +237,6 @@
     "Obsidian Vault/刷题笔记 - 记录/845. Longest Mountain in Array.md",
     "Obsidian Vault/刷题笔记 - 记录/349. Intersection of Two Arrays.md",
     "Obsidian Vault/刷题笔记 - 记录/350. Intersection of Two Arrays II.md",
-    "Obsidian Vault/刷题笔记 - 记录/347. Top K Frequent Elements.md",
-    "Obsidian Vault/刷题笔记 - 记录/215. Kth Largest Element in an Array.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
