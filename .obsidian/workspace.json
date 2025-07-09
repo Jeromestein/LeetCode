@@ -38,6 +38,20 @@
             }
           },
           {
+            "id": "02fd4c69ba8a28b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3439. Reschedule Meetings for Maximum Free Time I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3439. Reschedule Meetings for Maximum Free Time I"
+            }
+          },
+          {
             "id": "3cde20fb39ff36d6",
             "type": "leaf",
             "state": {
@@ -52,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -125,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "56. Merge Intervals.md",
+                "file": "3439. Reschedule Meetings for Maximum Free Time I.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +149,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 56. Merge Intervals"
+              "title": "Backlinks for 3439. Reschedule Meetings for Maximum Free Time I"
             }
           },
           {
@@ -144,12 +158,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "56. Merge Intervals.md",
+                "file": "3439. Reschedule Meetings for Maximum Free Time I.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 56. Merge Intervals"
+              "title": "Outgoing links from 3439. Reschedule Meetings for Maximum Free Time I"
             }
           },
           {
@@ -173,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "56. Merge Intervals.md",
+                "file": "3439. Reschedule Meetings for Maximum Free Time I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 56. Merge Intervals"
+              "title": "Outline of 3439. Reschedule Meetings for Maximum Free Time I"
             }
           }
         ],
@@ -200,10 +214,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "31fabe0391e0eb53",
+  "active": "02fd4c69ba8a28b1",
   "lastOpenFiles": [
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "3439.reschedule-meetings-for-maximum-free-time-i.py",
     "56. Merge Intervals.md",
+    "3439. Reschedule Meetings for Maximum Free Time I.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "56.merge-intervals.py",
     "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
     "876. Middle of the Linked List.md",
@@ -236,7 +252,6 @@
     "Obsidian Vault/Welcome.md",
     "Obsidian Vault/刷题笔记 - 记录/845. Longest Mountain in Array.md",
     "Obsidian Vault/刷题笔记 - 记录/349. Intersection of Two Arrays.md",
-    "Obsidian Vault/刷题笔记 - 记录/350. Intersection of Two Arrays II.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
