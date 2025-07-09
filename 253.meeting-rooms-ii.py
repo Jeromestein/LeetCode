@@ -6,7 +6,6 @@
 
 # @lc code=start
 
-
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
 
@@ -36,6 +35,4 @@ class Solution:
 
         # The size of the heap tells us the minimum rooms required for all the meetings.
         return len(free_rooms)
-
-
 # @lc code=end
