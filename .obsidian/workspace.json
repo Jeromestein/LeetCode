@@ -38,6 +38,20 @@
             }
           },
           {
+            "id": "1eec921a7d4b1832",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. Longest Palindromic Substring.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5. Longest Palindromic Substring"
+            }
+          },
+          {
             "id": "902ef95ce6b842f9",
             "type": "leaf",
             "state": {
@@ -52,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -84,7 +98,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lambda",
+                "query": "tag:#Palindrom",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -105,7 +119,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -173,13 +188,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "5. Longest Palindromic Substring.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6. 第六章 多指针"
+              "title": "Outline of 5. Longest Palindromic Substring"
             }
           }
         ],
@@ -199,11 +214,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ced489a6272bf11f",
+  "active": "1eec921a7d4b1832",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "5. Longest Palindromic Substring.md",
+    "5.longest-palindromic-substring.py",
     "986. Interval List Intersections.md",
     "253. Meeting Rooms II.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "986.interval-list-intersections.py",
     "285. Inorder Successor in BST.md",
     "285.inorder-successor-in-bst.py",
@@ -224,7 +241,6 @@
     "287. Find the Duplicate Number.md",
     "287.find-the-duplicate-number.py",
     "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
-    "328.odd-even-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/1394. Find Lucky Integer in an Array.md",
     "Obsidian Vault/刷题笔记 - 记录/1865. Finding Pairs With a Certain Sum.md",
     "Obsidian Vault/刷题笔记 - 记录/1. Two Sum.md",
@@ -235,7 +251,6 @@
     "Obsidian Vault/刷题笔记 - 记录/86. Partition List.md",
     "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
     "Obsidian Vault/刷题笔记 - 记录/21. Merge Two Sorted Lists.md",
-    "Obsidian Vault/刷题笔记 - 记录/43. Multiply Strings.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
