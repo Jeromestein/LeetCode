@@ -11,7 +11,7 @@ class Solution:
         # 2 pointers, left right, find vowels and swap
         chars=list(s)
         n=len(chars)
-        vowels="aeiouAEIOU"
+        vowels=set("aeiouAEIOU")
         left,right=0,n-1
         while left<right:
             if chars[left] in vowels and chars[right] in vowels:
