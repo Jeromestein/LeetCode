@@ -38,17 +38,31 @@
             }
           },
           {
-            "id": "826472a29ef51a19",
+            "id": "e60314d886e4c174",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "76. Minimum Window Substring"
+              "title": "3201. Find the Maximum Length of Valid Subsequence I"
+            }
+          },
+          {
+            "id": "fea8f1265d2b4eae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3201. Find the Maximum Length of Valid Subsequence I"
             }
           }
         ],
@@ -173,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 76. Minimum Window Substring"
+              "title": "Outline of 3201. Find the Maximum Length of Valid Subsequence I"
             }
           }
         ],
@@ -199,13 +213,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "826472a29ef51a19",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/209. Minimum Size Subarray Sum.md",
+    "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
+    "209.minimum-size-subarray-sum.py",
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
+    "3201.find-the-maximum-length-of-valid-subsequence-i.py",
     "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
     "76.minimum-window-substring.py",
     "Obsidian Vault/刷题笔记 - 记录/11. Container With Most Water.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
     "Obsidian Vault/刷题笔记 - 记录/3. Longest Substring Without Repeating Characters.md",
     "11.container-with-most-water.py",
     "Obsidian Vault/刷题笔记 - 记录/3136. Valid Word.md",
@@ -220,9 +238,7 @@
     "125.valid-palindrome.py",
     "345.reverse-vowels-of-a-string.py",
     "Obsidian Vault/刷题笔记 - 记录/2402. Meeting Rooms III.md",
-    "beginners_python_cheat_sheet_pcc.pdf",
     "Obsidian Vault/刷题笔记 - 记录/5. Longest Palindromic Substring.md",
-    "2402.meeting-rooms-iii.py",
     "Obsidian Vault/刷题笔记 - 记录/986. Interval List Intersections.md",
     "Obsidian Vault/刷题笔记 - 记录/253. Meeting Rooms II.md",
     "Obsidian Vault/刷题笔记 - 记录/285. Inorder Successor in BST.md",
@@ -234,8 +250,6 @@
     "Obsidian Vault/刷题笔记 - 记录/3439. Reschedule Meetings for Maximum Free Time I.md",
     "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
     "Obsidian Vault/刷题笔记 - 记录/876. Middle of the Linked List.md",
-    "Obsidian Vault/刷题笔记 - 记录/287. Find the Duplicate Number.md",
-    "Obsidian Vault/刷题笔记 - 记录/328. Odd Even Linked List.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
