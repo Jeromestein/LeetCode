@@ -78,9 +78,23 @@
               "icon": "lucide-file",
               "title": "3201. Find the Maximum Length of Valid Subsequence I"
             }
+          },
+          {
+            "id": "a348e22756516a23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2163. Minimum Difference in Sums After Removal of Elements.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2163. Minimum Difference in Sums After Removal of Elements"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -201,13 +215,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3202. Find the Maximum Length of Valid Subsequence II.md",
+                "file": "2163. Minimum Difference in Sums After Removal of Elements.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3202. Find the Maximum Length of Valid Subsequence II"
+              "title": "Outline of 2163. Minimum Difference in Sums After Removal of Elements"
             }
           }
         ],
@@ -227,11 +241,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e9743af148b37901",
+  "active": "a348e22756516a23",
   "lastOpenFiles": [
-    "3202.find-the-maximum-length-of-valid-subsequence-ii.py",
+    "2163.minimum-difference-in-sums-after-removal-of-elements.py",
     "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
+    "2163. Minimum Difference in Sums After Removal of Elements.md",
     "3202. Find the Maximum Length of Valid Subsequence II.md",
+    "3202.find-the-maximum-length-of-valid-subsequence-ii.py",
     "Obsidian Vault/刷题笔记 - 记录/209. Minimum Size Subarray Sum.md",
     "209.minimum-size-subarray-sum.py",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
@@ -252,7 +268,6 @@
     "Obsidian Vault/刷题笔记 - 记录/125. Valid Palindrome.md",
     "Obsidian Vault/刷题笔记 - 记录/345. Reverse Vowels of a String.md",
     "125.valid-palindrome.py",
-    "345.reverse-vowels-of-a-string.py",
     "Obsidian Vault/刷题笔记 - 记录/2402. Meeting Rooms III.md",
     "Obsidian Vault/刷题笔记 - 记录/5. Longest Palindromic Substring.md",
     "Obsidian Vault/刷题笔记 - 记录/986. Interval List Intersections.md",
@@ -264,7 +279,6 @@
     "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 记录/56. Merge Intervals.md",
     "Obsidian Vault/刷题笔记 - 记录/3439. Reschedule Meetings for Maximum Free Time I.md",
-    "Obsidian Vault/刷题笔记 - 记录/142. Linked List Cycle II.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
