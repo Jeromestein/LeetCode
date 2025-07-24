@@ -38,35 +38,35 @@
             }
           },
           {
-            "id": "c2260920ffcf7f90",
+            "id": "82c9b7dc0d173648",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/621. Task Scheduler.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1717. Maximum Score From Removing Substrings"
+              "title": "621. Task Scheduler"
             }
           },
           {
-            "id": "ffa413179daa4271",
+            "id": "a672022411f9918d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/233. Number of Digit One.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "146. LRU Cache"
+              "title": "233. Number of Digit One"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -187,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/233. Number of Digit One.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1717. Maximum Score From Removing Substrings"
+              "title": "Outline of 233. Number of Digit One"
             }
           }
         ],
@@ -213,13 +213,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c2260920ffcf7f90",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "233.number-of-digit-one.py",
+    "Obsidian Vault/刷题笔记 - 记录/621. Task Scheduler.md",
+    "Obsidian Vault/刷题笔记 - 记录/233. Number of Digit One.md",
+    "Obsidian Vault/刷题笔记 - 记录/53. Maximum Subarray.md",
+    "621.task-scheduler.py",
+    "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
+    "53.maximum-subarray.py",
+    "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
+    "2.add-two-numbers.py",
+    "527.word-abbreviation.py",
     "1717.maximum-score-from-removing-substrings.py",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
     "Obsidian Vault/刷题笔记 - 记录/1967. Delete Characters to Make Fancy String.md",
-    "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
     "Obsidian Vault/刷题笔记 - 记录/1695. Maximum Erasure Value.md",
     "1695.maximum-erasure-value.py",
     "Obsidian Vault/刷题笔记 - 记录/465. Optimal Account Balancing.md",
@@ -231,16 +239,11 @@
     "Obsidian Vault/刷题笔记 - 记录/3202. Find the Maximum Length of Valid Subsequence II.md",
     "3202.find-the-maximum-length-of-valid-subsequence-ii.py",
     "Obsidian Vault/刷题笔记 - 记录/209. Minimum Size Subarray Sum.md",
-    "209.minimum-size-subarray-sum.py",
     "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
-    "3201.find-the-maximum-length-of-valid-subsequence-i.py",
     "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
-    "76.minimum-window-substring.py",
     "Obsidian Vault/刷题笔记 - 记录/11. Container With Most Water.md",
     "Obsidian Vault/刷题笔记 - 记录/3. Longest Substring Without Repeating Characters.md",
-    "11.container-with-most-water.py",
     "Obsidian Vault/刷题笔记 - 记录/3136. Valid Word.md",
-    "3136.valid-word.py",
     "Obsidian Vault/刷题笔记 - 记录/1290. Convert Binary Number in a Linked List to Integer.md",
     "Obsidian Vault/刷题笔记 - 记录/680. Valid Palindrome II.md",
     "Obsidian Vault/刷题笔记 - 记录/125. Valid Palindrome.md",
@@ -248,9 +251,6 @@
     "Obsidian Vault/刷题笔记 - 记录/2402. Meeting Rooms III.md",
     "Obsidian Vault/刷题笔记 - 记录/5. Longest Palindromic Substring.md",
     "Obsidian Vault/刷题笔记 - 记录/986. Interval List Intersections.md",
-    "Obsidian Vault/刷题笔记 - 记录/253. Meeting Rooms II.md",
-    "Obsidian Vault/刷题笔记 - 记录/285. Inorder Successor in BST.md",
-    "Obsidian Vault/刷题笔记 - 记录/3440. Reschedule Meetings for Maximum Free Time II.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
