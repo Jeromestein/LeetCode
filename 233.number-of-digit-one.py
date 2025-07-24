@@ -24,11 +24,11 @@ class Solution:
 
             res += higher * i
 
-            if current == 0:
-                extra = 0
-            elif current == 1:
+            extra = 0
+            find_number = 1
+            if current == find_number:
                 extra = lower + 1
-            else:
+            if current > find_number:
                 extra = i
 
             res += extra
