@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "94. Binary Tree Inorder Traversal.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3487. Maximum Unique Subarray Sum After Deletion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "94. Binary Tree Inorder Traversal"
+              "title": "3487. Maximum Unique Subarray Sum After Deletion"
             }
           },
           {
@@ -62,9 +62,21 @@
               "icon": "lucide-file",
               "title": "145. Binary Tree Postorder Traversal"
             }
+          },
+          {
+            "id": "eb9602529a9fbe63",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "beginners_python_cheat_sheet_pcc.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "beginners_python_cheat_sheet_pcc"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,13 +197,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/145. Binary Tree Postorder Traversal.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3487. Maximum Unique Subarray Sum After Deletion.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 145. Binary Tree Postorder Traversal"
+              "title": "Outline of 3487. Maximum Unique Subarray Sum After Deletion"
             }
           }
         ],
@@ -211,11 +223,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "e67faa472740c6e6",
   "lastOpenFiles": [
+    "python_interview_cheatsheet.html",
+    "python_cheaatsheet.md",
+    "3487.maximum-unique-subarray-sum-after-deletion.py",
+    "Obsidian Vault/刷题笔记 - 记录/206. Reverse Linked List.md",
+    "Obsidian Vault/刷题笔记 - 记录/3487. Maximum Unique Subarray Sum After Deletion.md",
+    "beginners_python_cheat_sheet_pcc.pdf",
+    "Obsidian Vault/刷题笔记 - 记录/145. Binary Tree Postorder Traversal.md",
+    "206.reverse-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/94. Binary Tree Inorder Traversal.md",
     "Obsidian Vault/刷题笔记 - 记录/144. Binary Tree Preorder Traversal.md",
-    "Obsidian Vault/刷题笔记 - 记录/145. Binary Tree Postorder Traversal.md",
     "Obsidian Vault/刷题笔记 - 算法篇/8. 第八章 二叉树与递归.md",
     "145.binary-tree-postorder-traversal.py",
     "144.binary-tree-preorder-traversal.py",
@@ -231,10 +250,7 @@
     "Obsidian Vault/刷题笔记 - 记录/53. Maximum Subarray.md",
     "621.task-scheduler.py",
     "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
-    "53.maximum-subarray.py",
     "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
-    "2.add-two-numbers.py",
-    "527.word-abbreviation.py",
     "Obsidian Vault/刷题笔记 - 记录/1967. Delete Characters to Make Fancy String.md",
     "Obsidian Vault/刷题笔记 - 记录/1695. Maximum Erasure Value.md",
     "Obsidian Vault/刷题笔记 - 记录/465. Optimal Account Balancing.md",
@@ -245,10 +261,6 @@
     "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
     "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
     "Obsidian Vault/刷题笔记 - 记录/11. Container With Most Water.md",
-    "Obsidian Vault/刷题笔记 - 记录/3. Longest Substring Without Repeating Characters.md",
-    "Obsidian Vault/刷题笔记 - 记录/3136. Valid Word.md",
-    "Obsidian Vault/刷题笔记 - 记录/1290. Convert Binary Number in a Linked List to Integer.md",
-    "Obsidian Vault/刷题笔记 - 记录/680. Valid Palindrome II.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
