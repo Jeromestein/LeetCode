@@ -13,12 +13,68 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6. 第六章 多指针"
+              "title": "395. Longest Substring with At Least K Repeating Characters"
+            }
+          },
+          {
+            "id": "f23ba23dc55dcb9f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2044. Count Number of Maximum Bitwise-OR Subsets"
+            }
+          },
+          {
+            "id": "8310b9ce4b11d01a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3480. Maximize Subarrays After Removing One Conflicting Pair.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3480. Maximize Subarrays After Removing One Conflicting Pair"
+            }
+          },
+          {
+            "id": "93178544a34424bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2044. Count Number of Maximum Bitwise-OR Subsets"
+            }
+          },
+          {
+            "id": "555605a2fa787e8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "395. Longest Substring with At Least K Repeating Characters"
             }
           },
           {
@@ -34,77 +90,9 @@
               "icon": "lucide-file",
               "title": "713. Subarray Product Less Than K"
             }
-          },
-          {
-            "id": "afde7c4ca04334c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/239. Sliding Window Maximum.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "239. Sliding Window Maximum"
-            }
-          },
-          {
-            "id": "e67faa472740c6e6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3487. Maximum Unique Subarray Sum After Deletion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3487. Maximum Unique Subarray Sum After Deletion"
-            }
-          },
-          {
-            "id": "1e5892289623cd81",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "144. Binary Tree Preorder Traversal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "144. Binary Tree Preorder Traversal"
-            }
-          },
-          {
-            "id": "ff7265479f258446",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/145. Binary Tree Postorder Traversal.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "145. Binary Tree Postorder Traversal"
-            }
-          },
-          {
-            "id": "eb9602529a9fbe63",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "beginners_python_cheat_sheet_pcc.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "beginners_python_cheat_sheet_pcc"
-            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -225,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/713. Subarray Product Less Than K.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 713. Subarray Product Less Than K"
+              "title": "Outline of 2044. Count Number of Maximum Bitwise-OR Subsets"
             }
           }
         ],
@@ -251,11 +239,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7a877e3e07a9ca17",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
-    "Obsidian Vault/刷题笔记 - 记录/239. Sliding Window Maximum.md",
-    "Obsidian Vault/刷题笔记 - 记录/713. Subarray Product Less Than K.md",
+    "Obsidian Vault/刷题笔记 - 记录/2210. Count Hills and Valleys in an Array.md",
+    "2210.count-hills-and-valleys-in-an-array.py",
+    "2220.minimum-bit-flips-to-convert-number.py",
+    "Obsidian Vault/刷题笔记 - 记录/3480. Maximize Subarrays After Removing One Conflicting Pair.md",
+    "3480.maximize-subarrays-after-removing-one-conflicting-pair.py",
+    "53. Maximum Subarray.md",
+    "Obsidian Vault/刷题笔记 - 记录/53. Maximum Subarray.md",
+    "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
+    "2044.count-number-of-maximum-bitwise-or-subsets.py",
+    "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "Obsidian Vault/刷题笔记 - 记录/713. Subarray Product Less Than K.md",
+    "395.longest-substring-with-at-least-k-repeating-characters.py",
+    "713.subarray-product-less-than-k.py",
+    "Obsidian Vault/刷题笔记 - 记录/704. Binary Search.md",
+    "Obsidian Vault/刷题笔记 - 记录/3. Longest Substring Without Repeating Characters.md",
+    "Obsidian Vault/刷题笔记 - 记录/刷题记录表.md",
+    "Obsidian Vault/刷题笔记 - 记录/209. Minimum Size Subarray Sum.md",
+    "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
+    "Obsidian Vault/刷题笔记 - 记录/11. Container With Most Water.md",
+    "Obsidian Vault/刷题笔记 - 记录/239. Sliding Window Maximum.md",
     "239.sliding-window-maximum.py",
     "Obsidian Vault/刷题笔记 - 记录/3487. Maximum Unique Subarray Sum After Deletion.md",
     "python_interview_cheatsheet.html",
@@ -264,31 +270,12 @@
     "Obsidian Vault/刷题笔记 - 记录/206. Reverse Linked List.md",
     "beginners_python_cheat_sheet_pcc.pdf",
     "Obsidian Vault/刷题笔记 - 记录/145. Binary Tree Postorder Traversal.md",
-    "206.reverse-linked-list.py",
     "Obsidian Vault/刷题笔记 - 记录/94. Binary Tree Inorder Traversal.md",
     "Obsidian Vault/刷题笔记 - 记录/144. Binary Tree Preorder Traversal.md",
     "Obsidian Vault/刷题笔记 - 算法篇/8. 第八章 二叉树与递归.md",
-    "145.binary-tree-postorder-traversal.py",
-    "144.binary-tree-preorder-traversal.py",
-    "94.binary-tree-inorder-traversal.py",
     "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 记录/472. Concatenated Words.md",
-    "Obsidian Vault/刷题笔记 - 记录/472. Concatenated Words.textClipping",
     "Obsidian Vault/刷题笔记 - 记录/233. Number of Digit One.md",
-    "Obsidian Vault/刷题笔记 - 记录/621. Task Scheduler.md",
-    "472.concatenated-words.py",
-    "Obsidian Vault/刷题笔记 - 记录/53. Maximum Subarray.md",
-    "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
-    "Obsidian Vault/刷题笔记 - 记录/1717. Maximum Score From Removing Substrings.md",
-    "Obsidian Vault/刷题笔记 - 记录/1967. Delete Characters to Make Fancy String.md",
-    "Obsidian Vault/刷题笔记 - 记录/1695. Maximum Erasure Value.md",
-    "Obsidian Vault/刷题笔记 - 记录/465. Optimal Account Balancing.md",
-    "Obsidian Vault/刷题笔记 - 记录/2163. Minimum Difference in Sums After Removal of Elements.md",
-    "Obsidian Vault/刷题笔记 - 记录/3201. Find the Maximum Length of Valid Subsequence I.md",
-    "Obsidian Vault/刷题笔记 - 记录/3202. Find the Maximum Length of Valid Subsequence II.md",
-    "Obsidian Vault/刷题笔记 - 记录/209. Minimum Size Subarray Sum.md",
-    "Obsidian Vault/刷题笔记 - 记录/76. Minimum Window Substring.md",
-    "Obsidian Vault/刷题笔记 - 记录/3085. Minimum Deletions to Make String K-Special.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
