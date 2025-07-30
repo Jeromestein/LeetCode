@@ -22,34 +22,6 @@
             }
           },
           {
-            "id": "d5e98cedf0c67ce8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/272. Closest Binary Search Tree Value II.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "272. Closest Binary Search Tree Value II"
-            }
-          },
-          {
-            "id": "4cb218dba46a9507",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/270. Closest Binary Search Tree Value.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "270. Closest Binary Search Tree Value"
-            }
-          },
-          {
             "id": "770876df5ec709b2",
             "type": "leaf",
             "state": {
@@ -61,6 +33,20 @@
               },
               "icon": "lucide-file",
               "title": "480. Sliding Window Median"
+            }
+          },
+          {
+            "id": "9e36c353519dc953",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/2419. Longest Subarray With Maximum Bitwise AND.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2419. Longest Subarray With Maximum Bitwise AND"
             }
           }
         ],
@@ -185,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/270. Closest Binary Search Tree Value.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2419. Longest Subarray With Maximum Bitwise AND.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 270. Closest Binary Search Tree Value"
+              "title": "Outline of 2419. Longest Subarray With Maximum Bitwise AND"
             }
           }
         ],
@@ -213,12 +199,14 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
+    "Obsidian Vault/刷题笔记 - 记录/2419. Longest Subarray With Maximum Bitwise AND.md",
+    "2419.longest-subarray-with-maximum-bitwise-and.py",
+    "Obsidian Vault/刷题笔记 - 记录/270. Closest Binary Search Tree Value.md",
     "270.closest-binary-search-tree-value.py",
     "Obsidian Vault/刷题笔记 - 记录/272. Closest Binary Search Tree Value II.md",
-    "Obsidian Vault/刷题笔记 - 记录/270. Closest Binary Search Tree Value.md",
     "Obsidian Vault/刷题笔记 - 记录/2411. Smallest Subarrays With Maximum Bitwise OR.md",
     "Obsidian Vault/刷题笔记 - 记录/94. Binary Tree Inorder Traversal.md",
-    "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
     "272.closest-binary-search-tree-value-ii.py",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
@@ -240,8 +228,6 @@
     "53. Maximum Subarray.md",
     "2044.count-number-of-maximum-bitwise-or-subsets.py",
     "Obsidian Vault/刷题笔记 - 记录/713. Subarray Product Less Than K.md",
-    "395.longest-substring-with-at-least-k-repeating-characters.py",
-    "713.subarray-product-less-than-k.py",
     "Obsidian Vault/刷题笔记 - 记录/704. Binary Search.md",
     "Obsidian Vault/刷题笔记 - 记录/3. Longest Substring Without Repeating Characters.md",
     "Obsidian Vault/刷题笔记 - 记录/刷题记录表.md",
