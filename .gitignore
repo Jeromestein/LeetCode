@@ -2,3 +2,4 @@ test.py
 test.java
 *.pptx
 .DS_Store
+*HKEY_CURRENT_USER*
