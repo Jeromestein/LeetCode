@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "2438. Range Product Queries of Powers"
             }
+          },
+          {
+            "id": "2f4f83a7a6904099",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2787. Ways to Express an Integer as Sum of Powers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2787. Ways to Express an Integer as Sum of Powers"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
+                "file": "2787. Ways to Express an Integer as Sum of Powers.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2438. Range Product Queries of Powers"
+              "title": "Outline of 2787. Ways to Express an Integer as Sum of Powers"
             }
           }
         ],
@@ -183,11 +197,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2d529df19a1775ca",
+  "active": "2f4f83a7a6904099",
   "lastOpenFiles": [
+    "2787.ways-to-express-an-integer-as-sum-of-powers.py",
+    "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
+    "2787. Ways to Express an Integer as Sum of Powers.md",
     "2438.range-product-queries-of-powers.py",
     "Obsidian Vault/刷题笔记 - 记录/869. Reordered Power of 2.md",
-    "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
     "Obsidian Vault/刷题笔记 - 记录/3363. Find the Maximum Number of Fruits Collected.md",
     "Obsidian Vault/刷题笔记 - 记录/1198. Find Smallest Common Element in All Rows.md",
     "1198.find-smallest-common-element-in-all-rows.py",
@@ -209,7 +225,6 @@
     "2561.rearranging-fruits.py",
     "161.one-edit-distance.py",
     "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
-    "480.sliding-window-median.py",
     "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
     "Obsidian Vault/刷题笔记 - 记录/314. Binary Tree Vertical Order Traversal.md",
     "Obsidian Vault/刷题笔记 - 记录/118. Pascal's Triangle.md",
@@ -220,7 +235,6 @@
     "Obsidian Vault/刷题笔记 - 记录/272. Closest Binary Search Tree Value II.md",
     "Obsidian Vault/刷题笔记 - 记录/2411. Smallest Subarrays With Maximum Bitwise OR.md",
     "Obsidian Vault/刷题笔记 - 记录/94. Binary Tree Inorder Traversal.md",
-    "Obsidian Vault/刷题笔记 - 记录/594. Longest Harmonious Subsequence.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
