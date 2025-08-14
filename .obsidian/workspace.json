@@ -8,49 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c6d4f4fba1f41472",
+            "id": "345b2ec15e2e8644",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/869. Reordered Power of 2.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "869. Reordered Power of 2"
-            }
-          },
-          {
-            "id": "2d529df19a1775ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2438. Range Product Queries of Powers"
-            }
-          },
-          {
-            "id": "2f4f83a7a6904099",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2787. Ways to Express an Integer as Sum of Powers.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2787. Ways to Express an Integer as Sum of Powers"
+              "title": "326. Power of Three"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2787. Ways to Express an Integer as Sum of Powers.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2787. Ways to Express an Integer as Sum of Powers"
+              "title": "Outline of 326. Power of Three"
             }
           }
         ],
@@ -197,11 +168,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2f4f83a7a6904099",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "326.power-of-three.py",
+    "Obsidian Vault/刷题笔记 - 记录/2787. Ways to Express an Integer as Sum of Powers.md",
+    "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
     "2787.ways-to-express-an-integer-as-sum-of-powers.py",
     "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
-    "2787. Ways to Express an Integer as Sum of Powers.md",
     "2438.range-product-queries-of-powers.py",
     "Obsidian Vault/刷题笔记 - 记录/869. Reordered Power of 2.md",
     "Obsidian Vault/刷题笔记 - 记录/3363. Find the Maximum Number of Fruits Collected.md",
@@ -223,7 +196,6 @@
     "Obsidian Vault/刷题笔记 - 记录/2561. Rearranging Fruits.md",
     "904.fruit-into-baskets.py",
     "2561.rearranging-fruits.py",
-    "161.one-edit-distance.py",
     "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
     "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
     "Obsidian Vault/刷题笔记 - 记录/314. Binary Tree Vertical Order Traversal.md",
@@ -234,7 +206,6 @@
     "Obsidian Vault/刷题笔记 - 记录/270. Closest Binary Search Tree Value.md",
     "Obsidian Vault/刷题笔记 - 记录/272. Closest Binary Search Tree Value II.md",
     "Obsidian Vault/刷题笔记 - 记录/2411. Smallest Subarrays With Maximum Bitwise OR.md",
-    "Obsidian Vault/刷题笔记 - 记录/94. Binary Tree Inorder Traversal.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
