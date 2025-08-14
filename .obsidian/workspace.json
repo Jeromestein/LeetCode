@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "326. Power of Three"
             }
+          },
+          {
+            "id": "db77e2c8beb3993f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/2264. Largest 3-Same-Digit Number in String.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2264. Largest 3-Same-Digit Number in String"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -142,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/2264. Largest 3-Same-Digit Number in String.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 326. Power of Three"
+              "title": "Outline of 2264. Largest 3-Same-Digit Number in String"
             }
           }
         ],
@@ -170,9 +185,11 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
+    "Obsidian Vault/刷题笔记 - 记录/2264. Largest 3-Same-Digit Number in String.md",
+    "2264.largest-3-same-digit-number-in-string.py",
     "326.power-of-three.py",
     "Obsidian Vault/刷题笔记 - 记录/2787. Ways to Express an Integer as Sum of Powers.md",
-    "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
     "2787.ways-to-express-an-integer-as-sum-of-powers.py",
     "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
     "2438.range-product-queries-of-powers.py",
@@ -194,8 +211,6 @@
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/904. Fruit Into Baskets.md",
     "Obsidian Vault/刷题笔记 - 记录/2561. Rearranging Fruits.md",
-    "904.fruit-into-baskets.py",
-    "2561.rearranging-fruits.py",
     "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
     "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
     "Obsidian Vault/刷题笔记 - 记录/314. Binary Tree Vertical Order Traversal.md",
