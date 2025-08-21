@@ -8,45 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "345b2ec15e2e8644",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "326. Power of Three"
-            }
-          },
-          {
             "id": "db77e2c8beb3993f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6. 第六章 多指针"
+              "title": "302. Smallest Rectangle Enclosing Black Pixels"
             }
           },
           {
-            "id": "f579a5a761566f30",
+            "id": "d816a22ed6dc9951",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/303. Range Sum Query - Immutable.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "303. Range Sum Query - Immutable"
+              "title": "1277. Count Square Submatrices with All Ones"
+            }
+          },
+          {
+            "id": "a0afa26e1bdff8c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1277. Count Square Submatrices with All Ones.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1277. Count Square Submatrices with All Ones"
             }
           },
           {
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "342. Power of Four"
+              "title": "837. New 21 Game"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "traver",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 342. Power of Four"
+              "title": "Outline of 1277. Count Square Submatrices with All Ones"
             }
           }
         ],
@@ -203,6 +203,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -213,12 +214,19 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/1504. Count Submatrices With All Ones.md",
+    "1504.count-submatrices-with-all-ones.py",
+    "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
+    "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
+    "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
+    "1277.count-square-submatrices-with-all-ones.py",
+    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "837. New 21 Game.md",
+    "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
     "342.power-of-four.py",
     "Obsidian Vault/刷题笔记 - 记录/303. Range Sum Query - Immutable.md",
-    "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
     "303.range-sum-query-immutable.py",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 记录/2264. Largest 3-Same-Digit Number in String.md",
     "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
     "2264.largest-3-same-digit-number-in-string.py",
@@ -234,21 +242,13 @@
     "Obsidian Vault/刷题笔记 - 记录/231. Power of Two.md",
     "231.power-of-two.py",
     "Obsidian Vault/刷题笔记 - 记录/808. Soup Servings.md",
-    "808.soup-servings.py",
     "Obsidian Vault/刷题笔记 - 记录/3479. Fruits Into Baskets III.md",
-    "3479.fruits-into-baskets-iii.py",
     "Obsidian Vault/刷题笔记 - 记录/3477. Fruits Into Baskets II.md",
     "Obsidian Vault/刷题笔记 - 记录/2106. Maximum Fruits Harvested After at Most K Steps.md",
-    "2106.maximum-fruits-harvested-after-at-most-k-steps.py",
     "Obsidian Vault/刷题笔记 - 记录/161. One Edit Distance.md",
     "Obsidian Vault/刷题笔记 - 记录/904. Fruit Into Baskets.md",
     "Obsidian Vault/刷题笔记 - 记录/2561. Rearranging Fruits.md",
     "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
-    "Obsidian Vault/刷题笔记 - 记录/395. Longest Substring with At Least K Repeating Characters.md",
-    "Obsidian Vault/刷题笔记 - 记录/314. Binary Tree Vertical Order Traversal.md",
-    "Obsidian Vault/刷题笔记 - 记录/118. Pascal's Triangle.md",
-    "Obsidian Vault/刷题笔记 - 记录/898. Bitwise ORs of Subarrays.md",
-    "Obsidian Vault/刷题笔记 - 记录/2044. Count Number of Maximum Bitwise-OR Subsets.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
