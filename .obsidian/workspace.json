@@ -22,6 +22,34 @@
             }
           },
           {
+            "id": "73b0cff11e89f6cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3195. Find the Minimum Area to Cover All Ones I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3195. Find the Minimum Area to Cover All Ones I"
+            }
+          },
+          {
+            "id": "9ca864632c23c551",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "498. Diagonal Traverse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "498. Diagonal Traverse"
+            }
+          },
+          {
             "id": "d816a22ed6dc9951",
             "type": "leaf",
             "state": {
@@ -34,37 +62,9 @@
               "icon": "lucide-file",
               "title": "1277. Count Square Submatrices with All Ones"
             }
-          },
-          {
-            "id": "a0afa26e1bdff8c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1277. Count Square Submatrices with All Ones.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1277. Count Square Submatrices with All Ones"
-            }
-          },
-          {
-            "id": "280e4685a93e2cd3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "837. New 21 Game"
-            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
+                "file": "498. Diagonal Traverse.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1277. Count Square Submatrices with All Ones"
+              "title": "Outline of 498. Diagonal Traverse"
             }
           }
         ],
@@ -212,13 +212,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "9ca864632c23c551",
   "lastOpenFiles": [
+    "3195. Find the Minimum Area to Cover All Ones I.md",
+    "498. Diagonal Traverse.md",
+    "3195.find-the-minimum-area-to-cover-all-ones-i.py",
+    "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
+    "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
+    "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
     "Obsidian Vault/刷题笔记 - 记录/1504. Count Submatrices With All Ones.md",
     "1504.count-submatrices-with-all-ones.py",
-    "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
-    "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
-    "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
     "1277.count-square-submatrices-with-all-ones.py",
     "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
@@ -240,7 +243,6 @@
     "Obsidian Vault/刷题笔记 - 记录/1198. Find Smallest Common Element in All Rows.md",
     "1198.find-smallest-common-element-in-all-rows.py",
     "Obsidian Vault/刷题笔记 - 记录/231. Power of Two.md",
-    "231.power-of-two.py",
     "Obsidian Vault/刷题笔记 - 记录/808. Soup Servings.md",
     "Obsidian Vault/刷题笔记 - 记录/3479. Fruits Into Baskets III.md",
     "Obsidian Vault/刷题笔记 - 记录/3477. Fruits Into Baskets II.md",
@@ -248,7 +250,6 @@
     "Obsidian Vault/刷题笔记 - 记录/161. One Edit Distance.md",
     "Obsidian Vault/刷题笔记 - 记录/904. Fruit Into Baskets.md",
     "Obsidian Vault/刷题笔记 - 记录/2561. Rearranging Fruits.md",
-    "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
