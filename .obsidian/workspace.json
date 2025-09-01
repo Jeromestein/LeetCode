@@ -13,40 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1181. Before and After Puzzle.md",
+                "file": "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1181. Before and After Puzzle"
+              "title": "5. 第五章 二分法"
             }
           },
           {
-            "id": "7c5614737931361a",
+            "id": "b5e6fae98aefc744",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1792. Maximum Average Pass Ratio.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/36. Valid Sudoku.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1792. Maximum Average Pass Ratio"
+              "title": "36. Valid Sudoku"
             }
           },
           {
-            "id": "06e409bd4e762c5b",
+            "id": "4a63b5f8a3cb4485",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/36. Valid Sudoku.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "37. Sudoku Solver"
+              "title": "36. Valid Sudoku"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/36. Valid Sudoku.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 37. Sudoku Solver"
+              "title": "Outline of 36. Valid Sudoku"
             }
           }
         ],
@@ -200,11 +200,16 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/1182. Shortest Distance to Target Color.md",
+    "1182.shortest-distance-to-target-color.py",
+    "Obsidian Vault/刷题笔记 - 记录/36. Valid Sudoku.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
+    "Obsidian Vault/刷题笔记 - 记录/1181. Before and After Puzzle.md",
+    "36.valid-sudoku.py",
+    "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
     "37.sudoku-solver.py",
     "Obsidian Vault/刷题笔记 - 记录/1792. Maximum Average Pass Ratio.md",
-    "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
     "1792.maximum-average-pass-ratio.py",
-    "Obsidian Vault/刷题笔记 - 记录/1181. Before and After Puzzle.md",
     "Obsidian Vault/刷题笔记 - 记录/3021. Alice and Bob Playing Flower Game.md",
     "3021.alice-and-bob-playing-flower-game.py",
     "Obsidian Vault/刷题笔记 - 记录/3446. Sort Matrix by Diagonals.md",
@@ -218,13 +223,9 @@
     "Obsidian Vault/刷题笔记 - 记录/498. Diagonal Traverse.md",
     "498.diagonal-traverse.py",
     "Obsidian Vault/刷题笔记 - 记录/3195. Find the Minimum Area to Cover All Ones I.md",
-    "3195.find-the-minimum-area-to-cover-all-ones-i.py",
     "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
     "Obsidian Vault/刷题笔记 - 记录/837. New 21 Game.md",
     "Obsidian Vault/刷题笔记 - 记录/1504. Count Submatrices With All Ones.md",
-    "1504.count-submatrices-with-all-ones.py",
-    "1277.count-square-submatrices-with-all-ones.py",
-    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "837. New 21 Game.md",
     "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
@@ -234,8 +235,6 @@
     "Obsidian Vault/刷题笔记 - 记录/2787. Ways to Express an Integer as Sum of Powers.md",
     "Obsidian Vault/刷题笔记 - 记录/2438. Range Product Queries of Powers.md",
     "Obsidian Vault/刷题笔记 - 记录/869. Reordered Power of 2.md",
-    "Obsidian Vault/刷题笔记 - 记录/3363. Find the Maximum Number of Fruits Collected.md",
-    "Obsidian Vault/刷题笔记 - 记录/1198. Find Smallest Common Element in All Rows.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
