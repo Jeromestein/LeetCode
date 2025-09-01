@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "1792. Maximum Average Pass Ratio"
             }
+          },
+          {
+            "id": "06e409bd4e762c5b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "37. Sudoku Solver"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1792. Maximum Average Pass Ratio.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1792. Maximum Average Pass Ratio"
+              "title": "Outline of 37. Sudoku Solver"
             }
           }
         ],
@@ -186,9 +200,11 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "37.sudoku-solver.py",
+    "Obsidian Vault/刷题笔记 - 记录/1792. Maximum Average Pass Ratio.md",
+    "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
     "1792.maximum-average-pass-ratio.py",
     "Obsidian Vault/刷题笔记 - 记录/1181. Before and After Puzzle.md",
-    "Obsidian Vault/刷题笔记 - 记录/1792. Maximum Average Pass Ratio.md",
     "Obsidian Vault/刷题笔记 - 记录/3021. Alice and Bob Playing Flower Game.md",
     "3021.alice-and-bob-playing-flower-game.py",
     "Obsidian Vault/刷题笔记 - 记录/3446. Sort Matrix by Diagonals.md",
@@ -212,7 +228,6 @@
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "837. New 21 Game.md",
     "Obsidian Vault/刷题笔记 - 记录/342. Power of Four.md",
-    "342.power-of-four.py",
     "Obsidian Vault/刷题笔记 - 记录/303. Range Sum Query - Immutable.md",
     "Obsidian Vault/刷题笔记 - 记录/2264. Largest 3-Same-Digit Number in String.md",
     "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
@@ -221,7 +236,6 @@
     "Obsidian Vault/刷题笔记 - 记录/869. Reordered Power of 2.md",
     "Obsidian Vault/刷题笔记 - 记录/3363. Find the Maximum Number of Fruits Collected.md",
     "Obsidian Vault/刷题笔记 - 记录/1198. Find Smallest Common Element in All Rows.md",
-    "Obsidian Vault/刷题笔记 - 记录/231. Power of Two.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
