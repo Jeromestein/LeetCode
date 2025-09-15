@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "21af531be203ce2c",
+            "id": "2f74ce10ffe8d7ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3227. Vowels Game in a String.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1935. Maximum Number of Words You Can Type.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3227. Vowels Game in a String"
+              "title": "1935. Maximum Number of Words You Can Type"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3227. Vowels Game in a String.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1935. Maximum Number of Words You Can Type.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3227. Vowels Game in a String"
+              "title": "Outline of 1935. Maximum Number of Words You Can Type"
             }
           }
         ],
@@ -200,8 +200,11 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
-    "Obsidian Vault/刷题笔记 - 记录/2785. Sort Vowels in a String.md",
+    "1935.maximum-number-of-words-you-can-type.py",
+    "a.md",
+    "Obsidian Vault/刷题笔记 - 记录/1935. Maximum Number of Words You Can Type.md",
     "Obsidian Vault/刷题笔记 - 记录/3227. Vowels Game in a String.md",
+    "Obsidian Vault/刷题笔记 - 记录/2785. Sort Vowels in a String.md",
     "3227.vowels-game-in-a-string.py",
     "2785.sort-vowels-in-a-string.py",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
@@ -233,8 +236,6 @@
     "Obsidian Vault/刷题笔记 - 记录/3000. Maximum Area of Longest Diagonal Rectangle.md",
     "Obsidian Vault/刷题笔记 - 记录/1277. Count Square Submatrices with All Ones.md",
     "Obsidian Vault/刷题笔记 - 记录/498. Diagonal Traverse.md",
-    "Obsidian Vault/刷题笔记 - 记录/3195. Find the Minimum Area to Cover All Ones I.md",
-    "Obsidian Vault/刷题笔记 - 记录/302. Smallest Rectangle Enclosing Black Pixels.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
