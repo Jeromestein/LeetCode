@@ -90,9 +90,23 @@
               "icon": "lucide-file",
               "title": "165. Compare Version Numbers"
             }
+          },
+          {
+            "id": "8483ba7bf056e2f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/120. Triangle.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "120. Triangle"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/165. Compare Version Numbers.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/120. Triangle.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 165. Compare Version Numbers"
+              "title": "Outline of 120. Triangle"
             }
           }
         ],
@@ -242,9 +256,11 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "120.triangle.py",
+    "Obsidian Vault/刷题笔记 - 记录/165. Compare Version Numbers.md",
+    "Obsidian Vault/刷题笔记 - 记录/120. Triangle.md",
     "165.compare-version-numbers.py",
     "Obsidian Vault/刷题笔记 - 记录/1152. Analyze User Website Visit Pattern.md",
-    "Obsidian Vault/刷题笔记 - 记录/165. Compare Version Numbers.md",
     "Obsidian Vault/刷题笔记 - 记录/3005. Count Elements With Maximum Frequency.md",
     "1152.analyze-user-website-visit-pattern.py",
     "3005.count-elements-with-maximum-frequency.py",
@@ -265,7 +281,6 @@
     "2785.sort-vowels-in-a-string.py",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
     "Obsidian Vault/刷题笔记 - 记录/1317. Convert Integer to the Sum of Two No-Zero Integers.md",
-    "1317.convert-integer-to-the-sum-of-two-no-zero-integers.py",
     "Obsidian Vault/刷题笔记 - 记录/1304. Find N Unique Integers Sum up to Zero.md",
     "Obsidian Vault/刷题笔记 - 记录/567. Permutation in String.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
@@ -277,7 +292,6 @@
     "Obsidian Vault/刷题笔记 - 记录/1182. Shortest Distance to Target Color.md",
     "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
     "Obsidian Vault/刷题笔记 - 记录/1181. Before and After Puzzle.md",
-    "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
