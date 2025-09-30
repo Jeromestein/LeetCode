@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "7588284e58b943f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/611. Valid Triangle Number.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "611. Valid Triangle Number"
-            }
-          },
-          {
             "id": "e99f082bcbc93863",
             "type": "leaf",
             "state": {
@@ -62,9 +48,37 @@
               "icon": "lucide-file",
               "title": "1039. Minimum Score Triangulation of Polygon"
             }
+          },
+          {
+            "id": "3e4a8e116a806861",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2221. Find Triangular Sum of an Array.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2221. Find Triangular Sum of an Array"
+            }
+          },
+          {
+            "id": "520fc01c8ec7ade1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1121. Divide Array Into Increasing Sequences.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1121. Divide Array Into Increasing Sequences"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1039. Minimum Score Triangulation of Polygon.md",
+                "file": "1121. Divide Array Into Increasing Sequences.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1039. Minimum Score Triangulation of Polygon"
+              "title": "Outline of 1121. Divide Array Into Increasing Sequences"
             }
           }
         ],
@@ -212,11 +226,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "520fc01c8ec7ade1",
   "lastOpenFiles": [
+    "1121.divide-array-into-increasing-sequences.py",
+    "2221. Find Triangular Sum of an Array.md",
+    "1121. Divide Array Into Increasing Sequences.md",
+    "2221.find-triangular-sum-of-an-array.py",
+    "Obsidian Vault/刷题笔记 - 记录/1039. Minimum Score Triangulation of Polygon.md",
     "1039.minimum-score-triangulation-of-polygon.py",
     "Obsidian Vault/刷题笔记 - 记录/611. Valid Triangle Number.md",
-    "Obsidian Vault/刷题笔记 - 记录/1039. Minimum Score Triangulation of Polygon.md",
     "611.valid-triangle-number.py",
     "Obsidian Vault/刷题笔记 - 记录/120. Triangle.md",
     "120.triangle.py",
@@ -234,9 +252,7 @@
     "Obsidian Vault/刷题笔记 - 记录/1150. Check If a Number Is Majority Element in a Sorted Array.md",
     "1150.check-if-a-number-is-majority-element-in-a-sorted-array.py",
     "Obsidian Vault/刷题笔记 - 记录/1133. Largest Unique Number.md",
-    "1133.largest-unique-number.py",
     "Obsidian Vault/刷题笔记 - 记录/1935. Maximum Number of Words You Can Type.md",
-    "1935.maximum-number-of-words-you-can-type.py",
     "Obsidian Vault/刷题笔记 - 记录/3227. Vowels Game in a String.md",
     "Obsidian Vault/刷题笔记 - 记录/2785. Sort Vowels in a String.md",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
@@ -248,8 +264,6 @@
     "Obsidian Vault/刷题笔记 - 记录/3516. Find Closest Person.md",
     "Obsidian Vault/刷题笔记 - 记录/3025. Find the Number of Ways to Place People I.md",
     "Obsidian Vault/刷题笔记 - 记录/3027. Find the Number of Ways to Place People II.md",
-    "Obsidian Vault/刷题笔记 - 记录/36. Valid Sudoku.md",
-    "Obsidian Vault/刷题笔记 - 记录/1182. Shortest Distance to Target Color.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
