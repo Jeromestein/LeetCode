@@ -36,35 +36,21 @@
             }
           },
           {
-            "id": "27940c2450f5b89b",
+            "id": "1ecfc3729496c083",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1518. Water Bottles.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/774. Minimize Max Distance to Gas Station.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1518. Water Bottles"
-            }
-          },
-          {
-            "id": "9cc366f22ccee893",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1135. Connecting Cities With Minimum Cost.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1135. Connecting Cities With Minimum Cost"
+              "title": "774. Minimize Max Distance to Gas Station"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -185,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1135. Connecting Cities With Minimum Cost.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/774. Minimize Max Distance to Gas Station.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1135. Connecting Cities With Minimum Cost"
+              "title": "Outline of 774. Minimize Max Distance to Gas Station"
             }
           }
         ],
@@ -212,16 +198,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "1ecfc3729496c083",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/1488. Avoid Flood in The City.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "Obsidian Vault/刷题笔记 - 记录/774. Minimize Max Distance to Gas Station.md",
+    "Obsidian Vault/刷题笔记 - 记录/2300. Successful Pairs of Spells and Potions.md",
+    "774.minimize-max-distance-to-gas-station.py",
+    "2300.successful-pairs-of-spells-and-potions.py",
+    "Obsidian Vault/刷题笔记 - 算法篇/5. 第五章 二分法.md",
+    "1488.avoid-flood-in-the-city.py",
+    "Obsidian Vault/刷题笔记 - 记录/1135. Connecting Cities With Minimum Cost.md",
     "1135.connecting-cities-with-minimum-cost.py",
     "Obsidian Vault/刷题笔记 - 记录/1518. Water Bottles.md",
-    "Obsidian Vault/刷题笔记 - 记录/1135. Connecting Cities With Minimum Cost.md",
     "Obsidian Vault/刷题笔记 - 记录/778. Swim in Rising Water.md",
     "778.swim-in-rising-water.py",
     "1518.water-bottles.py",
     "Obsidian Vault/刷题笔记 - 记录/1121. Divide Array Into Increasing Sequences.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/2221. Find Triangular Sum of an Array.md",
     "1121.divide-array-into-increasing-sequences.py",
     "2221.find-triangular-sum-of-an-array.py",
@@ -230,13 +223,9 @@
     "Obsidian Vault/刷题笔记 - 记录/611. Valid Triangle Number.md",
     "611.valid-triangle-number.py",
     "Obsidian Vault/刷题笔记 - 记录/120. Triangle.md",
-    "120.triangle.py",
     "Obsidian Vault/刷题笔记 - 记录/165. Compare Version Numbers.md",
-    "165.compare-version-numbers.py",
     "Obsidian Vault/刷题笔记 - 记录/1152. Analyze User Website Visit Pattern.md",
     "Obsidian Vault/刷题笔记 - 记录/3005. Count Elements With Maximum Frequency.md",
-    "1152.analyze-user-website-visit-pattern.py",
-    "3005.count-elements-with-maximum-frequency.py",
     "Obsidian Vault/刷题笔记 - 记录/2353. Design a Food Rating System.md",
     "a.md",
     "Obsidian Vault/刷题笔记 - 记录/2197. Replace Non-Coprime Numbers in Array.md",
@@ -246,10 +235,6 @@
     "Obsidian Vault/刷题笔记 - 记录/3227. Vowels Game in a String.md",
     "Obsidian Vault/刷题笔记 - 记录/2785. Sort Vowels in a String.md",
     "Obsidian Vault/刷题笔记 - 记录/3307. Find the K-th Character in String Game II.md",
-    "Obsidian Vault/刷题笔记 - 记录/1317. Convert Integer to the Sum of Two No-Zero Integers.md",
-    "Obsidian Vault/刷题笔记 - 记录/1304. Find N Unique Integers Sum up to Zero.md",
-    "Obsidian Vault/刷题笔记 - 记录/567. Permutation in String.md",
-    "Obsidian Vault/刷题笔记 - 记录/2749. Minimum Operations to Make the Integer Zero.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
