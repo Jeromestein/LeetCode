@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "73318e481dc9e78c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1526. Minimum Number of Increments on Subarrays to Form a Target Array.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1526. Minimum Number of Increments on Subarrays to Form a Target Array"
-            }
-          },
-          {
             "id": "ba3c6b10a7e0efb9",
             "type": "leaf",
             "state": {
@@ -62,9 +48,37 @@
               "icon": "lucide-file",
               "title": "45. Jump Game II"
             }
+          },
+          {
+            "id": "1ecb1643cf3dab7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3318. Find X-Sum of All K-Long Subarrays I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3318. Find X-Sum of All K-Long Subarrays I"
+            }
+          },
+          {
+            "id": "4dee86d460ef7d90",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3318. Find X-Sum of All K-Long Subarrays I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3318. Find X-Sum of All K-Long Subarrays I"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/45. Jump Game II.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3318. Find X-Sum of All K-Long Subarrays I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 45. Jump Game II"
+              "title": "Outline of 3318. Find X-Sum of All K-Long Subarrays I"
             }
           }
         ],
@@ -212,15 +226,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ba3c6b10a7e0efb9",
+  "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/1183. Maximum Number of Ones.md",
+    "1183.maximum-number-of-ones.py",
+    "Obsidian Vault/刷题笔记 - 记录/3318. Find X-Sum of All K-Long Subarrays I.md",
+    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
+    "Obsidian Vault/刷题笔记 - 记录/45. Jump Game II.md",
+    "3318.find-x-sum-of-all-k-long-subarrays-i.py",
     "Obsidian Vault/刷题笔记 - 记录/3217. Delete Nodes From Linked List Present in Array.md",
     "Obsidian Vault/刷题笔记 - 记录/1526. Minimum Number of Increments on Subarrays to Form a Target Array.md",
     "Obsidian Vault/刷题笔记 - 记录/1578. Minimum Time to Make Rope Colorful.md",
     "Obsidian Vault/刷题笔记 - 记录/3289. The Two Sneaky Numbers of Digitville.md",
     "Obsidian Vault/刷题笔记 - 记录/2257. Count Unguarded Cells in the Grid.md",
     "3217.delete-nodes-from-linked-list-present-in-array.py",
-    "Obsidian Vault/刷题笔记 - 记录/45. Jump Game II.md",
     "2257.count-unguarded-cells-in-the-grid.py",
     "1578.minimum-time-to-make-rope-colorful.py",
     "45.jump-game-ii.py",
@@ -231,7 +250,6 @@
     "Obsidian Vault/刷题笔记 - 记录/3370. Smallest Number With All Set Bits.md",
     "Obsidian Vault/刷题笔记 - 记录/2464. Minimum Subarrays in a Valid Split.md",
     "2464.minimum-subarrays-in-a-valid-split.py",
-    "3370.smallest-number-with-all-set-bits.py",
     "Obsidian Vault/刷题笔记 - 记录/3304. Find the K-th Character in String Game.md",
     "Obsidian Vault/刷题笔记 - 记录/2749. Minimum Operations to Make the Integer Zero.md",
     "Obsidian Vault/刷题笔记 - 记录/2411. Smallest Subarrays With Maximum Bitwise OR.md",
@@ -240,15 +258,11 @@
     "Obsidian Vault/刷题笔记 - 记录/37. Sudoku Solver.md",
     "Obsidian Vault/刷题笔记 - 记录/29. Divide Two Integers.md",
     "Obsidian Vault/刷题笔记 - 记录/3354. Make Array Elements Equal to Zero.md",
-    "3354.make-array-elements-equal-to-zero.py",
     "Obsidian Vault/刷题笔记 - 记录/1716. Calculate Money in Leetcode Bank.md",
     "Obsidian Vault/刷题笔记 - 记录/2125. Number of Laser Beams in a Bank.md",
     "Obsidian Vault/刷题笔记 - 记录/2048. Next Greater Numerically Balanced Number.md",
     "Obsidian Vault/刷题笔记 - 记录/1570. Dot Product of Two Sparse Vectors.md",
     "Obsidian Vault/刷题笔记 - 记录/3461. Check If Digits Are Equal in String After Operations I.md",
-    "Obsidian Vault/刷题笔记 - 记录/3347. Maximum Frequency of an Element After Performing Operations II.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 记录/3346. Maximum Frequency of an Element After Performing Operations I.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
