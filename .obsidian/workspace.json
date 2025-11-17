@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "3927019a9a4ddb0e",
+            "id": "a709e720dec549a9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1513. Number of Substrings With Only 1s.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3228. Maximum Number of Operations to Move Ones to the End"
+              "title": "1513. Number of Substrings With Only 1s"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "gcd",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1513. Number of Substrings With Only 1s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3228. Maximum Number of Operations to Move Ones to the End"
+              "title": "Outline of 1513. Number of Substrings With Only 1s"
             }
           }
         ],
@@ -198,15 +198,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "a709e720dec549a9",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/259. 3Sum Smaller.md",
+    "259.3-sum-smaller.py",
+    "Obsidian Vault/刷题笔记 - 记录/1513. Number of Substrings With Only 1s.md",
+    "Obsidian Vault/刷题笔记 - 记录/1437. Check If All 1's Are at Least Length K Places Away.md",
+    "1513.number-of-substrings-with-only-1-s.py",
+    "1437.check-if-all-1-s-are-at-least-length-k-places-away.py",
+    "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
     "Obsidian Vault/刷题笔记 - 记录/261. Graph Valid Tree.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/2654. Minimum Number of Operations to Make All Array Elements Equal to 1.md",
     "261.graph-valid-tree.py",
     "Obsidian Vault/刷题笔记 - 记录/268. Missing Number.md",
     "268.missing-number.py",
-    "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
     "3228.maximum-number-of-operations-to-move-ones-to-the-end.py",
     "Obsidian Vault/刷题笔记 - 记录/2464. Minimum Subarrays in a Valid Split.md",
     "Obsidian Vault/刷题笔记 - 记录/2197. Replace Non-Coprime Numbers in Array.md",
@@ -220,21 +226,15 @@
     "Obsidian Vault/刷题笔记 - 记录/2528. Maximize the Minimum Powered City.md",
     "2169.count-operations-to-obtain-zero.py",
     "Obsidian Vault/刷题笔记 - 记录/3542. Minimum Operations to Convert All Elements to Zero.md",
-    "3542.minimum-operations-to-convert-all-elements-to-zero.py",
-    "2528.maximize-the-minimum-powered-city.py",
     "Obsidian Vault/刷题笔记 - 记录/3607. Power Grid Maintenance.md",
     "Obsidian Vault/刷题笔记 - 记录/3321. Find X-Sum of All K-Long Subarrays II.md",
     "Obsidian Vault/刷题笔记 - 记录/480. Sliding Window Median.md",
     "Obsidian Vault/刷题笔记 - 算法篇/1. 第一章 一些“方法论”.md",
-    "beginners_python_cheat_sheet_pcc.pdf",
     "Obsidian Vault/刷题笔记 - 记录/303. Range Sum Query - Immutable.md",
     "Obsidian Vault/刷题笔记 - 记录/160. Intersection of Two Linked Lists.md",
     "Obsidian Vault/刷题笔记 - 记录/146. LRU Cache.md",
     "Obsidian Vault/刷题笔记 - 记录/141. Linked List Cycle.md",
     "Obsidian Vault/刷题笔记 - 记录/3318. Find X-Sum of All K-Long Subarrays I.md",
-    "Obsidian Vault/刷题笔记 - 记录/1183. Maximum Number of Ones.md",
-    "Obsidian Vault/刷题笔记 - 记录/45. Jump Game II.md",
-    "Obsidian Vault/刷题笔记 - 记录/3217. Delete Nodes From Linked List Present in Array.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
