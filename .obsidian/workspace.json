@@ -36,35 +36,63 @@
             }
           },
           {
-            "id": "2a3592c771b9209e",
+            "id": "2f35a1997780d7e2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/757. Set Intersection Size At Least Two.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1262. Greatest Sum Divisible by Three.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "757. Set Intersection Size At Least Two"
+              "title": "1262. Greatest Sum Divisible by Three"
             }
           },
           {
-            "id": "006f6935d475a5a1",
+            "id": "9e29c7fcdc2543c7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1930. Unique Length-3 Palindromic Subsequences"
+              "title": "1018. Binary Prefix Divisible By 5"
+            }
+          },
+          {
+            "id": "395639237152058a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1018. Binary Prefix Divisible By 5"
+            }
+          },
+          {
+            "id": "d5cbdbb97adf16ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1018. Binary Prefix Divisible By 5"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -185,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1930. Unique Length-3 Palindromic Subsequences"
+              "title": "Outline of 1018. Binary Prefix Divisible By 5"
             }
           }
         ],
@@ -212,11 +240,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0efcc7dd9cf06fa6",
+  "active": "d5cbdbb97adf16ff",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/364. Nested List Weight Sum II.md",
+    "364.nested-list-weight-sum-ii.py",
+    "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+    "1018.binary-prefix-divisible-by-5.py",
+    "Obsidian Vault/刷题笔记 - 记录/1262. Greatest Sum Divisible by Three.md",
+    "Obsidian Vault/刷题笔记 - 记录/3190. Find Minimum Operations to Make All Elements Divisible by Three.md",
+    "1262.greatest-sum-divisible-by-three.py",
+    "3190.find-minimum-operations-to-make-all-elements-divisible-by-three.py",
+    "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
     "1930.unique-length-3-palindromic-subsequences.py",
     "Obsidian Vault/刷题笔记 - 记录/757. Set Intersection Size At Least Two.md",
-    "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
     "Obsidian Vault/刷题笔记 - 记录/986. Interval List Intersections.md",
     "Obsidian Vault/刷题笔记 - 记录/621. Task Scheduler.md",
     "Obsidian Vault/刷题笔记 - 记录/253. Meeting Rooms II.md",
@@ -233,23 +269,14 @@
     "259.3-sum-smaller.py",
     "Obsidian Vault/刷题笔记 - 记录/1437. Check If All 1's Are at Least Length K Places Away.md",
     "1513.number-of-substrings-with-only-1-s.py",
-    "1437.check-if-all-1-s-are-at-least-length-k-places-away.py",
     "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
     "Obsidian Vault/刷题笔记 - 记录/261. Graph Valid Tree.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/2654. Minimum Number of Operations to Make All Array Elements Equal to 1.md",
-    "261.graph-valid-tree.py",
     "Obsidian Vault/刷题笔记 - 记录/268. Missing Number.md",
-    "268.missing-number.py",
-    "3228.maximum-number-of-operations-to-move-ones-to-the-end.py",
     "Obsidian Vault/刷题笔记 - 记录/2464. Minimum Subarrays in a Valid Split.md",
     "Obsidian Vault/刷题笔记 - 记录/2197. Replace Non-Coprime Numbers in Array.md",
-    "2654.minimum-number-of-operations-to-make-all-array-elements-equal-to-1.py",
     "Obsidian Vault/刷题笔记 - 记录/474. Ones and Zeroes.md",
-    "Obsidian Vault/刷题笔记 - 记录/1198. Find Smallest Common Element in All Rows.md",
-    "Obsidian Vault/刷题笔记 - 记录/170. Two Sum III - Data structure design.md",
-    "Obsidian Vault/刷题笔记 - 记录/2169. Count Operations to Obtain Zero.md",
-    "Obsidian Vault/刷题笔记 - 记录/2528. Maximize the Minimum Powered City.md",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
