@@ -48,9 +48,21 @@
               "icon": "lucide-file",
               "title": "1015. Smallest Integer Divisible by K"
             }
+          },
+          {
+            "id": "b7329b3e2dc4a1dc",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Obsidian Vault/Pasted image 20250619150235.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250619150235"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -171,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/1015. Smallest Integer Divisible by K.md",
+                "file": "Obsidian Vault/Pasted image 20250619150235.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1015. Smallest Integer Divisible by K"
+              "title": "Outline of Pasted image 20250619150235"
             }
           }
         ],
@@ -200,8 +212,11 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
-    "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+    "Obsidian Vault/Pasted image 20250619150306.png",
+    "Obsidian Vault/刷题笔记 - 记录/2435. Paths in Matrix Whose Sum Is Divisible by K.md",
+    "2435.paths-in-matrix-whose-sum-is-divisible-by-k.py",
     "Obsidian Vault/刷题笔记 - 记录/1015. Smallest Integer Divisible by K.md",
+    "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
     "Obsidian Vault/刷题笔记 - 记录/364. Nested List Weight Sum II.md",
     "364.nested-list-weight-sum-ii.py",
     "1018.binary-prefix-divisible-by-5.py",
@@ -227,16 +242,12 @@
     "Obsidian Vault/刷题笔记 - 记录/259. 3Sum Smaller.md",
     "259.3-sum-smaller.py",
     "Obsidian Vault/刷题笔记 - 记录/1437. Check If All 1's Are at Least Length K Places Away.md",
-    "1513.number-of-substrings-with-only-1-s.py",
     "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
     "Obsidian Vault/刷题笔记 - 记录/261. Graph Valid Tree.md",
     "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
     "Obsidian Vault/刷题笔记 - 记录/2654. Minimum Number of Operations to Make All Array Elements Equal to 1.md",
     "Obsidian Vault/刷题笔记 - 记录/268. Missing Number.md",
     "Obsidian Vault/刷题笔记 - 记录/2464. Minimum Subarrays in a Valid Split.md",
-    "Obsidian Vault/刷题笔记 - 记录/2197. Replace Non-Coprime Numbers in Array.md",
-    "Obsidian Vault/刷题笔记 - 记录/474. Ones and Zeroes.md",
-    "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619112149.png",
     "Obsidian Vault/Pasted image 20250619112041.png",
