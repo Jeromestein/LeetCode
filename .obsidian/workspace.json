@@ -48,9 +48,79 @@
               "icon": "lucide-file",
               "title": "2872. Maximum Number of K-Divisible Components"
             }
+          },
+          {
+            "id": "9dc2bf8cd0ad2a93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1018. Binary Prefix Divisible By 5"
+            }
+          },
+          {
+            "id": "e5e2c5c2c2415aa3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/1590. Make Sum Divisible by P.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1590. Make Sum Divisible by P"
+            }
+          },
+          {
+            "id": "bf5382b484bac727",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/370. Range Addition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "370. Range Addition"
+            }
+          },
+          {
+            "id": "682cc22c0769380c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3623. Count Number of Trapezoids I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3623. Count Number of Trapezoids I"
+            }
+          },
+          {
+            "id": "6567b2346801ebe1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault/刷题笔记 - 记录/3623. Count Number of Trapezoids I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3623. Count Number of Trapezoids I"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -82,7 +152,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "inf",
+                "query": "remaind",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/2872. Maximum Number of K-Divisible Components.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/3623. Count Number of Trapezoids I.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2872. Maximum Number of K-Divisible Components"
+              "title": "Outline of 3623. Count Number of Trapezoids I"
             }
           }
         ],
@@ -200,25 +270,32 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/1214. Two Sum BSTs.md",
+    "1214.two-sum-bs-ts.py",
+    "Obsidian Vault/刷题笔记 - 记录/3623. Count Number of Trapezoids I.md",
+    "Obsidian Vault/刷题笔记 - 记录/370. Range Addition.md",
+    "Obsidian Vault/刷题笔记 - 记录/2141. Maximum Running Time of N Computers.md",
+    "2141.maximum-running-time-of-n-computers.py",
+    "Obsidian Vault/刷题笔记 - 记录/1590. Make Sum Divisible by P.md",
+    "1590.make-sum-divisible-by-p.py",
+    "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
+    "Obsidian Vault/刷题笔记 - 记录/1262. Greatest Sum Divisible by Three.md",
+    "370.range-addition.py",
+    "Obsidian Vault/刷题笔记 - 记录/2872. Maximum Number of K-Divisible Components.md",
     "2872.maximum-number-of-k-divisible-components.py",
     "Obsidian Vault/刷题笔记 - 记录/3381. Maximum Subarray Sum With Length Divisible by K.md",
-    "Obsidian Vault/刷题笔记 - 记录/2872. Maximum Number of K-Divisible Components.md",
     "3381.maximum-subarray-sum-with-length-divisible-by-k.py",
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/刷题笔记 - 记录/2435. Paths in Matrix Whose Sum Is Divisible by K.md",
     "2435.paths-in-matrix-whose-sum-is-divisible-by-k.py",
     "Obsidian Vault/刷题笔记 - 记录/1015. Smallest Integer Divisible by K.md",
-    "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
     "Obsidian Vault/刷题笔记 - 记录/364. Nested List Weight Sum II.md",
     "364.nested-list-weight-sum-ii.py",
     "1018.binary-prefix-divisible-by-5.py",
-    "Obsidian Vault/刷题笔记 - 记录/1262. Greatest Sum Divisible by Three.md",
     "Obsidian Vault/刷题笔记 - 记录/3190. Find Minimum Operations to Make All Elements Divisible by Three.md",
     "1262.greatest-sum-divisible-by-three.py",
-    "3190.find-minimum-operations-to-make-all-elements-divisible-by-three.py",
     "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
-    "1930.unique-length-3-palindromic-subsequences.py",
     "Obsidian Vault/刷题笔记 - 记录/757. Set Intersection Size At Least Two.md",
     "Obsidian Vault/刷题笔记 - 记录/986. Interval List Intersections.md",
     "Obsidian Vault/刷题笔记 - 记录/621. Task Scheduler.md",
@@ -226,18 +303,10 @@
     "Obsidian Vault/刷题笔记 - 记录/252. Meeting Rooms.md",
     "Obsidian Vault/刷题笔记 - 记录/57. Insert Interval.md",
     "Obsidian Vault/刷题笔记 - 记录/56. Merge Intervals.md",
-    "757.set-intersection-size-at-least-two.py",
     "Obsidian Vault/刷题笔记 - 记录/2154. Keep Multiplying Found Values by Two.md",
-    "2154.keep-multiplying-found-values-by-two.py",
     "Obsidian Vault/刷题笔记 - 记录/717. 1-bit and 2-bit Characters.md",
-    "717.1-bit-and-2-bit-characters.py",
     "Obsidian Vault/刷题笔记 - 记录/1513. Number of Substrings With Only 1s.md",
     "Obsidian Vault/刷题笔记 - 记录/259. 3Sum Smaller.md",
-    "Obsidian Vault/刷题笔记 - 记录/1437. Check If All 1's Are at Least Length K Places Away.md",
-    "Obsidian Vault/刷题笔记 - 记录/3228. Maximum Number of Operations to Move Ones to the End.md",
-    "Obsidian Vault/刷题笔记 - 记录/261. Graph Valid Tree.md",
-    "Obsidian Vault/刷题笔记 - 算法篇/6. 第六章 多指针.md",
-    "Obsidian Vault/刷题笔记 - 记录/2654. Minimum Number of Operations to Make All Array Elements Equal to 1.md",
     "Obsidian Vault/Pasted image 20250619112149.png",
     "Obsidian Vault/Pasted image 20250619112041.png",
     "Obsidian Vault/Pasted image 20250619111957.png",
