@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "18ef35e077114cfe",
+            "id": "2254f3ba7ce1faed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3578. Count Partitions With Max-Min Difference at Most K.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1874. Minimize Product Sum of Two Arrays.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3578. Count Partitions With Max-Min Difference at Most K"
+              "title": "1874. Minimize Product Sum of Two Arrays"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Vault/刷题笔记 - 记录/3578. Count Partitions With Max-Min Difference at Most K.md",
+                "file": "Obsidian Vault/刷题笔记 - 记录/1874. Minimize Product Sum of Two Arrays.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 3578. Count Partitions With Max-Min Difference at Most K"
+              "title": "Outline of 1874. Minimize Product Sum of Two Arrays"
             }
           }
         ],
@@ -200,10 +200,16 @@
   },
   "active": "0efcc7dd9cf06fa6",
   "lastOpenFiles": [
+    "Obsidian Vault/刷题笔记 - 记录/3577. Count the Number of Computer Unlocking Permutations.md",
+    "Obsidian Vault/刷题笔记 - 记录/1874. Minimize Product Sum of Two Arrays.md",
+    "1874.minimize-product-sum-of-two-arrays.py",
+    "3577.count-the-number-of-computer-unlocking-permutations.py",
+    "Obsidian Vault/刷题笔记 - 记录/3583. Count Special Triplets.md",
+    "3583.count-special-triplets.py",
+    "Obsidian Vault/刷题笔记 - 记录/3578. Count Partitions With Max-Min Difference at Most K.md",
     "Obsidian Vault/刷题笔记 - 记录/326. Power of Three.md",
     "Obsidian Vault/刷题笔记 - 记录/1523. Count Odd Numbers in an Interval Range.md",
     "Obsidian Vault/刷题笔记 - 记录/1925. Count Square Sum Triples.md",
-    "Obsidian Vault/刷题笔记 - 记录/3578. Count Partitions With Max-Min Difference at Most K.md",
     "3578.count-partitions-with-max-min-difference-at-most-k.py",
     "1925.count-square-sum-triples.py",
     "Obsidian Vault/刷题笔记 - 记录/3432. Count Partitions with Even Sum Difference.md",
@@ -219,13 +225,10 @@
     "Obsidian Vault/刷题笔记 - 记录/2211. Count Collisions on a Road.md",
     "Obsidian Vault/刷题笔记 - 记录/3625. Count Number of Trapezoids II.md",
     "2211.count-collisions-on-a-road.py",
-    "242.valid-anagram.py",
     "Obsidian Vault/刷题笔记 - 记录/3623. Count Number of Trapezoids I.md",
     "Obsidian Vault/刷题笔记 - 记录/1214. Two Sum BSTs.md",
-    "1214.two-sum-bs-ts.py",
     "Obsidian Vault/刷题笔记 - 记录/370. Range Addition.md",
     "Obsidian Vault/刷题笔记 - 记录/2141. Maximum Running Time of N Computers.md",
-    "2141.maximum-running-time-of-n-computers.py",
     "Obsidian Vault/刷题笔记 - 记录/1590. Make Sum Divisible by P.md",
     "Obsidian Vault/刷题笔记 - 记录/1018. Binary Prefix Divisible By 5.md",
     "Obsidian Vault/刷题笔记 - 记录/1262. Greatest Sum Divisible by Three.md",
@@ -234,10 +237,6 @@
     "Obsidian Vault/Pasted image 20250619150235.png",
     "Obsidian Vault/Pasted image 20250619150306.png",
     "Obsidian Vault/刷题笔记 - 记录/2435. Paths in Matrix Whose Sum Is Divisible by K.md",
-    "Obsidian Vault/刷题笔记 - 记录/1015. Smallest Integer Divisible by K.md",
-    "Obsidian Vault/刷题笔记 - 记录/364. Nested List Weight Sum II.md",
-    "Obsidian Vault/刷题笔记 - 记录/3190. Find Minimum Operations to Make All Elements Divisible by Three.md",
-    "Obsidian Vault/刷题笔记 - 记录/1930. Unique Length-3 Palindromic Subsequences.md",
     "Obsidian Vault/Pasted image 20250619112149.png",
     "Obsidian Vault/Pasted image 20250619112041.png",
     "Obsidian Vault/Pasted image 20250619111957.png",
